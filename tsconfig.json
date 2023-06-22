@@ -1,0 +1,10 @@
+{
+  "vueCompilerOptions": {
+    "plugins": [
+      "@vue/language-plugin-pug"
+    ]
+  },
+  "compilerOptions": {
+    "allowJs": true
+  }
+}
