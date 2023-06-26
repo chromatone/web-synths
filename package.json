@@ -12,7 +12,8 @@
   "license": "MIT",
   "dependencies": {
     "@unocss/reset": "0.52.7",
-    "@vueuse/core": "10.2.0"
+    "@vueuse/core": "10.2.0",
+    "pocketbase": "0.15.2"
   },
   "devDependencies": {
     "@unocss/extractor-pug": "0.52.7",

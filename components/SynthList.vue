@@ -8,7 +8,7 @@ const open = ref(false)
 
 <template lang='pug'>
 .flex.flex-wrap.gap-4.m-2.lg-m-8
-  a.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300(
+  a.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl(
     v-for="synth in synths" :key="synth.url"
     style="flex: 1 1 200px; color: #333"
     :href="synth.url"
