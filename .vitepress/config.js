@@ -6,6 +6,7 @@ import { transformerDirectives, presetIcons, presetUno, extractorSplit } from 'u
 import extractorPug from '@unocss/extractor-pug'
 
 export default defineConfig({
+  title: 'Online synths',
   vite: {
     plugins: [
       Unocss({

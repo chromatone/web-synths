@@ -2,12 +2,11 @@
 title: Online synths
 description: Web synthesizers to play with MIDI controllers
 date: 2023-06-22
+layout: home
 ---
 
-# Hello World!
-
 <script setup>
-import SynthList from './SynthList.vue'
+import SynthList from './components/SynthList.vue'
   </script>
 
   <SynthList />
