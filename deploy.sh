@@ -1,4 +1,4 @@
-cd dist
+cd .vitepress/dist
 
 git init
 git remote add origin git@github.com:davay42/synths.git 
