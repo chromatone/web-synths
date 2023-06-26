@@ -1,0 +1,29 @@
+{
+  "hash": "e3f86090",
+  "browserHash": "748efea4",
+  "optimized": {
+    "vue": {
+      "src": "../../../node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "90ef7367",
+      "needsInterop": false
+    },
+    "@vueuse/core": {
+      "src": "../../../node_modules/.pnpm/@vueuse+core@10.2.0_vue@3.3.4/node_modules/@vueuse/core/index.mjs",
+      "file": "@vueuse_core.js",
+      "fileHash": "f11a329b",
+      "needsInterop": false
+    },
+    "pocketbase": {
+      "src": "../../../node_modules/.pnpm/pocketbase@0.15.2/node_modules/pocketbase/dist/pocketbase.es.mjs",
+      "file": "pocketbase.js",
+      "fileHash": "a7edfbcb",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-WICYTZ2N": {
+      "file": "chunk-WICYTZ2N.js"
+    }
+  }
+}
