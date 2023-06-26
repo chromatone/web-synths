@@ -7,6 +7,8 @@ layout: home
 
 <script setup>
 import SynthList from './components/SynthList.vue'
-  </script>
+import TheForm from './components/TheForm.vue'
+</script>
 
-  <SynthList />
+<TheForm />
+<SynthList />
