@@ -1,9 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { isFormOpen, email, isAccessGranted, isValidEmail } from '../composables/useForm.ts'
 import { useScrollLock } from '@vueuse/core'
 import { watch } from 'vue'
 
-const isLocked = useScrollLock(!import.meta.env.SSR && document?.body)
+const isLocked = useScrollLock(
+  //@ts-ignore
+  !import.meta.env.SSR && document?.body
+)
+
 isLocked.value = true
 
 watch(isAccessGranted, a => {

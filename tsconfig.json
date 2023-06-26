@@ -7,6 +7,8 @@
   "compilerOptions": {
     "allowJs": true,
     "target": "esnext",
-    "moduleResolution": "nodenext"
+    "moduleResolution": "nodenext",
+    "allowImportingTsExtensions": true,
+    "module": "ESNext"
   }
 }
