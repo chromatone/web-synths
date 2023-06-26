@@ -1,5 +1,5 @@
 <script setup>
-import { isFormOpen, email, isAccessGranted, isValidEmail } from '../composables/useForm'
+import { isFormOpen, email, isAccessGranted, isValidEmail } from '../composables/useForm.ts'
 import { useScrollLock } from '@vueuse/core'
 import { watch } from 'vue'
 
