@@ -8,7 +8,7 @@ const isLocked = useScrollLock(
   !import.meta.env.SSR && document?.body
 )
 
-isLocked.value = true
+isLocked.value = false
 
 watch(isAccessGranted, a => {
   isFormOpen.value = false

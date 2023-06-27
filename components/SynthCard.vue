@@ -13,7 +13,6 @@ const online = ref(null)
 onMounted(async () => {
   try {
     const response = await fetch('https://corsproxy.io/?' + props.url);
-    console.log(response, props.title)
     if (response.status == 200) {
       online.value = true
     } else {
@@ -38,6 +37,6 @@ a.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-translate-y-2
     .text-md {{ title }} 
     .flex-1 
     .w-2.h-2.rounded-full.shadow-inset(
-      :class="{'bg-green-500': online, 'bg-red-500':!online}"
+      :class="{'bg-green-500': online === true, 'bg-light-900':online === false}"
     )
 </template>
