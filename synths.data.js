@@ -14,7 +14,7 @@ export default {
 
       const dirname = path.dirname(fileURLToPath(import.meta.url));
 
-      const res = await directus.items('synths').readByQuery({ sort: ['id'], limit: -1 });
+      const res = await directus.items('synths').readByQuery({ sort: ['sort', 'id'], limit: -1 });
       const records = res.data
 
       for (let r of records) {

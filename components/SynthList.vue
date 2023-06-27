@@ -3,7 +3,6 @@
 import { data } from '../synths.data'
 import { data as texts } from '../texts.data'
 import SynthCard from './SynthCard.vue'
-import line from './line.svg?raw'
 
 </script>
 
