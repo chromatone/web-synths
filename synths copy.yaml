@@ -1,54 +1,54 @@
 - title: Dotpiano
   url: https://dotpiano.com/
-  img: upload-b097fd20-c4cd-11e7-9991-fdd4f21590b2.jpg
+  img: dotpiano.jpg
 - title: Casio CZ 101
   url: https://www.webaudiomodules.org/wamsynths/webcz101/
-  img: upload-803b4f64-4938-42e8-b541-d9dac30b1ac0.png
+  img: casio.png
 - title: Сhromatone
   url: https://touchme.chromatone.center/#/level
-  img: upload-e9c4c109-d477-4cf2-abce-6d5a5e5f965f.png
+  img: chromatone.png
 - title: DEXED
   url: https://www.webaudiomodules.org/wamsynths/dexed
-  img: upload-f61c8a86-4e8f-4650-a01d-dc83fa168214.png
+  img: dexed.png
 - title: TAL-NoiseMaker
   url: https://www.webaudiomodules.org/wamsynths/noisemaker
-  img: upload-ff5bbd6c-9e24-4281-a667-af064d83101a.png
-- title: A MIDI–driven Web Audio
+  img: tal.png
+- title: MIDI–driven Web Audio
   url: https://webaudiodemos.appspot.com/midi-synth/index.html
-  img: upload-c82c3af8-710d-49bc-9532-42f9cb82e21f.png
+  img: midiwebaudio.png
 - title: Yamaha DX7
   url: https://www.webaudiomodules.org/wamsynths/webdx7/
-  img: upload-72f49fe2-7491-4931-a99e-80f6a5cd328b.png
+  img: dx7.png
 - title: WebSynths
   url: https://www.audiotool.com/product/device/heisenberg/
-  img: upload-9589500c-d146-4535-a247-d8703fc81f49.png
+  img: websynths.png
 - title: Cardboard Synth
   url: https://www.gsn-lib.org/apps/cardboardsynth/index.html
-  img: upload-de0a947b-f1ec-46a8-be97-c6ae095225c6.jpg
+  img: cardboard.jpg
 - title: Websynths
   url: http://websynths.com/
-  img: upload-fba38dd5-7b7c-46c4-89ee-807d6de8fa18.png
+  img: webs.png
 - title: Tanguy synth
   url: http://tanguysynth.com/
-  img: upload-1221c78b-d2bd-44d8-8abe-0104917ab1e1.png
+  img: tanguy.png
 - title: MOD synth
   url: http://mod-synth.io/
-  img: upload-ba63245a-c8ee-4aa2-b2e4-a2391f03403a.png
+  img: mod.png
 - title: OLIF SY1K
   url: http://perso.numericable.fr/olivier.friker/synth/O3-synth%20V1.3.html
-  img: upload-04ab46d0-32f5-4d13-8eb3-af371e4186c6.png
+  img: olif.png
 - title: Juno-106
   url: http://juno-106.js.org/
-  img: upload-ee2856f2-527c-4733-a0b6-8cb52c891937.png
+  img: juno.png
 - title: Note Sculptor
   url: http://www.noisesculptor.com/
-  img: upload-7cccfef4-7b9f-4f06-99a5-438562c9fd4c.png
+  img: sculpt.png
 - title: WebAudioSynth V2
   url: http://aikelab.net/websynthv2/
-  img: upload-32366b4a-dcb8-4631-85b3-79d0aafb026a.jpg
+  img: w2.jpg
 - title: Sound Trap
   url: https://www.soundtrap.com/
-  img: upload-a90a2e46-6bc3-4774-ba8e-e52bb1e2e220.png
+  img: soundtrap.png
 - title: Samplestich
   url: http://samplestitch.com.s3-website-us-east-1.amazonaws.com/
   img: upload-4610cbd6-1343-48f5-b1d8-4ad4ef2936d3.png

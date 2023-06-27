@@ -1,14 +1,13 @@
-import PocketBase from "pocketbase"
+import { Directus } from '@directus/sdk';
 
 
 export default {
   async load() {
-    const pb = new PocketBase("https://api.defucc.me")
+    const directus = new Directus('http://dir.defucc.me');
 
-    const records = await pb.collection("texts").getFullList();
-
+    const records = await directus.items('texts').readByQuery({ limit: -1 })
     const texts = {}
-    records.forEach(r => {
+    records.data.forEach(r => {
       texts[r.title] = r.content
     })
 

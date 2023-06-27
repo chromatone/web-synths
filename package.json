@@ -25,6 +25,7 @@
     "vitepress": "1.0.0-beta.3",
     "pug": "3.0.2",
     "unocss": "0.53.1",
-    "image-downloader": "4.3.0"
+    "image-downloader": "4.3.0",
+    "@directus/sdk": "10.3.3"
   }
 }

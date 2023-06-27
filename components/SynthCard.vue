@@ -31,7 +31,7 @@ a.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-translate-y-2
   :href="url"
   target="_blank"
   ) 
-  img(:src="`/media/${img}`")
+  img(:src="`/img/${img}.jpg`")
   .flex-1
   .p-4.flex.items-center
     .text-md {{ title }} 
