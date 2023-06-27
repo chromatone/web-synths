@@ -13,7 +13,7 @@ export default {
     const pb = new PocketBase("https://api.defucc.me")
 
     const records = await pb.collection("synths").getFullList({
-      sort: "rank",
+      sort: "sort",
     });
 
     for (let r of records) {

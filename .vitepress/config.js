@@ -7,6 +7,10 @@ import extractorPug from '@unocss/extractor-pug'
 
 export default defineConfig({
   title: 'Online synths',
+  description: 'Web audio synthesizers to play with a MIDI-controller straight from the browser',
+  themeConfig: {
+    logo: 'logo.svg'
+  },
   vite: {
     plugins: [
       Unocss({
