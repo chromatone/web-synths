@@ -11,8 +11,14 @@ export default defineConfig({
   themeConfig: {
     logo: 'logo.svg',
     lastUpdated: true,
+    footer: {
+      copyright: `With ❤️ by <a href="https://chromatone.center" target="_blank">Chromatone</a> and <a href="https://playtronica.com" target="_blank">Playtronica</a>`
+    },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/chromatone/web-synths' }
+    ],
+    nav: [
+
     ]
   },
   vite: {
