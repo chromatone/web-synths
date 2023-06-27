@@ -10,19 +10,19 @@ const props = defineProps({
 
 const online = ref(null)
 
-onMounted(async () => {
-  try {
-    const response = await fetch('https://corsproxy.io/?' + props.url);
-    if (response.status == 200) {
-      online.value = true
-    } else {
-      online.value = false
-    }
-  } catch (e) {
-    online.value = false
-  }
+// onMounted(async () => {
+//   try {
+//     const response = await fetch('https://corsproxy.io/?' + props.url);
+//     if (response.status == 200) {
+//       online.value = true
+//     } else {
+//       online.value = false
+//     }
+//   } catch (e) {
+//     online.value = false
+//   }
 
-})
+// })
 </script>
 
 <template lang='pug'>

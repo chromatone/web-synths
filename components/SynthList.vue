@@ -7,7 +7,7 @@ import SynthCard from './SynthCard.vue';
 </script>
 
 <template lang='pug'>
-.p-4(v-html="texts.intro")
+.p-4.max-w-75ch.dark-text-light-200.line-height-loose.text-lg.intro(v-html="texts.intro")
 .flex.flex-wrap.gap-4.m-2.lg-m-8
   SynthCard( 
     v-for="synth in data" :key="synth.url"
@@ -15,8 +15,16 @@ import SynthCard from './SynthCard.vue';
     )
 </template>
 
-<style scoped>
+<style>
 .dark a {
   color: #eee !important;
+}
+
+.intro p {
+  @apply my-4;
+}
+
+.intro a {
+  @apply underline font-bold;
 }
 </style>

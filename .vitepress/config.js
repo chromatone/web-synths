@@ -9,7 +9,11 @@ export default defineConfig({
   title: 'Online synths',
   description: 'Web audio synthesizers to play with a MIDI-controller straight from the browser',
   themeConfig: {
-    logo: 'logo.svg'
+    logo: 'logo.svg',
+    lastUpdated: true,
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/chromatone/web-synths' }
+    ]
   },
   vite: {
     plugins: [

@@ -10,5 +10,5 @@ import SynthList from './components/SynthList.vue'
 import TheForm from './components/TheForm.vue'
 </script>
 
-<TheForm />
 <SynthList />
+<TheForm />
