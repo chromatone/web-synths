@@ -1,14 +1,15 @@
-<script setup lang="ts">
+<script setup>
 import { isFormOpen, email, isAccessGranted, isValidEmail } from '../composables/useForm.ts'
 import { useScrollLock } from '@vueuse/core'
 import { watch } from 'vue'
+import { data as texts } from '../texts.data.js'
 
 const isLocked = useScrollLock(
   //@ts-ignore
   !import.meta.env.SSR && document?.body
 )
 
-isLocked.value = false
+isLocked.value = true
 
 watch(isAccessGranted, a => {
   isFormOpen.value = false
@@ -19,8 +20,8 @@ watch(isAccessGranted, a => {
 
 <template lang='pug'>
 transition(name="slide")
-  .z-20.fixed.bottom-0.right-0.left-0.h-80.bg-light-800.bg-opacity-80.backdrop-blur.flex.flex-col.items-center.gap-4.justify-center.dark-bg-dark-200.dark-bg-opacity-80.p-4(v-show="isFormOpen")
-    label.text-center.max-w-45ch.mt-6(for="email") We are building a community of web musicians. Leave your e-mail to get free full access to the collection and receive occasional community updates from us. 
+  .z-20.fixed.bottom-0.right-0.left-0.bg-light-800.bg-opacity-80.backdrop-blur.flex.flex-col.items-center.gap-4.justify-center.dark-bg-dark-200.dark-bg-opacity-80.p-4(v-show="isFormOpen")
+    label.text-center.max-w-45ch.mt-4(for="email" v-html="texts['form-header']")
     .flex.gap-2
       input.flex-1.p-2.md-p-4.rounded-xl.bg-light-200.shadow-md.dark-bg-dark-400.flex-1(
         style="flex: 10 1 200px"
@@ -37,7 +38,7 @@ transition(name="slide")
         style="flex: 1 1 400px"
       ) GET FREE ACCESS
     .flex-1
-    .p-2 With ❤️ from Playtronica and  Chromatone
+    .p-2(v-html="texts.footer")
 </template>
 
 <style>
