@@ -14,7 +14,7 @@ import createHead from 'vitepress-pages/head'
 
 const metaData = {
   title: "Online synths",
-  description: "Web audio synthesizers collection to play with a MIDI-controller straight from the browser",
+  description: "Web audio synthesizers collection to play with a MIDI-controller straight from the browser.",
   site: "synth.chromatone.center",
   url: "https://synth.chromatone.center/", //the end slash here is mandatory
   repo: "https://github.com/chromatone/web-synths",
@@ -33,6 +33,7 @@ const metaData = {
 export default defineConfig({
   title: metaData.title,
   description: metaData.description,
+  titleTemplate: 'Web based synthesizers collection',
   lang: "en-US",
   cleanUrls: true,
   transformHead: createHead(metaData),
