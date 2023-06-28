@@ -21,7 +21,7 @@ const metaData = {
   locale: "en",
   icon: "logo.svg",
   logo: "logo.svg",
-  image: "media/chromatone.jpg", // used for og:image, should be 1.91x1 ratio
+  image: "cover.jpg", // used for og:image, should be 1.91x1 ratio
   color: '#cccccc',
   author: "davay42", //your twitter handle
   tags: "synths, webaudio, synthesizer, MIDI, midi-controller, play music, online synth, online DAW, browser audio, web music",
