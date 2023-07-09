@@ -11,16 +11,16 @@ const { focused } = useFocus(target, { initialValue: true })
 
 const isFormOpen = useStorage('locked', true)
 
-const isLocked = useScrollLock(
-  //@ts-ignore
-  !import.meta.env.SSR && document?.body
-)
+// const isLocked = useScrollLock(
+//   //@ts-ignore
+//   !import.meta.env.SSR && document?.body
+// )
 
-isLocked.value = isFormOpen.value
+// isLocked.value = isFormOpen.value
 
 watch(isAccessGranted, a => {
   isFormOpen.value = false
-  isLocked.value = false
+  // isLocked.value = false
 })
 
 onMounted(() => {
@@ -31,7 +31,7 @@ onMounted(() => {
 
 <template lang='pug'>
 transition(name="slide")
-  .fixed.z-20.bottom-0.right-0.left-0.bg-light-800.bg-opacity-80.backdrop-blur.flex.flex-col.items-center.gap-4.justify-center.dark-bg-dark-200.dark-bg-opacity-80.p-8(v-show="isFormOpen")
+  .fixed.z-200.bottom-0.right-0.left-0.bg-light-800.bg-opacity-80.backdrop-blur.flex.flex-col.items-center.gap-4.justify-center.dark-bg-dark-200.dark-bg-opacity-80.p-8(v-show="isFormOpen")
     .flex.flex-col.gap-4
       label.text-center.max-w-45ch(for="email") We are building web musicians community. Leave your e-mail to instantly access full collection and occasionally receive community updates from us. 
       .flex.gap-4.flex-wrap.md-flex-nowrap

@@ -46,7 +46,10 @@ export default defineConfig({
     socialLinks: [
       { icon: "github", link: "https://github.com/chromatone/web-synths" },
     ],
-    nav: [],
+    nav: [
+      { text: 'Chromatone', link: 'https://chromatone.center' },
+      { text: 'Playtronica', link: 'https://playtronica.com' }
+    ],
   },
   head: [
 
