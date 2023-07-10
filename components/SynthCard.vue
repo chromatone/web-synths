@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue'
+import { isFormOpen } from '../composables/useForm.ts';
 
 const props = defineProps({
   disabled: Boolean,
@@ -10,6 +11,8 @@ const props = defineProps({
 })
 
 const online = ref(null)
+
+
 
 // onMounted(async () => {
 //   try {
@@ -32,6 +35,7 @@ component.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-trans
   :href="url"
   :is="!disabled ? 'a' : 'button'"
   target="_blank"
+  @click="disabled ? isFormOpen = true : 0"
   )
   img(:src="`/img/${img}.jpg`")
   .flex-1

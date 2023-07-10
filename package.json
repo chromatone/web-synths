@@ -14,19 +14,19 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@unocss/reset": "0.53.4",
-    "@vueuse/core": "10.2.0",
+    "@unocss/reset": "0.53.5",
+    "@vueuse/core": "10.2.1",
     "pocketbase": "0.15.2",
     "vue": "3.3.4"
   },
   "devDependencies": {
-    "@directus/sdk": "10.3.3",
-    "@unocss/extractor-pug": "0.53.4",
-    "@vue/language-plugin-pug": "^1.8.2",
+    "@directus/sdk": "10.3.5",
+    "@unocss/extractor-pug": "0.53.5",
+    "@vue/language-plugin-pug": "^1.8.4",
     "image-downloader": "4.3.0",
     "pug": "3.0.2",
-    "unocss": "0.53.4",
-    "vitepress": "1.0.0-beta.3",
-    "vitepress-pages": "2.0.0-beta.14"
+    "unocss": "0.53.5",
+    "vitepress": "1.0.0-beta.5",
+    "vitepress-pages": "2.0.0"
   }
 }
