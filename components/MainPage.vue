@@ -15,16 +15,16 @@ const list = ref(data);
 
 <template lang='pug'>
 TheForm
-SlickList.flex.flex-wrap.gap-4.md-gap-6.m-2.lg-m-8(
+SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
   :class="{block: !isAccessGranted}"
   v-model:list="list", 
   axis="xy", 
   use-drag-handle)
-  SlickItem(
+  SlickItem.flex(
     style="flex: 1 1 240px"
     v-for="(synth,s) in list" 
     :key="synth.title"
-    :index="s"  )
+    :index="s")
     SynthCard.card.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative( 
       :title="synth.title"
       :description="synth.description"
@@ -36,7 +36,7 @@ SlickList.flex.flex-wrap.gap-4.md-gap-6.m-2.lg-m-8(
 
 <style lang="postcss">
 .block button.off {
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
 .dark a {

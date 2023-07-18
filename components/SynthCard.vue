@@ -3,7 +3,7 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { checkAvailability, isFormOpen, isAccessGranted } from '../composables/useForm.ts';
 import { DragHandle } from 'vue-slicksort';
 //@ts-ignore
-import SynthFav from './SynthFav.vue';
+// import SynthFav from './SynthFav.vue';
 
 const props = defineProps({
   off: { type: Boolean, default: false },
@@ -44,7 +44,6 @@ function click() {
 
 <template lang='pug'>
 button.flex.flex-col.text-left.relative(
-  style="flex: 1 1 180px; color: #333"
   @click="click"
   :class="{off}"
   )
@@ -57,7 +56,7 @@ button.flex.flex-col.text-left.relative(
       .w-2.h-2.rounded-full.shadow-inset(
         :class="{'bg-green-500': online === true, 'bg-red-500':online === false}"
         )
-      SynthFav.scale-70.absolute.top-2.right-2(:url="url")
+      //- SynthFav.scale-70.absolute.top-2.right-2(:url="url")
       DragHandle.scale-80.opacity-40.cursor-grab
         svg(xmlns="http://www.w3.org/2000/svg", width="32", height="32", viewBox="0 0 32 32")
           path(d="M4 7v2h24V7zm0 8v2h24v-2zm0 8v2h24v-2z", fill="#888888")
