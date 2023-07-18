@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import { } from 'vitepress-pages'
+import texts from '../texts.json'
 
 import Unocss from "unocss/vite";
 import {
@@ -41,7 +41,7 @@ export default defineConfig({
     logo: "logo.svg",
     lastUpdated: true,
     footer: {
-      copyright: `With ❤️ by <a href="https://chromatone.center" target="_blank">Chromatone</a> and <a href="https://playtronica.com" target="_blank">Playtronica</a>`,
+      copyright: texts.footer,
     },
     socialLinks: [
       { icon: "github", link: "https://github.com/chromatone/web-synths" },
