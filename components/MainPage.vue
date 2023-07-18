@@ -4,13 +4,16 @@ import TheForm from './TheForm.vue'
 import texts from '../texts.json'
 
 import { ref } from "vue";
-import { favourites } from "../composables/useFavourites.ts";
 import { isAccessGranted } from "../composables/useForm.ts";
 import { data } from "../synths.data";
 import SynthCard from "./SynthCard.vue";
 import { SlickList, SlickItem, DragHandle } from "vue-slicksort";
 
 const list = ref(data);
+
+function isOff(n) {
+  return !isAccessGranted.value && n > 5
+}
 </script>
 
 <template lang='pug'>
@@ -30,7 +33,7 @@ SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
       :description="synth.description"
       :img="synth.img"
       :url="synth.url"
-      :off="!isAccessGranted && s>5")
+      :off="isOff(s)")
 .mx-auto.p-4.max-w-75ch.dark-text-light-200.text-center.line-height-loose.text-md.intro.md-text-lg(v-html="texts.intro")
 </template>
 
