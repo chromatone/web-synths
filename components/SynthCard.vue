@@ -1,6 +1,6 @@
 <script setup>
-import { onMounted, ref } from 'vue'
-import { isFormOpen } from '../composables/useForm.ts';
+import { onMounted, ref, watch } from 'vue'
+import { checkAvailability, isFormOpen } from '../composables/useForm.ts';
 
 const props = defineProps({
   disabled: Boolean,
@@ -12,21 +12,19 @@ const props = defineProps({
 
 const online = ref(null)
 
+watch(checkAvailability, async check => {
+  try {
+    const response = await fetch('https://corsproxy.io/?' + props.url);
+    if (response.status == 200) {
+      online.value = true
+    } else {
+      online.value = false
+    }
+  } catch (e) {
+    online.value = false
+  }
+})
 
-
-// onMounted(async () => {
-//   try {
-//     const response = await fetch('https://corsproxy.io/?' + props.url);
-//     if (response.status == 200) {
-//       online.value = true
-//     } else {
-//       online.value = false
-//     }
-//   } catch (e) {
-//     online.value = false
-//   }
-
-// })
 </script>
 
 <template lang='pug'>
@@ -42,7 +40,7 @@ component.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-trans
   .p-4.flex.items-center.justify-center
     .text-md.font-bold {{ title }} 
     .w-2.h-2.rounded-full.shadow-inset.absolute.right-4(
-      :class="{'bg-green-500': online === true, 'bg-light-900':online === false}"
+      :class="{'bg-green-500': online === true, 'bg-red-500':online === false}"
       )
 </template>
 

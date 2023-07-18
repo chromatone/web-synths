@@ -4,10 +4,6 @@ import { useScrollLock, useStorage } from '@vueuse/core'
 import { watch, ref, onMounted } from 'vue'
 import { data as texts } from '../texts.data.js'
 
-
-
-
-
 </script>
 
 <template lang='pug'>
@@ -30,7 +26,7 @@ transition(name="slide")
           name="email"
           type="email"
           @keydown.enter="grantAccess(email)"
-          placeholder="you@site.com")
+          placeholder="you@gmail.com")
 
         button.text-sm.md-text-md.p-2.font-bold.md-p-4.rounded-xl.shadow-xl.hover-shadow-2xl.transition.-hover-translate-y-2px.active-translate-y-0.active-shadow-md.bg-green-400.dark-bg-green-700(
           @click="grantAccess(email)"

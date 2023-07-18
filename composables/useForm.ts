@@ -14,11 +14,14 @@ export const isValidEmail = computed(() => /^[^@]+@\w+(\.\w+)+\w$/.test(email.va
 
 
 export async function grantAccess(email: string) {
-  const data = {
-    email,
-  }
-  const user = await directus.items('players').createOne(data)
+  const data = { email }
   isAccessGranted.value = true
+  try {
+    await directus.items('players').createOne(data)
+  } catch (e) {
+    console.error(e)
+  }
+
 }
 
 export const isFormOpen = ref(false)
@@ -26,3 +29,6 @@ export const isFormOpen = ref(false)
 watch(isAccessGranted, a => {
   isFormOpen.value = false
 })
+
+export const checkAvailability = ref(false)
+
