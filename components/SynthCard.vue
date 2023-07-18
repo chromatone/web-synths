@@ -1,14 +1,14 @@
-<script setup>
-import { onMounted, ref, watch } from 'vue'
-import { checkAvailability, isFormOpen } from '../composables/useForm.ts';
-import SynthFav from './SynthFav.vue';
+<script setup lang="ts">
+import { computed, onMounted, ref, watch } from 'vue'
+import { checkAvailability, isFormOpen, isAccessGranted } from '../composables/useForm.ts';
+// import SynthFav from './SynthFav.vue';
 
 const props = defineProps({
-  disabled: Boolean,
-  title: String,
-  description: String,
-  img: String,
-  url: String
+  off: { type: Boolean, default: false },
+  title: { type: String, default: '' },
+  description: { type: String, default: '' },
+  img: { type: String, default: '' },
+  url: { type: String, default: '' },
 })
 
 const online = ref(null)
@@ -26,17 +26,25 @@ watch(checkAvailability, async check => {
   }
 })
 
+const disabled = computed(() => !isAccessGranted.value && props.off)
 
+function click() {
+  if (disabled.value) {
+    isFormOpen.value = !isFormOpen.value
+  } else {
+    window.open(props.url, '_blank')
+  }
+  console.log('clicked', props.url, disabled.value)
+
+}
 
 </script>
 
 <template lang='pug'>
-component.card.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative(
+button.card.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative(
   style="flex: 1 1 240px; color: #333"
-  :href="url"
-  :is="!disabled ? 'a' : 'button'"
-  target="_blank"
-  @click="disabled ? isFormOpen = true : 0"
+  :class="{disabled}"
+  @click="click"
   )
   img(:src="`/img/${img}.jpg`")
   .flex-1
@@ -49,11 +57,11 @@ component.card.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-
 </template>
 
 <style scoped lang="postcss">
-button.card {
+.disabled {
   @apply cursor-not-allowed !dark-text-light-900/50 !text-dark-900/50;
 }
 
-button.card img {
+.disabled img {
   @apply opacity-30;
 }
 </style>

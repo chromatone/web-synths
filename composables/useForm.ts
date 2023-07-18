@@ -12,22 +12,20 @@ export const isAccessGranted = useStorage('access-granted', false)
 export const email = ref('')
 export const isValidEmail = computed(() => /^[^@]+@\w+(\.\w+)+\w$/.test(email.value))
 
-
 export async function grantAccess(email: string) {
   const data = { email }
-  isAccessGranted.value = true
   try {
     await directus.items('players').createOne(data)
   } catch (e) {
     console.error(e)
   }
-
+  isAccessGranted.value = true
 }
 
 export const isFormOpen = ref(false)
 
 watch(isAccessGranted, a => {
-  isFormOpen.value = false
+  if (a) isFormOpen.value = false
 })
 
 export const checkAvailability = ref(false)

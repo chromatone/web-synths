@@ -1,4 +1,4 @@
-<script setup>
+<script setup >
 import { favourites } from '../composables/useFavourites.ts';
 import { isAccessGranted } from '../composables/useForm.ts';
 import { data } from '../synths.data'
@@ -8,13 +8,14 @@ import SynthCard from './SynthCard.vue'
 
 <template lang='pug'>
 .flex.flex-wrap.gap-4.md-gap-6.m-2.lg-m-8
-  transition-group(name="list")
-    SynthCard( 
-      :style="{order: favourites[synth.url]? 1 : 100}"
-      v-for="(synth,s) in data" :key="synth.url"
-      :disabled="!isAccessGranted &&  s>=6 "
-      v-bind="synth"
-      )
+  SynthCard( 
+    v-for="(synth,s) in data" :key="synth.title"
+    :title="synth.title"
+    :description="synth.description"
+    :img="synth.img"
+    :url="synth.url"
+    :off="s>=6"
+    )
 </template>
 
 <style lang="postcss">

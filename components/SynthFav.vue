@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { favourites } from '../composables/useFavourites.ts';
 
 function toggleFav(url) {

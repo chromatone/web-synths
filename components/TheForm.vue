@@ -15,7 +15,7 @@ transition(name="slide")
       path(d="M7.219 5.781L5.78 7.22L14.563 16L5.78 24.781L7.22 26.22L16 17.437l8.781 8.782l1.438-1.438L17.437 16l8.782-8.781L24.78 5.78L16 14.563z", fill="#888888")
     .flex.flex-col.gap-4.relative 
 
-      label.text-center.max-w-45ch(for="email") We are building web musicians community. Leave your e-mail to instantly access full collection and occasionally receive community updates from us.
+      label.text-center.max-w-45ch(for="email") We are building web musicians community. Leave your e-mail to instantly access full collection and occasionally receive community updates from us. 
 
       .flex.gap-4.flex-wrap.md-flex-nowrap
         input.flex-1.p-2.md-p-4.rounded-xl.bg-light-200.shadow-md.dark-bg-dark-400.flex-1(
@@ -34,6 +34,7 @@ transition(name="slide")
           :class="{'grayscale-50':!isValidEmail}"
           style="flex: 1 1 400px"
         ) GET FULL ACCESS
+      .text-xs.opacity-60.text-center.max-w-45ch.mx-auto Your access status will be saved per device and you won't need to enter your e-mail again.
 </template>
 
 <style>

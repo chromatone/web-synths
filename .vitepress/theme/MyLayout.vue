@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import DefaultTheme from 'vitepress/theme'
 import { checkAvailability } from '../../composables/useForm'
 const { Layout } = DefaultTheme
