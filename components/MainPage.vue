@@ -14,6 +14,8 @@ const list = ref(data);
 function isOff(n) {
   return !isAccessGranted.value && n > 5
 }
+
+//https://vue-slicksort.netlify.app/components/slicklist
 </script>
 
 <template lang='pug'>
