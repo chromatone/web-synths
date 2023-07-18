@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
 import { checkAvailability, isFormOpen, isAccessGranted } from '../composables/useForm.ts';
+import { DragHandle } from 'vue-slicksort';
 // import SynthFav from './SynthFav.vue';
 
 const props = defineProps({
@@ -26,42 +27,39 @@ watch(checkAvailability, async check => {
   }
 })
 
-const disabled = computed(() => !isAccessGranted.value && props.off)
+
 
 function click() {
-  if (disabled.value) {
+  if (props.off) {
     isFormOpen.value = !isFormOpen.value
   } else {
     window.open(props.url, '_blank')
   }
-  console.log('clicked', props.url, disabled.value)
+  console.log('clicked', props.url, props.off)
 
 }
 
 </script>
 
 <template lang='pug'>
-button.card.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative(
-  style="flex: 1 1 240px; color: #333"
-  :class="{disabled}"
+button.flex.flex-col(
+  style="flex: 1 1 180px; color: #333"
   @click="click"
+  :class="{off}"
   )
   img(:src="`/img/${img}.jpg`")
   .flex-1
   .p-4.flex.items-center.justify-between
-    .text-md.font-bold.flex.items-center.gap-2 {{ title }} 
+    .text-md.font-bold.flex.items-center.gap-2.flex-1
+      .p-0 {{ title }}
+      .flex-1
       .w-2.h-2.rounded-full.shadow-inset(
         :class="{'bg-green-500': online === true, 'bg-red-500':online === false}"
         )
+      DragHandle.scale-80.opacity-60.cursor-grab
+        svg(xmlns="http://www.w3.org/2000/svg", width="32", height="32", viewBox="0 0 32 32")
+          path(d="M4 7v2h24V7zm0 8v2h24v-2zm0 8v2h24v-2z", fill="#888888")
       //- SynthFav.scale-70.absolute.bottom-2.right-2(:url="url")
 </template>
 
-<style scoped lang="postcss">
-.disabled {
-  @apply cursor-not-allowed !dark-text-light-900/50 !text-dark-900/50;
-}
-
-.disabled img {
-  @apply opacity-30;
-}
-</style>
+<style scoped lang="postcss"></style>

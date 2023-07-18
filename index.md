@@ -6,11 +6,7 @@ layout: home
 ---
 
 <script setup>
-import SynthList from './components/SynthList.vue'
-import TheForm from './components/TheForm.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import MainPage from './components/MainPage.vue'
 </script>
 
-<SynthList />
-<TheWelcome />
-<TheForm />
+<MainPage/>
