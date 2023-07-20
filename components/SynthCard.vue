@@ -35,7 +35,6 @@ function click() {
     window.open(props.url, '_blank')
   }
   console.log('clicked', props.url, props.off)
-
 }
 
 </script>
