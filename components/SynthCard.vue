@@ -28,8 +28,6 @@ watch(checkAvailability, async check => {
   }
 })
 
-
-
 function click() {
   if (props.off) {
     isFormOpen.value = !isFormOpen.value
@@ -45,10 +43,9 @@ function click() {
 <template lang='pug'>
 button.flex.flex-col.text-left.relative(
   @click="click"
-  :class="{off}"
   )
   img(:src="`/img/${img}.jpg`")
-  .flex-1
+  .flex-1 
   .p-4.flex.items-center.justify-between
     .text-md.font-bold.flex.items-center.gap-2.flex-1
       .p-0 {{ title }}
