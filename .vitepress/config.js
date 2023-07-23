@@ -59,7 +59,13 @@ export default defineConfig({
     ["meta", { content: "yes", name: "apple-mobile-web-app-capable" }],
     ["meta", { content: "yes", name: "mobile-web-app-capable" }],
     ["meta", { content: "Synths online", name: "apple-mobile-web-app-title" }],
-    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=UA-106419193-1' }],
+    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-647GHFC42Z' }],
+    ['script', { type: "text/javascript" }, `
+window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-647GHFC42Z');
+    `],
     ['script', { type: "text/javascript" }, 'window.$sleek=[];window.SLEEK_PRODUCT_ID=988732704;(function(){d=document;s=d.createElement("script");s.src="https://client.sleekplan.com/sdk/e.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();']
 
   ],
