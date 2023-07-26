@@ -44,7 +44,7 @@ button.flex.flex-col.text-left.relative.min-h-50(@click="click")
   img(
     height="200"
     width="400"
-    :src="`/img/${img}.webp`" 
+    :src="`/img/${title.toLowerCase().split(' ').join('-')}.webp`" 
     :alt="`${title} illustration`")
   .flex-1 
   .p-4.flex.items-center.justify-between

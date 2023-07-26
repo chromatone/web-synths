@@ -19,10 +19,10 @@ export default {
 
       for (let r of records) {
         let dest = path.resolve(dirname, './public/img/')
-        let filePath = path.resolve(dest, `${r.img}.webp`)
+        let filePath = path.resolve(dest, `${r.title.toLowerCase().split(' ').join('-')}.webp`)
         if (fs.existsSync(filePath)) continue
-        let url = `https://dir.defucc.me/assets/${r.img}?quality=40&width=600&format=webp&download`
-        console.log('downloading file:', r.img + '.webp')
+        let url = `https://dir.defucc.me/assets/${r.img}?quality=70&width=1000&format=webp&download`
+        console.log('downloading file:', r.title.toLowerCase().split(' ').join('-') + '.webp')
         await download.image({ url, dest: filePath })
       }
 

@@ -4,7 +4,7 @@ node_modules/
 .vitepress/dist/
 .vitepress/.temp
 .DS_Store
-public/media
-public/img
 .env
 players/
+database/
+uploads/
