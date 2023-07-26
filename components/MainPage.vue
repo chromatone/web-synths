@@ -7,7 +7,7 @@ import { SlickList, SlickItem } from "vue-slicksort";
 import { useElementVisibility, useStorage, useTransition } from '@vueuse/core';
 import { version } from '../package.json'
 
-const list = useStorage(`synths-${version}-${data.length + 1}`, data)
+const list = useStorage(`synths-${version}`, data)
 
 function isOff(n) {
   return !isAccessGranted.value && n > 5
