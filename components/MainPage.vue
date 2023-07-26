@@ -41,7 +41,7 @@ SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
 
 <style lang="postcss">
 .dark a {
-  color: #eee !important;
+  color: #fff !important;
 }
 
 .intro p {
@@ -50,9 +50,5 @@ SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
 
 .intro a {
   @apply underline font-bold;
-}
-
-.card {
-  @apply flex-1
 }
 </style>

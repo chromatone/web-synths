@@ -40,10 +40,11 @@ function click() {
 </script>
 
 <template lang='pug'>
-button.flex.flex-col.text-left.relative.min-h-50(@click="click")
+button.flex.flex-col.text-left.relative.min-h-50(
+  @click="click")
   img(
     height="200"
-    width="400"
+    width="1000"
     :src="`/img/${title.toLowerCase().split(' ').join('-')}.webp`" 
     :alt="`${title} illustration`")
   .flex-1 
@@ -55,8 +56,8 @@ button.flex.flex-col.text-left.relative.min-h-50(@click="click")
         :class="{'bg-green-500': online === true, 'bg-red-500':online === false}"
         )
       ClientOnly
-        SynthFav.scale-70.absolute.top-2.right-2(:url="url")
-      DragHandle.scale-80.opacity-40.cursor-grab
+        SynthFav.scale-70.w-10(:url="url")
+      DragHandle.scale-80.opacity-40.cursor-grab.absolute.top-2.right-2
         svg(xmlns="http://www.w3.org/2000/svg", width="32", height="32", viewBox="0 0 32 32")
           path(d="M4 7v2h24V7zm0 8v2h24v-2zm0 8v2h24v-2z", fill="#888888")
       
