@@ -3,11 +3,10 @@ import { computed, onMounted, ref } from 'vue';
 import { isAccessGranted } from "../composables/useForm.ts";
 import { data } from "../synths.data";
 import SynthCard from "./SynthCard.vue";
-import { SlickList, SlickItem, DragHandle } from "vue-slicksort";
-import { useElementVisibility, useTransition } from '@vueuse/core';
-import { Directus } from '@directus/sdk';
+import { SlickList, SlickItem } from "vue-slicksort";
+import { useElementVisibility, useStorage, useTransition } from '@vueuse/core';
 
-const list = ref(data);
+const list = useStorage(`synths-${data.length}`, data)
 
 function isOff(n) {
   return !isAccessGranted.value && n > 5
