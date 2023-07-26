@@ -34,16 +34,14 @@ function click() {
   } else {
     window.open(props.url, '_blank')
   }
-  console.log('clicked', props.url, props.off)
+  // console.log('clicked', props.url, props.off)
 }
 
 </script>
 
 <template lang='pug'>
-button.flex.flex-col.text-left.relative(
-  @click="click"
-  )
-  img(:src="`/img/${img}.jpg`")
+button.flex.flex-col.text-left.relative.min-h-50(@click="click")
+  img(:src="`/img/${img}.webp`" :alt="`${title} illustration`")
   .flex-1 
   .p-4.flex.items-center.justify-between
     .text-md.font-bold.flex.items-center.gap-2.flex-1
