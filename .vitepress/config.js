@@ -51,7 +51,7 @@ export default defineConfig({
     ],
   },
   head: [
-
+    ["link", { rel: "icon", href: `/${metaData.icon}` }],
     ["meta", { name: "referrer", content: "always" }],
     ["meta", { content: "955357184504374", property: "fb:app_id" }],
     ["meta", { content: "website", property: "og:type" }],

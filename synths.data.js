@@ -6,11 +6,13 @@ import fs from 'node:fs'
 import { Directus } from '@directus/sdk';
 import { parse, stringify } from 'yaml'
 
+import { version } from './package.json'
+
 export default {
   async load() {
 
     const dirname = path.dirname(fileURLToPath(import.meta.url));
-    const cacheFile = path.resolve(dirname, './synths.yaml')
+    const cacheFile = path.resolve(dirname, `./synths-v.${version}.yaml`)
 
     const cached = fs.existsSync(cacheFile) ? parse(fs.readFileSync(cacheFile, 'utf8')) : []
 

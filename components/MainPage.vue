@@ -5,28 +5,28 @@ import { data } from "../synths.data";
 import SynthCard from "./SynthCard.vue";
 import { SlickList, SlickItem } from "vue-slicksort";
 import { useElementVisibility, useStorage, useTransition } from '@vueuse/core';
+import { version } from '../package.json'
 
-const list = useStorage(`synths-${data.length}`, data)
+const list = useStorage(`synths-${version}-${data.length + 1}`, data)
 
 function isOff(n) {
   return !isAccessGranted.value && n > 5
 }
 
-const players = ref([]);
+const players = ref([])
+const count = computed(() => players.value.length)
+const counter = useTransition(count)
+
+const counters = ref()
+const visible = useElementVisibility(counters)
 
 onMounted(() => {
   fetch('https://corsproxy.io/?https://dir.defucc.me/items/players?limit=-1')
     .then(response => response.json())
     .then(({ data }) => players.value = data)
 })
-const count = computed(() => players.value.length)
-
-const counter = useTransition(count)
 
 //https://vue-slicksort.netlify.app/components/slicklist
-
-const counters = ref()
-const visible = useElementVisibility(counters)
 </script>
 
 <template lang='pug'>
