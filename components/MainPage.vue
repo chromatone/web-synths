@@ -1,9 +1,11 @@
 <script setup>
-import { ref } from "vue";
+import { computed, onMounted, ref } from 'vue';
 import { isAccessGranted } from "../composables/useForm.ts";
 import { data } from "../synths.data";
 import SynthCard from "./SynthCard.vue";
 import { SlickList, SlickItem, DragHandle } from "vue-slicksort";
+import { useElementVisibility, useTransition } from '@vueuse/core';
+import { Directus } from '@directus/sdk';
 
 const list = ref(data);
 
@@ -11,7 +13,21 @@ function isOff(n) {
   return !isAccessGranted.value && n > 5
 }
 
+const players = ref([]);
+
+onMounted(() => {
+  fetch('https://corsproxy.io/?https://dir.defucc.me/items/players?limit=-1')
+    .then(response => response.json())
+    .then(({ data }) => players.value = data)
+})
+const count = computed(() => players.value.length)
+
+const counter = useTransition(count)
+
 //https://vue-slicksort.netlify.app/components/slicklist
+
+const counters = ref()
+const visible = useElementVisibility(counters)
 </script>
 
 <template lang='pug'>
@@ -33,6 +49,13 @@ SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
       :off="isOff(s)")
 .mx-auto.p-4.max-w-75ch.dark-text-light-200.text-center.line-height-loose.text-md.intro.md-text-lg.pt-16
   slot
+  .flex.justify-center(ref="counters")
+    .p-2.flex.flex-col.mt-8(v-if="visible")
+      .text-4xl.font-bold {{ list.length }}
+      .text-lg web synths
+    .p-2.flex.flex-col.mt-8(v-if="visible&&count>0")
+      .text-4xl.font-bold {{ counter.toFixed() }}+
+      .text-lg web musicians
 </template>
 
 <style lang="postcss">

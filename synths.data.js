@@ -16,7 +16,7 @@ export default {
 
     if (cached.length > 0) return cached
 
-    const directus = new Directus('http://dir.defucc.me');
+    const directus = new Directus('https://dir.defucc.me');
 
     const res = await directus.items('synths').readByQuery({ sort: ['sort', 'id'], limit: -1, filter: { status: { '_eq': 'published' } } });
 

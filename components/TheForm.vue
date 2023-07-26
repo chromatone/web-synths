@@ -1,7 +1,5 @@
 <script setup>
 import { email, isAccessGranted, isValidEmail, isFormOpen, grantAccess } from '../composables/useForm.ts'
-
-
 </script>
 
 <template lang='pug'>
