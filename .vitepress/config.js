@@ -1,5 +1,4 @@
 import { defineConfig } from "vitepress";
-import texts from '../texts.json'
 
 import Unocss from "unocss/vite";
 import {
@@ -13,7 +12,7 @@ import extractorPug from "@unocss/extractor-pug";
 import createHead from 'vitepress-pages/head'
 
 const metaData = {
-  title: "Online synths",
+  title: "Web synths",
   description: "Web audio synthesizers collection to play with a MIDI-controller straight from the browser.",
   site: "synth.chromatone.center",
   url: "https://synth.chromatone.center/", //the end slash here is mandatory
@@ -33,7 +32,7 @@ const metaData = {
 export default defineConfig({
   title: metaData.title,
   description: metaData.description,
-  titleTemplate: 'Web based synthesizers collection',
+  titleTemplate: 'Online synthesizers collection',
   lang: "en-US",
   cleanUrls: true,
   transformHead: createHead(metaData),
@@ -41,14 +40,14 @@ export default defineConfig({
     logo: "logo.svg",
     lastUpdated: true,
     footer: {
-      copyright: texts.footer,
+      copyright: "<p>With ❤️ by <a title='Visual Music Language' href='https://chromatone.center' target='_blank' rel='noopener'>Chromatone</a> and <a href='https://playtronica.com' title='Musical gadgets' target='_blank' rel='noopener'>Playtronica</a></p>"
     },
     socialLinks: [
       { icon: "github", link: "https://github.com/chromatone/web-synths" },
     ],
     nav: [
+      { text: 'Playtronica', link: 'https://playtronica.com' },
       { text: 'Chromatone', link: 'https://chromatone.center' },
-      { text: 'Playtronica', link: 'https://playtronica.com' }
     ],
   },
   head: [

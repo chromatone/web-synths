@@ -2,9 +2,6 @@ import { ref, computed, watch, Ref } from 'vue'
 import { Directus } from '@directus/sdk';
 import { RemovableRef, useStorage } from '@vueuse/core';
 
-//@ts-ignore
-const apiToken = import.meta.env.VITE_API_KEY
-
 const directus = new Directus('https://dir.defucc.me');
 
 export const isAccessGranted: RemovableRef<boolean | string> = useStorage('access-granted', false)

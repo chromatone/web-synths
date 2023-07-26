@@ -1,8 +1,4 @@
 <script setup>
-import TheForm from './TheForm.vue'
-
-import texts from '../texts.json'
-
 import { ref } from "vue";
 import { isAccessGranted } from "../composables/useForm.ts";
 import { data } from "../synths.data";
@@ -19,7 +15,6 @@ function isOff(n) {
 </script>
 
 <template lang='pug'>
-TheForm
 SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
   v-model:list="list", 
   axis="xy", 
@@ -36,7 +31,8 @@ SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
       :img="synth.img"
       :url="synth.url"
       :off="isOff(s)")
-.mx-auto.p-4.max-w-75ch.dark-text-light-200.text-center.line-height-loose.text-md.intro.md-text-lg(v-html="texts.intro")
+.mx-auto.p-4.max-w-75ch.dark-text-light-200.text-center.line-height-loose.text-md.intro.md-text-lg.pt-16
+  slot
 </template>
 
 <style lang="postcss">
