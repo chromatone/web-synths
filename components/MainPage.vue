@@ -30,7 +30,7 @@ SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
     :key="synth.title"
     :index="s")
     SynthCard.card.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative( 
-      :style="{opacity: isOff(s) ? 0.5 : 1}"
+      :style="{opacity: isOff(s) ? 0.8 : 1}"
       :title="synth.title"
       :description="synth.description"
       :img="synth.img"

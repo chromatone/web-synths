@@ -41,7 +41,11 @@ function click() {
 
 <template lang='pug'>
 button.flex.flex-col.text-left.relative.min-h-50(@click="click")
-  img(:src="`/img/${img}.webp`" :alt="`${title} illustration`")
+  img(
+    height="200"
+    width="400"
+    :src="`/img/${img}.webp`" 
+    :alt="`${title} illustration`")
   .flex-1 
   .p-4.flex.items-center.justify-between
     .text-md.font-bold.flex.items-center.gap-2.flex-1
