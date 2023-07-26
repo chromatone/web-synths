@@ -7,7 +7,7 @@ import { SlickList, SlickItem } from "vue-slicksort";
 import { useElementVisibility, useStorage, useTransition } from '@vueuse/core';
 import { version } from '../package.json'
 
-const list = useStorage(`synths-${version}`, data)
+const list = ref(data)
 
 function isOff(n) {
   return !isAccessGranted.value && n > 5
@@ -37,14 +37,15 @@ SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
   SlickItem.flex(
     style="flex: 1 1 240px"
     v-for="(synth,s) in list" 
-    :key="synth.title"
+    :key="synth.id"
     :index="s")
-    SynthCard.card.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative( 
+    SynthCard( 
       :style="{opacity: isOff(s) ? 0.8 : 1}"
       :title="synth.title"
       :description="synth.description"
       :img="synth.img"
       :url="synth.url"
+      :key="synth.id"
       :off="isOff(s)")
 .mx-auto.p-4.max-w-75ch.dark-text-light-200.text-center.line-height-loose.text-md.intro.md-text-lg.pt-16
   slot

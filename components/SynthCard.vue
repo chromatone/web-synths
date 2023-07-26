@@ -40,19 +40,20 @@ function click() {
 </script>
 
 <template lang='pug'>
-button.flex.flex-col.text-left.relative.min-h-50(
+button.flex.flex-col.text-left.relative.min-h-50.card.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative(
   @click="click")
   img(
+    :key="title"
     height="200"
     width="1000"
     :src="`/img/${title.toLowerCase().split(' ').join('-')}.webp`" 
     :alt="`${title} illustration`")
   .flex-1 
-  .p-4.flex.items-center.justify-between
+  .p-4.flex.items-center.justify-between.w-full
     .text-md.font-bold.flex.items-center.gap-2.flex-1
-      .p-0 {{ title }}
-      .flex-1
+      .flex-1 {{ title }}
       .w-2.h-2.rounded-full.shadow-inset(
+        v-if="checkAvailability"
         :class="{'bg-green-500': online === true, 'bg-red-500':online === false}"
         )
       ClientOnly
