@@ -21,7 +21,7 @@ const counters = ref()
 const visible = useElementVisibility(counters)
 
 onMounted(() => {
-  fetch('https://corsproxy.io/?https://dir.defucc.me/items/players?limit=-1')
+  fetch('https://corsproxy.io/?https://db.chromatone.center/items/players?limit=-1')
     .then(response => response.json())
     .then(({ data }) => players.value = data)
 })

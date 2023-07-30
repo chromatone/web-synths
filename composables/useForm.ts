@@ -2,7 +2,7 @@ import { ref, computed, watch, Ref } from 'vue'
 import { Directus } from '@directus/sdk';
 import { RemovableRef, useStorage } from '@vueuse/core';
 
-const directus = new Directus('https://dir.defucc.me');
+const directus = new Directus('https://db.chromatone.center');
 
 export const isAccessGranted: RemovableRef<boolean | string> = useStorage('access-granted', false)
 

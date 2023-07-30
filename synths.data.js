@@ -18,7 +18,7 @@ export default {
 
     if (cached.length > 0) return cached
 
-    const directus = new Directus('https://dir.defucc.me');
+    const directus = new Directus('https://db.chromatone.center');
 
     const res = await directus.items('synths').readByQuery({ sort: ['sort', 'id'], limit: -1, filter: { status: { '_eq': 'published' } } });
 
@@ -31,7 +31,7 @@ export default {
       let dest = path.resolve(dirname, './public/img/')
       let filePath = path.resolve(dest, `${r.title.toLowerCase().split(' ').join('-')}.webp`)
       if (fs.existsSync(filePath)) continue
-      let url = `https://dir.defucc.me/assets/${r.img}?quality=70&width=1000&format=webp&download`
+      let url = `https://db.chromatone.center/assets/${r.img}?quality=70&width=1000&format=webp&download`
       console.log('downloading file:', r.title.toLowerCase().split(' ').join('-') + '.webp')
 
       await download.image({ url, dest: filePath })

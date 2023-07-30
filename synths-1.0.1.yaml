@@ -38,6 +38,16 @@
   content: null
   img: 110d33fe-8c5f-4502-aaf9-6458f2119d33
   category: 3
+- id: 30
+  status: published
+  sort: 5
+  user_created: b95c3af3-aa5f-454a-aaa2-dbaebb85c54c
+  date_created: 2023-07-30T02:33:18.609Z
+  title: DX7 Synth
+  url: https://mmontag.github.io/dx7-synth-js/
+  content: null
+  img: 33b1ee5c-77f0-4fb7-86ef-d8687532688b
+  category: 2
 - id: 10
   status: published
   sort: 6
