@@ -7,6 +7,18 @@ import { SlickList, SlickItem } from "vue-slicksort";
 import { useElementVisibility, useStorage, useTransition } from '@vueuse/core';
 import { version } from '../package.json'
 
+import { useShare } from '@vueuse/core'
+
+const { share, isSupported } = useShare()
+
+function startShare() {
+  share({
+    title: 'Web synths collection',
+    text: 'Look at this online synthesizer collection. No need to install anything - just your browser and any MIDI controller will do.',
+    url: location.href,
+  })
+}
+
 const list = ref(data)
 
 function isOff(n) {
@@ -56,6 +68,7 @@ SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
     .p-2.flex.flex-col.mt-8(v-if="visible&&count>0")
       .text-4xl.font-bold {{ counter.toFixed() }}+
       .text-lg web musicians
+  button.py-2.px-4.mt-6.bg-light-800.shadow-lg.rounded-lg.cursor-pointer.dark-bg-dark-800(@click="startShare()" v-if="isSupported") Share now to save for later
 </template>
 
 <style lang="postcss">
