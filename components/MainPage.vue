@@ -68,7 +68,7 @@ SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
     .p-2.flex.flex-col.mt-8(v-if="visible&&count>0")
       .text-4xl.font-bold {{ counter.toFixed() }}+
       .text-lg web musicians
-  button.py-2.px-4.mt-6.bg-light-800.shadow-lg.rounded-lg.cursor-pointer.dark-bg-dark-800(@click="startShare()" v-if="isSupported") Share now to save for later
+  button.text-white.py-2.px-4.mt-6.shadow-lg.rounded-lg.cursor-pointer.bg-green-600.-hover-translate-y-2px.transition(@click="startShare()" v-if="isSupported") Share now to save for later
 </template>
 
 <style lang="postcss">
