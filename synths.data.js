@@ -31,7 +31,7 @@ export default {
       let dest = path.resolve(dirname, './public/img/')
       let filePath = path.resolve(dest, `${r.title.toLowerCase().split(' ').join('-')}.webp`)
       if (fs.existsSync(filePath)) continue
-      let url = `https://db.chromatone.center/assets/${r.img}?quality=70&width=1000&format=webp&download`
+      let url = `https://db.chromatone.center/assets/${r.cover}?quality=70&width=1000&format=webp&download`
       console.log('downloading file:', r.title.toLowerCase().split(' ').join('-') + '.webp')
 
       await download.image({ url, dest: filePath })

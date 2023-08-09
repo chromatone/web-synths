@@ -12,6 +12,7 @@ export const email = ref('')
 export const isValidEmail = computed(() => /^[^@]+@\w+(\.\w+)+\w$/.test(email.value))
 
 export async function grantAccess(email: string) {
+  if (!email) return
   const data = { email }
   isAccessGranted.value = email
   if (!isSent.value) {
