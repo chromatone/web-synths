@@ -28,7 +28,7 @@ export default {
 
       cached.push(r)
 
-      let dest = path.resolve(dirname, './public/img/')
+      let dest = path.resolve(dirname, './public/cover/')
       let filePath = path.resolve(dest, `${r.title.toLowerCase().split(' ').join('-')}.webp`)
       if (fs.existsSync(filePath)) continue
       let url = `https://db.chromatone.center/assets/${r.cover}?quality=70&width=1000&format=webp&download`

@@ -9,7 +9,7 @@ const props = defineProps({
   off: { type: Boolean, default: false },
   title: { type: String, default: '' },
   description: { type: String, default: '' },
-  img: { type: String, default: '' },
+  cover: { type: String, default: '' },
   url: { type: String, default: '' },
 })
 
@@ -46,7 +46,7 @@ button.flex.flex-col.text-left.relative.min-h-50.card.p-0.bg-light-300.shadow-lg
     :key="title"
     height="200"
     width="1000"
-    :src="`/img/${title.toLowerCase().split(' ').join('-')}.webp`" 
+    :src="`/cover/${title.toLowerCase().split(' ').join('-')}.webp`" 
     :alt="`${title} illustration`")
   .flex-1 
   .p-4.flex.items-center.justify-between.w-full
