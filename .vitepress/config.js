@@ -25,8 +25,8 @@ const metaData = {
   author: "davay42", //your twitter handle
   tags: "synths, webaudio, synthesizer, MIDI, midi-controller, play music, online synth, online DAW, browser audio, web music",
   // add it if you use [umami](https://umami.is/) for stats
-  umamiId: "c8fe73e2-2016-4b16-ae24-f01852619aaf",
-  umamiScript: "https://stats.defucc.me/umami.js"
+  umamiId: "dc58489b-fcbe-4efc-9b84-1c449913976c",
+  umamiScript: "https://stats.chromatone.center/script.js"
 };
 
 export default defineConfig({
