@@ -1,5 +1,7 @@
 <script setup>
-import { email, isAccessGranted, isValidEmail, isFormOpen, grantAccess } from '../composables/useForm.ts'
+import { useForm } from '../composables/useForm.ts'
+
+const { email, isValidEmail, isFormOpen, grantAccess } = useForm()
 </script>
 
 <template lang='pug'>
@@ -24,11 +26,11 @@ transition(name="slide")
           id="email"
           name="email"
           type="email"
-          @keydown.enter="grantAccess(email)"
+          @keydown.enter="grantAccess()"
           placeholder="your@gmail.com")
 
         button.text-sm.md-text-md.p-2.font-bold.md-p-4.rounded-xl.shadow-xl.hover-shadow-2xl.transition.-hover-translate-y-2px.active-translate-y-0.active-shadow-md.bg-green-400.dark-bg-green-700(
-          @click="grantAccess(email)"
+          @click="grantAccess()"
           :disabled="!isValidEmail"
           :class="{'grayscale-50':!isValidEmail}"
           style="flex: 1 1 400px"

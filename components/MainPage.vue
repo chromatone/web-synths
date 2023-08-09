@@ -1,11 +1,13 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
-import { isAccessGranted } from "../composables/useForm.ts";
+import { useForm } from "../composables/useForm.ts";
 import { data } from "../synths.data";
 import SynthCard from "./SynthCard.vue";
 import { SlickList, SlickItem } from "vue-slicksort";
-import { useElementVisibility, useStorage, useTransition } from '@vueuse/core';
+import { useElementVisibility, useTransition } from '@vueuse/core';
 import { version } from '../package.json'
+
+const { isAccessGranted } = useForm()
 
 import { useShare } from '@vueuse/core'
 

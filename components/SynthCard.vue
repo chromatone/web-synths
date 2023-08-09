@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
-import { checkAvailability, isFormOpen, isAccessGranted } from '../composables/useForm.ts';
+import { useForm } from '../composables/useForm.ts';
 import { DragHandle } from 'vue-slicksort';
 //@ts-ignore
 import SynthFav from './SynthFav.vue';
@@ -12,6 +12,8 @@ const props = defineProps({
   cover: { type: String, default: '' },
   url: { type: String, default: '' },
 })
+
+const { checkAvailability, isFormOpen } = useForm()
 
 const online = ref(null)
 
