@@ -39,9 +39,6 @@ export default defineConfig({
   themeConfig: {
     logo: "logo.svg",
     lastUpdated: true,
-    footer: {
-      copyright: "<p>With ❤️ by <a title='Visual Music Language' href='https://chromatone.center' target='_blank' rel='noopener'>Chromatone</a> and <a href='https://playtronica.com' title='Musical gadgets' target='_blank' rel='noopener'>Playtronica</a></p>"
-    },
     socialLinks: [
       { icon: "github", link: "https://github.com/chromatone/web-synths" },
     ],
