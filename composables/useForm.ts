@@ -61,7 +61,7 @@ export async function grantAccess() {
   if (!isSent.value) {
     isSent.value = true
     try {
-      const data = { email: email.value, name: name.value }
+      const data = { email: email.value, name: name.value.slice(0, 30) }
       storedEmail.value = email.value
       storedName.value = name.value
       const response = await fetch(url, {

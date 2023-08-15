@@ -45,7 +45,7 @@ transition(name="slide")
           .p-2.w-20.font-bold.text-right E-mail*
           input.flex-1.p-4.md-p-4.rounded-xl.bg-light-200.shadow-md.dark-bg-dark-400.flex-1(
             ref="target"
-
+            maxlength="30"
             v-model="email" 
             id="email"
             name="email"
@@ -55,11 +55,11 @@ transition(name="slide")
         label.flex.items-center.gap-2
           .p-2.w-20.font-bold.text-right Name
           input.flex-1.p-4.md-p-4.rounded-xl.bg-light-200.shadow-md.dark-bg-dark-400(
-
             v-model="name" 
             id="name"
             name="name"
             type="text"
+            @keydown.enter="grantAccess()"
             placeholder="optional")
 
 
