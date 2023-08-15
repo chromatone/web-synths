@@ -1,40 +1,75 @@
 <script setup>
 import { useForm } from '../composables/useForm.ts'
 
-const { email, isValidEmail, isFormOpen, grantAccess } = useForm()
+const { name, email, isValidEmail, isFormOpen, grantAccess, storedEmail, storedName, resetEmail, isAccessGranted } = useForm()
+
+function scroll() {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+}
 </script>
 
 <template lang='pug'>
 transition(name="slide")
-  .fixed.z-200.min-h-50dvh.bottom-0.right-0.left-0.bg-light-800.bg-opacity-80.backdrop-blur.flex.flex-col.items-center.gap-4.justify-start.dark-bg-dark-200.dark-bg-opacity-80.p-8.shadow(v-show="isFormOpen")
+  .z-10.min-h-40dvh.bottom-0.right-0.left-0.bg-light-800.bg-opacity-80.backdrop-blur.flex.flex-col.items-center.gap-4.justify-center.dark-bg-dark-200.dark-bg-opacity-80.p-8.shadow(
+    :class="{sticky:isFormOpen}"
+    )
 
     svg.absolute.top-4.right-4.text-4xl.cursor-pointer(
+      v-show="isFormOpen"
       @click="isFormOpen=false"
       xmlns="http://www.w3.org/2000/svg", width="1em", height="1em", viewBox="0 0 32 32")
       path(d="M7.219 5.781L5.78 7.22L14.563 16L5.78 24.781L7.22 26.22L16 17.437l8.781 8.782l1.438-1.438L17.437 16l8.782-8.781L24.78 5.78L16 14.563z", fill="#888888")
 
-    .flex.flex-col.gap-8.relative.pt-8 
+    .flex.flex-col.gap-4.max-w-45ch.text-center(v-if="isAccessGranted")
+      .text-3xl.font-bold Hello, {{ storedName }}!
+      .text-sm.flex.gap-2.justify-center {{ storedEmail }}
+        span.opacity-20.hover-opacity-50.transition.cursor-pointer(@click="resetEmail") Log out
+      .text-xl Enjoy your web-synthesizers hub
+      .flex.justify-center.cursor-pointer.p-2.opacity-50.hover-opacity-100.transition(
+        @click="scroll()"
+        )
+        svg.translate-y-3(xmlns="http://www.w3.org/2000/svg", width="32", height="32", viewBox="0 0 32 32")
+          path(d="M16 4.688L3.781 16.905l1.438 1.407L16 7.53l10.781 10.782l1.438-1.407zm0 7L3.781 23.905l1.438 1.407L16 14.53l10.781 10.781l1.438-1.406z", fill="#888888")
+
+    .flex.flex-col.gap-8.relative.pt-8.items-center(v-else)
 
       label.text-center.max-w-45ch(for="email")
         slot
 
-      .flex.gap-4.flex-wrap.md-flex-nowrap
-        input.flex-1.p-2.md-p-4.rounded-xl.bg-light-200.shadow-md.dark-bg-dark-400.flex-1(
-          ref="target"
-          style="flex: 10 1 200px"
-          v-model="email" 
-          id="email"
-          name="email"
-          type="email"
-          @keydown.enter="grantAccess()"
-          placeholder="your@gmail.com")
+      .flex.gap-4.flex-col.w-full
+        label.flex.items-center.gap-2
+          .p-2.w-20.font-bold.text-right E-mail*
+          input.flex-1.p-4.md-p-4.rounded-xl.bg-light-200.shadow-md.dark-bg-dark-400.flex-1(
+            ref="target"
 
-        button.text-sm.md-text-md.p-2.font-bold.md-p-4.rounded-xl.shadow-xl.hover-shadow-2xl.transition.-hover-translate-y-2px.active-translate-y-0.active-shadow-md.bg-green-400.dark-bg-green-700(
+            v-model="email" 
+            id="email"
+            name="email"
+            type="email"
+            @keydown.enter="grantAccess()"
+            placeholder="your@gmail.com")
+        label.flex.items-center.gap-2
+          .p-2.w-20.font-bold.text-right Name
+          input.flex-1.p-4.md-p-4.rounded-xl.bg-light-200.shadow-md.dark-bg-dark-400(
+
+            v-model="name" 
+            id="name"
+            name="name"
+            type="text"
+            placeholder="optional")
+
+
+
+        button.text-sm.md-text-md.p-4.font-bold.md-p-4.rounded-xl.shadow-xl.hover-shadow-2xl.transition.-hover-translate-y-2px.active-translate-y-0.active-shadow-md.bg-green-400.dark-bg-green-700(
           @click="grantAccess()"
           :disabled="!isValidEmail"
           :class="{'grayscale-50':!isValidEmail}"
-          style="flex: 1 1 400px"
-        )
+
+          )
           slot(name="button") GET ACCESS
       .text-xs.opacity-60.text-center.max-w-45ch.mx-auto 
         slot(name="notice") Your access status will be saved per device and you won't need to enter your e-mail again.
