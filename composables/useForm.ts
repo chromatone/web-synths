@@ -53,7 +53,6 @@ export function useForm() {
   }
 }
 
-const url = 'https://db.chromatone.center/flows/trigger/f36a3461-c476-4ce5-88c9-eba2216083b0'
 
 export async function grantAccess() {
   if (!email.value && !validateEmail(email.value)) return
@@ -64,18 +63,20 @@ export async function grantAccess() {
       const data = { email: email.value, name: name.value.slice(0, 30) }
       storedEmail.value = email.value
       storedName.value = name.value
-      const response = await fetch(url, {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        mode: "cors", // no-cors, *cors, same-origin
-        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: "same-origin", // include, *same-origin, omit
-        headers: {
-          "Content-Type": "application/json"
-        },
-        redirect: "follow", // manual, *follow, error
-        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-        body: JSON.stringify(data), // body data type must match "Content-Type" header
-      });
+      const response = await fetch(
+        'https://db.chromatone.center/flows/trigger/f36a3461-c476-4ce5-88c9-eba2216083b0',
+        {
+          method: "POST", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors", // no-cors, *cors, same-origin
+          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: "same-origin", // include, *same-origin, omit
+          headers: {
+            "Content-Type": "application/json"
+          },
+          redirect: "follow", // manual, *follow, error
+          referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+          body: JSON.stringify(data), // body data type must match "Content-Type" header
+        });
 
 
 
@@ -89,3 +90,4 @@ export async function grantAccess() {
 }
 
 
+//array:https://synth.playtronica.com,http://localhost:4173,https://tsoop.com,https://chromatone.center
