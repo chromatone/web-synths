@@ -5,9 +5,10 @@
   date_created: 2023-08-09T08:02:10.730Z
   title: Dotpiano
   url: https://dotpiano.com/
-  content: null
   cover: fd81d5c3-4cb6-41eb-9689-d5f7aba2b8a6
   tags: null
+  content: null
+  decription: null
 - id: 3
   status: published
   sort: 3
@@ -15,9 +16,10 @@
   date_created: 2023-08-09T08:02:10.748Z
   title: TouchME by Chromatone
   url: https://touchme.chromatone.center/
-  content: null
   cover: 6e97f4ab-c2f7-4e90-9c26-7518dbfddb3a
   tags: null
+  content: null
+  decription: null
 - id: 14
   status: published
   sort: 4
@@ -25,9 +27,10 @@
   date_created: 2023-08-09T08:02:10.765Z
   title: Juno-106
   url: http://juno-106.js.org/
-  content: null
   cover: d4fad441-c1a0-4ccc-9c0d-d8bfb79f9094
   tags: null
+  content: null
+  decription: null
 - id: 26
   status: published
   sort: 5
@@ -35,9 +38,10 @@
   date_created: 2023-08-09T08:02:10.816Z
   title: Learning synths with Ableton
   url: https://learningsynths.ableton.com/
-  content: null
   cover: f5c81f00-fc0e-40ad-96ce-a1834709253a
   tags: null
+  content: null
+  decription: null
 - id: 30
   status: published
   sort: 5
@@ -45,9 +49,10 @@
   date_created: 2023-08-09T08:02:10.800Z
   title: DX7 Synth
   url: https://mmontag.github.io/dx7-synth-js/
-  content: null
   cover: 01eacfd8-892d-41de-b928-50b686a87400
   tags: null
+  content: null
+  decription: null
 - id: 32
   status: published
   sort: 5
@@ -55,9 +60,10 @@
   date_created: 2023-08-09T08:02:10.784Z
   title: Sampler synth
   url: https://play.playtronica.com/
-  content: null
   cover: 749cb332-eb5e-40c6-bb36-fb87bb25a834
   tags: null
+  content: null
+  decription: null
 - id: 10
   status: published
   sort: 6
@@ -65,9 +71,10 @@
   date_created: 2023-08-09T08:02:10.837Z
   title: Websynths
   url: http://websynths.com/
-  content: null
   cover: 072cf912-9966-4d3f-9823-36e75fb8ada9
   tags: null
+  content: null
+  decription: null
 - id: 19
   status: published
   sort: 6
@@ -75,9 +82,10 @@
   date_created: 2023-08-09T08:02:10.859Z
   title: Theremin
   url: https://www.femurdesign.com/theremin/
-  content: null
   cover: f4ca5ef9-132a-4e56-80fb-21bd0fd0b3f6
   tags: null
+  content: null
+  decription: null
 - id: 29
   status: published
   sort: 6
@@ -85,9 +93,24 @@
   date_created: 2023-08-09T08:02:10.891Z
   title: Elementary synth
   url: https://chromatone.center/practice/synth/elementary/
-  content: null
   cover: 14f5d908-fba2-451f-8bec-a922cc5672c7
   tags: null
+  content: null
+  decription: null
+- id: 37
+  status: published
+  sort: 6
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-21T14:18:48.099Z
+  title: Sympathetic Synthesizer System Mk 1
+  url: https://stuartmemo.com/synth/
+  cover: 9186b1e4-9929-492e-94eb-32a04aa523c8
+  tags:
+    - keyboard
+    - midi
+    - additive
+  content: null
+  decription: null
 - id: 22
   status: published
   sort: 7
@@ -95,9 +118,10 @@
   date_created: 2023-08-09T08:02:10.875Z
   title: Disco-computer
   url: http://www.disco-computer.com/synthesizer/synth.html
-  content: null
   cover: 1ac14701-0530-4ca6-b516-45d5f9523819
   tags: null
+  content: null
+  decription: null
 - id: 31
   status: published
   sort: 12
@@ -105,9 +129,37 @@
   date_created: 2023-08-09T08:02:10.906Z
   title: Video Sampler
   url: https://seeing-sound.netlify.app/
-  content: null
   cover: a4e5d9b7-1b64-4c31-aed4-467e2c6cba32
   tags: null
+  content: null
+  decription: null
+- id: 34
+  status: published
+  sort: 12
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-21T14:00:50.309Z
+  title: Fluoresynth by Electric Telepathy
+  url: https://electrictelepathy.com/web-apps/fluoresynth/
+  cover: d9c0dc12-ede0-49df-aef2-2517fd6ed961
+  tags:
+    - midi
+    - keyboard
+  content: >-
+    ## How to play Fluoresynth
+
+
+    There are 3 ways to play notes with Fluoresynth:
+
+
+    - Click or tap the onscreen keyboard.
+
+    - Play with the bottom two rows of keys on your computer keyboard (z, s, x, d, c, v, g, b, h, n, j, m, etc.)
+
+    - Plug in a MIDI keyboard/device to your computer. MIDI supported in Chrome and Opera.
+
+
+    This app may not load or play sound in older web browsers and operating systems. Audio may sound choppy on low-performance devices.
+  decription: null
 - id: 27
   status: published
   sort: 14
@@ -115,9 +167,143 @@
   date_created: 2023-08-09T08:02:10.918Z
   title: Viktor NV-1
   url: http://nicroto.github.io/viktor/
-  content: null
   cover: 1c104eeb-dc14-4d3b-bb8e-14accb2184c3
   tags: null
+  content: null
+  decription: null
+- id: 35
+  status: published
+  sort: 18
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-21T14:05:27.437Z
+  title: VirtualPiano.eu
+  url: https://virtualpiano.eu/
+  cover: e3f86bf5-68a9-4e0c-bb67-d0f31c26365b
+  tags:
+    - midi
+    - keyboard
+  content: >-
+    VirtualPiano.eu is the online synthesizer that allows you to play 128
+    musical instruments for free using your PC keyboard, the mouse or by
+    connecting an external MIDI keyboard.
+
+
+    You can adjust Volume, Reverb, Loop and quality. Use the sustain and adjust the octaves, you can also select and set different channels including the one for the drums.
+
+
+    Create your own melodies, have fun playing or use VirtualPiano to learn how to play the Piano online on your own. 
+  decription: Professional GM mapped WebAudio Piano Synthesizer Engine / MIDI Player
+- id: 36
+  status: published
+  sort: 20
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-21T14:14:48.036Z
+  title: Online sequencer
+  url: https://onlinesequencer.net/
+  cover: d55b5de1-f912-432f-a4e5-8c601643ecb9
+  tags:
+    - sequencer
+  content: >-
+    **Online Sequencer** is a web-based music sequencer that allows users to
+    create music saved online, or on their computer. The piano roll is essential
+    to the sequencer, which is on the left of the screen, with 72 notes from
+    C2-B7 (labelled differently from a piano, C2 on the sequencer corresponds to
+    C1 on a piano). In addition to several parameters which can be modified to
+    change the sound of the music, additional functionality can be accessed via
+    the console.
+
+
+    Upon opening the site, users can begin composing and "drawing" notes on the grid, with the default instrument being Electric Piano. By default, a sequence's time signature is set to 4/4, and the grid spacing is set to 1/4 (16 notes per measure). The note lengths can be adjusted by dragging the dark tab on the right of each note, and precision can be afforded by changing the 'Grid' option to other note divisions. 
+
+
+    ## History
+
+
+    Online Sequencer was created on January 2, 2013 by Jacob Morgan during a break at Georgia Tech.
+
+
+    Beginning in the fall of 2013, accounts were available but were separate from the music portion of the site. They were only used in the forum and the website chat.
+
+
+    In 2015, accounts were linked to the main website and allowed songs to be saved under someone's username.
+
+
+    The World Update in 2018 added several new instruments and changed the landscape of sound design on the site. The "World Update Contest" was held for the update.
+
+
+    Starting in late 2020, OS began to receive a variety of updates which vastly improved the functionality of the site. These updates introduced features like custom grid sizes, automation with markers, extra reverb options, detune, and distortion. In 2021, the "Space Race" contest was held, as to see who could work best with the changes.
+
+
+    In late 2022, newer, higher-quality instruments were added. Some of the instruments, such as Electric Piano, Grand Piano, Violin, and Cello got an updated sustained version, while the original versions still exist under the "classic" designation.
+
+
+    Currently, the 10-Year Anniversary Contest is being held.
+
+
+    ## Features
+
+
+    Within the editor, numerous user interface features allow for various changes which will impact the individual sequence on that page.
+
+
+    ### Basic features
+
+
+    UI features include:
+
+
+    - Tempo (10-999 BPM)
+
+    - Measure count or Time count (MM: SS.ssss)
+
+    - Time signature (2/4, 3/4, 4/4, 5/4)
+
+    - Grid size (This correlates to note divisions; 1/16, 1/12, 1/8, 1/6, 1/4, 1/3, 1/2)
+
+    - Auto Scroll (Fast, Smooth, Off; how the sequencer displays measures off-screen as a sequence plays)
+
+    -  Add an Audio Track (This won't be saved to the sequence but will play alongside it for ease of transcription)
+
+    -  Title input
+
+    -   Draw, select, and erase
+
+    -   Instrument dropdown, instrument options, and select instrument (selects all notes of the current instrument)
+
+    -  Select all, Cut, Copy, and Paste
+
+    -  Zoom options
+
+    -  Export options
+
+    -  Help
+
+    -  Fullscreen
+
+    - Tooltips
+
+
+    ### Advanced features
+
+
+    Users can access more advanced features for use in their sequences by clicking the advanced tab on the instrument they wish to change. This menu contains options to change volume, panning, detune (-1200 to +1200), reverb, distortion, and an equalizer. This array lets users configure specific instruments to create specific sounds, and textures, or to accompany other instruments as a layer or development of the original sound.
+
+
+    OS also allows for commands to be entered in the browser console to manipulate different options in specific ways, such as setting custom to detune values (0-infinity), custom grid sizes, note divisions, and sequence ID amongst other things. These options bring OS closer to that of classic Digital Audio Workstations (DAWs) but are still limited in terms of accessibility and availability.
+
+
+    ### Browser and device support
+
+
+    Online Sequencer supports Chrome and other Chromium-based browsers, such as Microsoft Edge, Opera, and Brave. Firefox is also supported, but often with limited functionality. Safari and Internet Explorer are not supported, due to engine issues.
+
+
+    Other mobile browsers support sequence playback, but not editing. However, iOS users have the same problem with WebKit on macOS. However, unlike in macOS, all browsers (even Chromium-based browsers) use WebKit as the engine for iOS due to Apple prohibiting other engines for security reasons; iOS does not support Online Sequencer, other than chat and forums.
+
+
+    The website's user interface is formatted for proper use on desktops, but some pages such as the chat page, playlists, and forums should be formatted well on mobile devices. 
+  decription: "OnlineSequencer.net is an online music sequencer. Make tunes in
+    your browser and share "
 - id: 17
   status: published
   sort: 30
@@ -125,9 +311,10 @@
   date_created: 2023-08-09T08:02:10.930Z
   title: Sound Trap
   url: https://www.soundtrap.com/
-  content: null
   cover: 328c8c51-e7d4-48bd-9c3d-6dea5184cad5
   tags: null
+  content: null
+  decription: null
 - id: 6
   status: published
   sort: null
@@ -135,9 +322,10 @@
   date_created: 2023-08-09T08:02:11.181Z
   title: MIDI–driven Web Audio
   url: https://webaudiodemos.appspot.com/midi-synth/index.html
-  content: null
   cover: f268f0dc-b091-4799-885b-0a5eecfdcbec
   tags: null
+  content: null
+  decription: null
 - id: 8
   status: published
   sort: null
@@ -145,9 +333,10 @@
   date_created: 2023-08-09T08:02:11.088Z
   title: Meet the Heisenberg
   url: https://www.audiotool.com/product/device/heisenberg/
-  content: null
   cover: 88c6fe9d-033c-4aac-a946-278e729e5f05
   tags: null
+  content: null
+  decription: null
 - id: 9
   status: published
   sort: null
@@ -155,9 +344,10 @@
   date_created: 2023-08-09T08:02:11.141Z
   title: Cardboard Synth
   url: https://www.gsn-lib.org/apps/cardboardsynth/index.html
-  content: null
   cover: 3406a3fa-5e4d-4efc-a5ac-c6c8ee3abf72
   tags: null
+  content: null
+  decription: null
 - id: 11
   status: published
   sort: null
@@ -165,9 +355,10 @@
   date_created: 2023-08-09T08:02:11.126Z
   title: Tanguy synth
   url: http://tanguysynth.com/
-  content: null
   cover: 16a499c4-661f-48b5-b308-dd7ea77f335d
   tags: null
+  content: null
+  decription: null
 - id: 12
   status: published
   sort: null
@@ -175,9 +366,10 @@
   date_created: 2023-08-09T08:02:11.109Z
   title: MOD synth
   url: http://mod-synth.io/
-  content: null
   cover: dd13c72f-d1ee-4197-b8a2-f24c162d5858
   tags: null
+  content: null
+  decription: null
 - id: 13
   status: published
   sort: null
@@ -185,9 +377,10 @@
   date_created: 2023-08-09T08:02:11.076Z
   title: OLIF SY1K
   url: http://perso.numericable.fr/olivier.friker/synth/O3-synth%20V1.3.html
-  content: null
   cover: 44234157-4872-4e35-baec-a7d073a7258d
   tags: null
+  content: null
+  decription: null
 - id: 15
   status: published
   sort: null
@@ -195,9 +388,10 @@
   date_created: 2023-08-09T08:02:11.059Z
   title: Note Sculptor
   url: http://www.noisesculptor.com/
-  content: null
   cover: 3b9d921b-79da-4923-9cd2-bbc826561a93
   tags: null
+  content: null
+  decription: null
 - id: 16
   status: published
   sort: null
@@ -205,9 +399,10 @@
   date_created: 2023-08-09T08:02:11.159Z
   title: WebAudioSynth V2
   url: http://aikelab.net/websynthv2/
-  content: null
   cover: 7980d0af-e534-4383-a36c-0b116a06499e
   tags: null
+  content: null
+  decription: null
 - id: 18
   status: published
   sort: null
@@ -215,9 +410,10 @@
   date_created: 2023-08-09T08:02:10.944Z
   title: Samplestich
   url: http://samplestitch.com.s3-website-us-east-1.amazonaws.com/
-  content: null
   cover: 0f272d97-7882-4797-9890-97c3b75149a4
   tags: null
+  content: null
+  decription: null
 - id: 20
   status: published
   sort: null
@@ -225,9 +421,10 @@
   date_created: 2023-08-09T08:02:11.032Z
   title: Omni
   url: https://femurdesign.com/omni/
-  content: null
   cover: 82c94f42-0449-45ea-924d-7365ba51af20
   tags: null
+  content: null
+  decription: null
 - id: 21
   status: published
   sort: null
@@ -235,9 +432,10 @@
   date_created: 2023-08-09T08:02:11.016Z
   title: Web Modular
   url: https://www.g200kg.com/docs/webmodular/
-  content: null
   cover: 5bb158d2-cfcc-46d9-acd5-6cf3312d7678
   tags: null
+  content: null
+  decription: null
 - id: 23
   status: published
   sort: null
@@ -245,9 +443,10 @@
   date_created: 2023-08-09T08:02:11.000Z
   title: Online sequencer
   url: https://onlinesequencer.net/369477
-  content: null
   cover: efdc67a4-4cfc-4a4b-a704-1b939fbe7fc4
   tags: null
+  content: null
+  decription: null
 - id: 24
   status: published
   sort: null
@@ -255,9 +454,10 @@
   date_created: 2023-08-09T08:02:10.987Z
   title: PixelSynth
   url: https://ojack.github.io/PIXELSYNTH/
-  content: null
   cover: 59ec0d0b-6bcf-4c50-8d76-5fe624105c0c
   tags: null
+  content: null
+  decription: null
 - id: 25
   status: published
   sort: null
@@ -265,9 +465,10 @@
   date_created: 2023-08-09T08:02:10.970Z
   title: Acid Machine 2
   url: http://errozero.co.uk/acid-machine/
-  content: null
   cover: 380cdb0d-4a68-44a7-b24c-2b655f26ebcd
   tags: null
+  content: null
+  decription: null
 - id: 28
   status: published
   sort: null
@@ -275,6 +476,7 @@
   date_created: 2023-08-09T08:02:10.958Z
   title: WebSID Commodore 64
   url: http://www.igorski.nl/experiment/websid
-  content: null
   cover: e39565a0-15fa-4c3a-9bc7-aa5a613dd19f
   tags: null
+  content: null
+  decription: null
