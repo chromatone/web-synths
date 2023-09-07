@@ -12,8 +12,8 @@ import extractorPug from "@unocss/extractor-pug";
 const meta = {
   title: "Web synths",
   description: "Web audio synthesizers collection to play with a MIDI-controller straight from the browser.",
-  site: "synth.chromatone.center",
-  url: "https://synth.chromatone.center/", //the end slash here is mandatory
+  site: "synth.playtronica.com",
+  url: "https://synth.playtronica.com/", //the end slash here is mandatory
   repo: "https://github.com/chromatone/web-synths",
   locale: "en",
   icon: "logo.svg",
@@ -81,6 +81,11 @@ window.dataLayer = window.dataLayer || [];
     ],
   },
   transformHead({ pageData }) {
+    const url = pageData.relativePath.split('index.md')[0]
+    let image = meta.image
+    if (pageData.frontmatter.dynamic) {
+      image = pageData.frontmatter?.cover
+    }
     return [
       process.env.NODE_ENV === "production" ? ["script", { async: true, defer: true, "data-website-id": meta.umamiId, src: meta.umamiScript }] : null,
 
