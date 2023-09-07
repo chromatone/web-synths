@@ -9,9 +9,7 @@ import {
 } from "unocss";
 import extractorPug from "@unocss/extractor-pug";
 
-import createHead from 'vitepress-pages/head'
-
-const metaData = {
+const meta = {
   title: "Web synths",
   description: "Web audio synthesizers collection to play with a MIDI-controller straight from the browser.",
   site: "synth.chromatone.center",
@@ -22,6 +20,7 @@ const metaData = {
   logo: "logo.svg",
   image: "cover.jpg", // used for og:image, should be 1.91x1 ratio
   color: '#cccccc',
+  twitter: "davay42",
   author: "davay42", //your twitter handle
   tags: "synths, webaudio, synthesizer, MIDI, midi-controller, play music, online synth, online DAW, browser audio, web music",
   // add it if you use [umami](https://umami.is/) for stats
@@ -30,12 +29,11 @@ const metaData = {
 };
 
 export default defineConfig({
-  title: metaData.title,
-  description: metaData.description,
+  title: meta.title,
+  description: meta.description,
   titleTemplate: 'Online synthesizers collection',
   lang: "en-US",
   cleanUrls: true,
-  transformHead: createHead(metaData),
   themeConfig: {
     logo: "logo.svg",
     lastUpdated: true,
@@ -48,7 +46,7 @@ export default defineConfig({
     ],
   },
   head: [
-    ["link", { rel: "icon", href: `/${metaData.icon}` }],
+    ["link", { rel: "icon", href: `/${meta.icon}` }],
     ["meta", { name: "referrer", content: "always" }],
     ["meta", { content: "955357184504374", property: "fb:app_id" }],
     ["meta", { content: "website", property: "og:type" }],
@@ -81,5 +79,26 @@ window.dataLayer = window.dataLayer || [];
         extractors: [extractorSplit, extractorPug()],
       }),
     ],
+  },
+  transformHead({ pageData }) {
+    return [
+      process.env.NODE_ENV === "production" ? ["script", { async: true, defer: true, "data-website-id": meta.umamiId, src: meta.umamiScript }] : null,
+
+      meta.icon ? ["link", { rel: "icon", type: "image/svg+xml", href: meta.url + meta.icon }] : null,
+      meta?.author ? ["meta", { name: "author", content: meta?.author }] : null,
+      meta?.tags ? ["meta", { name: "keywords", content: meta?.tags }] : null,
+      meta.color ? ["meta", { name: "theme-color", content: meta.color }] : null,
+
+      ['meta', { property: 'og:title', content: pageData.title + ' | Chromatone & Playtronica' }],
+      ['meta', { property: 'og:description', content: pageData.description }],
+      ['meta', { property: 'og:url', content: meta.url + url }],
+      ['meta', { property: 'og:image', content: image }],
+      ['meta', { name: 'twitter:title', content: pageData.title + ' | Chromatone & Playtronica' }],
+      ['meta', { name: 'twitter:description', content: pageData.description }],
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+      ['meta', { name: 'twitter:site', content: `@${meta.author}` }],
+      ['meta', { name: 'twitter:creator', content: `@${meta.author}` }],
+      ['meta', { name: 'twitter:image', content: image }],
+    ]
   },
 });

@@ -30,7 +30,6 @@
 		"image-downloader": "4.3.0",
 		"pug": "3.0.2",
 		"unocss": "0.55.7",
-		"vitepress": "1.0.0-rc.10",
-		"vitepress-pages": "2.0.1"
+		"vitepress": "1.0.0-rc.10"
 	}
 }
