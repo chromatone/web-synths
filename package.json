@@ -13,25 +13,24 @@
 	"engines": {
 		"node": "20.x"
 	},
-	"packageManager": "pnpm@8.6.12",
+	"packageManager": "pnpm@8.7.4",
 	"keywords": [],
 	"author": "",
 	"license": "MIT",
 	"dependencies": {
-		"@unocss/reset": "0.53.6",
-		"@vueuse/core": "10.2.1",
+		"@unocss/reset": "0.55.7",
+		"@vueuse/core": "10.4.1",
 		"vue": "3.3.4",
 		"vue-slicksort": "^2.0.5"
 	},
 	"devDependencies": {
 		"@directus/sdk": "10.3.5",
-		"@unocss/extractor-pug": "0.53.6",
-		"@vue/language-plugin-pug": "^1.8.6",
+		"@unocss/extractor-pug": "0.55.7",
+		"@vue/language-plugin-pug": "^1.8.10",
 		"image-downloader": "4.3.0",
 		"pug": "3.0.2",
-		"unocss": "0.53.6",
-		"vitepress": "1.0.0-beta.6",
-		"vitepress-pages": "2.0.0",
-		"yaml": "2.3.1"
+		"unocss": "0.55.7",
+		"vitepress": "1.0.0-rc.10",
+		"vitepress-pages": "2.0.1"
 	}
 }
