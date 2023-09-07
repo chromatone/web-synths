@@ -16,8 +16,6 @@ export default {
 
     const cached = fs.existsSync(cacheFile) ? parse(fs.readFileSync(cacheFile, 'utf8')) : []
 
-    if (cached.length > 0) return cached
-
     const directus = new Directus('https://db.chromatone.center');
 
     const res = await directus.items('synths').readByQuery({ sort: ['sort', 'id'], limit: -1, filter: { status: { '_eq': 'published' } } });

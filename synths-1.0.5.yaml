@@ -11,18 +11,20 @@
   decription: null
 - id: 3
   status: published
-  sort: 3
+  sort: 2
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:10.748Z
-  title: TouchME by Chromatone
+  title: TouchME
   url: https://touchme.chromatone.center/
   cover: 6e97f4ab-c2f7-4e90-9c26-7518dbfddb3a
-  tags: null
+  tags:
+    - chromatone
+    - playtronica
   content: null
   decription: null
 - id: 14
   status: published
-  sort: 4
+  sort: 3
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:10.765Z
   title: Juno-106
@@ -31,20 +33,35 @@
   tags: null
   content: null
   decription: null
-- id: 26
+- id: 39
+  status: published
+  sort: 4
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-09-05T12:09:51.282Z
+  title: Waveform
+  url: https://waveform.playtronica.com/
+  cover: 1ad61158-88c4-4fcd-a878-9273e8f85f96
+  tags:
+    - playtronica
+    - polyphonic
+    - midi
+  content: null
+  decription: null
+- id: 29
   status: published
   sort: 5
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:10.816Z
-  title: Learning synths with Ableton
-  url: https://learningsynths.ableton.com/
-  cover: f5c81f00-fc0e-40ad-96ce-a1834709253a
-  tags: null
+  date_created: 2023-08-09T08:02:10.891Z
+  title: Elementary synth
+  url: https://chromatone.center/practice/synth/elementary/
+  cover: 14f5d908-fba2-451f-8bec-a922cc5672c7
+  tags:
+    - chromatone
   content: null
   decription: null
 - id: 30
   status: published
-  sort: 5
+  sort: 6
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:10.800Z
   title: DX7 Synth
@@ -55,18 +72,31 @@
   decription: null
 - id: 32
   status: published
-  sort: 5
+  sort: 7
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:10.784Z
   title: Sampler synth
   url: https://play.playtronica.com/
   cover: 749cb332-eb5e-40c6-bb36-fb87bb25a834
+  tags:
+    - playtronica
+    - sampler
+  content: null
+  decription: null
+- id: 26
+  status: published
+  sort: 8
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-09T08:02:10.816Z
+  title: Learning synths with Ableton
+  url: https://learningsynths.ableton.com/
+  cover: f5c81f00-fc0e-40ad-96ce-a1834709253a
   tags: null
   content: null
   decription: null
 - id: 10
   status: published
-  sort: 6
+  sort: 9
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:10.837Z
   title: Websynths
@@ -75,31 +105,9 @@
   tags: null
   content: null
   decription: null
-- id: 19
-  status: published
-  sort: 6
-  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:10.859Z
-  title: Theremin
-  url: https://www.femurdesign.com/theremin/
-  cover: f4ca5ef9-132a-4e56-80fb-21bd0fd0b3f6
-  tags: null
-  content: null
-  decription: null
-- id: 29
-  status: published
-  sort: 6
-  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:10.891Z
-  title: Elementary synth
-  url: https://chromatone.center/practice/synth/elementary/
-  cover: 14f5d908-fba2-451f-8bec-a922cc5672c7
-  tags: null
-  content: null
-  decription: null
 - id: 37
   status: published
-  sort: 6
+  sort: 10
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-21T14:18:48.099Z
   title: Sympathetic Synthesizer System Mk 1
@@ -111,9 +119,20 @@
     - additive
   content: null
   decription: null
+- id: 19
+  status: published
+  sort: 11
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-09T08:02:10.859Z
+  title: Theremin
+  url: https://www.femurdesign.com/theremin/
+  cover: f4ca5ef9-132a-4e56-80fb-21bd0fd0b3f6
+  tags: null
+  content: null
+  decription: null
 - id: 22
   status: published
-  sort: 7
+  sort: 12
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:10.875Z
   title: Disco-computer
@@ -124,7 +143,7 @@
   decription: null
 - id: 31
   status: published
-  sort: 12
+  sort: 13
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:10.906Z
   title: Video Sampler
@@ -135,7 +154,7 @@
   decription: null
 - id: 34
   status: published
-  sort: 12
+  sort: 14
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-21T14:00:50.309Z
   title: Fluoresynth by Electric Telepathy
@@ -162,7 +181,7 @@
   decription: null
 - id: 27
   status: published
-  sort: 14
+  sort: 15
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:10.918Z
   title: Viktor NV-1
@@ -173,7 +192,7 @@
   decription: null
 - id: 35
   status: published
-  sort: 18
+  sort: 16
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-21T14:05:27.437Z
   title: VirtualPiano.eu
@@ -195,7 +214,7 @@
   decription: Professional GM mapped WebAudio Piano Synthesizer Engine / MIDI Player
 - id: 36
   status: published
-  sort: 20
+  sort: 17
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-21T14:14:48.036Z
   title: Online sequencer
@@ -306,117 +325,31 @@
     your browser and share "
 - id: 17
   status: published
-  sort: 30
+  sort: 18
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:10.930Z
   title: Sound Trap
   url: https://www.soundtrap.com/
   cover: 328c8c51-e7d4-48bd-9c3d-6dea5184cad5
-  tags: null
+  tags:
+    - daw
   content: null
   decription: null
-- id: 6
+- id: 38
   status: published
-  sort: null
+  sort: 19
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:11.181Z
-  title: MIDI–driven Web Audio
-  url: https://webaudiodemos.appspot.com/midi-synth/index.html
-  cover: f268f0dc-b091-4799-885b-0a5eecfdcbec
-  tags: null
-  content: null
-  decription: null
-- id: 8
-  status: published
-  sort: null
-  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:11.088Z
-  title: Meet the Heisenberg
-  url: https://www.audiotool.com/product/device/heisenberg/
-  cover: 88c6fe9d-033c-4aac-a946-278e729e5f05
-  tags: null
-  content: null
-  decription: null
-- id: 9
-  status: published
-  sort: null
-  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:11.141Z
-  title: Cardboard Synth
-  url: https://www.gsn-lib.org/apps/cardboardsynth/index.html
-  cover: 3406a3fa-5e4d-4efc-a5ac-c6c8ee3abf72
-  tags: null
-  content: null
-  decription: null
-- id: 11
-  status: published
-  sort: null
-  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:11.126Z
-  title: Tanguy synth
-  url: http://tanguysynth.com/
-  cover: 16a499c4-661f-48b5-b308-dd7ea77f335d
-  tags: null
-  content: null
-  decription: null
-- id: 12
-  status: published
-  sort: null
-  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:11.109Z
-  title: MOD synth
-  url: http://mod-synth.io/
-  cover: dd13c72f-d1ee-4197-b8a2-f24c162d5858
-  tags: null
-  content: null
-  decription: null
-- id: 13
-  status: published
-  sort: null
-  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:11.076Z
-  title: OLIF SY1K
-  url: http://perso.numericable.fr/olivier.friker/synth/O3-synth%20V1.3.html
-  cover: 44234157-4872-4e35-baec-a7d073a7258d
-  tags: null
-  content: null
-  decription: null
-- id: 15
-  status: published
-  sort: null
-  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:11.059Z
-  title: Note Sculptor
-  url: http://www.noisesculptor.com/
-  cover: 3b9d921b-79da-4923-9cd2-bbc826561a93
-  tags: null
-  content: null
-  decription: null
-- id: 16
-  status: published
-  sort: null
-  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:11.159Z
-  title: WebAudioSynth V2
-  url: http://aikelab.net/websynthv2/
-  cover: 7980d0af-e534-4383-a36c-0b116a06499e
-  tags: null
-  content: null
-  decription: null
-- id: 18
-  status: published
-  sort: null
-  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:10.944Z
-  title: Samplestich
-  url: http://samplestitch.com.s3-website-us-east-1.amazonaws.com/
-  cover: 0f272d97-7882-4797-9890-97c3b75149a4
-  tags: null
-  content: null
-  decription: null
+  date_created: 2023-08-24T07:33:05.392Z
+  title: Sound Box
+  url: https://sb.bitsnbites.eu/
+  cover: af04c316-f2a0-4d99-834c-6518ff279094
+  tags:
+    - tracker
+  content: https://github.com/mbitsnbites/soundbox
+  decription: HTML5 synth music tracker
 - id: 20
   status: published
-  sort: null
+  sort: 20
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:11.032Z
   title: Omni
@@ -427,7 +360,7 @@
   decription: null
 - id: 21
   status: published
-  sort: null
+  sort: 21
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:11.016Z
   title: Web Modular
@@ -438,7 +371,7 @@
   decription: null
 - id: 23
   status: published
-  sort: null
+  sort: 22
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:11.000Z
   title: Online sequencer
@@ -447,20 +380,9 @@
   tags: null
   content: null
   decription: null
-- id: 24
-  status: published
-  sort: null
-  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
-  date_created: 2023-08-09T08:02:10.987Z
-  title: PixelSynth
-  url: https://ojack.github.io/PIXELSYNTH/
-  cover: 59ec0d0b-6bcf-4c50-8d76-5fe624105c0c
-  tags: null
-  content: null
-  decription: null
 - id: 25
   status: published
-  sort: null
+  sort: 23
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:10.970Z
   title: Acid Machine 2
@@ -469,14 +391,124 @@
   tags: null
   content: null
   decription: null
+- id: 24
+  status: published
+  sort: 24
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-09T08:02:10.987Z
+  title: PixelSynth
+  url: https://ojack.github.io/PIXELSYNTH/
+  cover: 59ec0d0b-6bcf-4c50-8d76-5fe624105c0c
+  tags: null
+  content: null
+  decription: null
 - id: 28
   status: published
-  sort: null
+  sort: 25
   user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
   date_created: 2023-08-09T08:02:10.958Z
   title: WebSID Commodore 64
   url: http://www.igorski.nl/experiment/websid
   cover: e39565a0-15fa-4c3a-9bc7-aa5a613dd19f
+  tags: null
+  content: null
+  decription: null
+- id: 6
+  status: published
+  sort: 26
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-09T08:02:11.181Z
+  title: MIDI–driven Web Audio
+  url: https://webaudiodemos.appspot.com/midi-synth/index.html
+  cover: f268f0dc-b091-4799-885b-0a5eecfdcbec
+  tags: null
+  content: null
+  decription: null
+- id: 18
+  status: published
+  sort: 27
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-09T08:02:10.944Z
+  title: Samplestich
+  url: http://samplestitch.com.s3-website-us-east-1.amazonaws.com/
+  cover: 0f272d97-7882-4797-9890-97c3b75149a4
+  tags: null
+  content: null
+  decription: null
+- id: 8
+  status: published
+  sort: 28
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-09T08:02:11.088Z
+  title: Meet the Heisenberg
+  url: https://www.audiotool.com/product/device/heisenberg/
+  cover: 88c6fe9d-033c-4aac-a946-278e729e5f05
+  tags: null
+  content: null
+  decription: null
+- id: 9
+  status: published
+  sort: 29
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-09T08:02:11.141Z
+  title: Cardboard Synth
+  url: https://www.gsn-lib.org/apps/cardboardsynth/index.html
+  cover: 3406a3fa-5e4d-4efc-a5ac-c6c8ee3abf72
+  tags: null
+  content: null
+  decription: null
+- id: 11
+  status: published
+  sort: 30
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-09T08:02:11.126Z
+  title: Tanguy synth
+  url: http://tanguysynth.com/
+  cover: 16a499c4-661f-48b5-b308-dd7ea77f335d
+  tags: null
+  content: null
+  decription: null
+- id: 12
+  status: published
+  sort: 31
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-09T08:02:11.109Z
+  title: MOD synth
+  url: http://mod-synth.io/
+  cover: dd13c72f-d1ee-4197-b8a2-f24c162d5858
+  tags: null
+  content: null
+  decription: null
+- id: 13
+  status: published
+  sort: 32
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-09T08:02:11.076Z
+  title: OLIF SY1K
+  url: http://perso.numericable.fr/olivier.friker/synth/O3-synth%20V1.3.html
+  cover: 44234157-4872-4e35-baec-a7d073a7258d
+  tags: null
+  content: null
+  decription: null
+- id: 15
+  status: published
+  sort: 33
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-09T08:02:11.059Z
+  title: Note Sculptor
+  url: http://www.noisesculptor.com/
+  cover: 3b9d921b-79da-4923-9cd2-bbc826561a93
+  tags: null
+  content: null
+  decription: null
+- id: 16
+  status: published
+  sort: 34
+  user_created: 796b4fbf-a0d9-4eac-998a-49bf3f9ffe65
+  date_created: 2023-08-09T08:02:11.159Z
+  title: WebAudioSynth V2
+  url: http://aikelab.net/websynthv2/
+  cover: 7980d0af-e534-4383-a36c-0b116a06499e
   tags: null
   content: null
   decription: null

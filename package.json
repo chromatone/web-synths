@@ -10,6 +10,10 @@
 		"serve": "vitepress serve",
 		"deploy": "sh deploy.sh"
 	},
+	"engines": {
+		"node": "20.x"
+	},
+	"packageManager": "pnpm@8.6.12",
 	"keywords": [],
 	"author": "",
 	"license": "MIT",
