@@ -3,7 +3,8 @@ name: Deploy to GitHub Pages
 on:
   workflow_dispatch:
   repository_dispatch:
-    types: [load]
+    types:
+      - buildhook
 jobs:
   build:
     name: Build
