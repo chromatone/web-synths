@@ -56,7 +56,7 @@ button.flex.flex-col.text-left.relative.min-h-50.card.p-0.bg-light-300.shadow-lg
   .p-4.flex.items-center.justify-between.w-full
     .text-md.font-bold.flex.items-center.gap-2.flex-1
       .flex-1 {{ title }} 
-        span.font-normal(title="Archived locally" v-if="archive") (A)
+        span.font-normal(title="Archived locally by us" v-if="archive") (A)
       .w-2.h-2.rounded-full.shadow-inset(
         v-if="checkAvailability"
         :class="{'bg-green-500': online === true, 'bg-red-500':online === false}"
