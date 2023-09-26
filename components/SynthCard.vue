@@ -11,6 +11,8 @@ const props = defineProps({
   description: { type: String, default: '' },
   cover: { type: String, default: '' },
   url: { type: String, default: '' },
+  archive: { type: Boolean, default: false },
+  archive_link: { type: String, default: '' },
 })
 
 const { checkAvailability, isFormOpen } = useForm()
@@ -34,7 +36,7 @@ function click() {
   if (props.off) {
     isFormOpen.value = !isFormOpen.value
   } else {
-    window.open(props.url, '_blank')
+    window.open(props.archive ? props.archive_link : props.url, '_blank')
   }
   // console.log('clicked', props.url, props.off)
 }
@@ -53,7 +55,8 @@ button.flex.flex-col.text-left.relative.min-h-50.card.p-0.bg-light-300.shadow-lg
   .flex-1 
   .p-4.flex.items-center.justify-between.w-full
     .text-md.font-bold.flex.items-center.gap-2.flex-1
-      .flex-1 {{ title }}
+      .flex-1 {{ title }} 
+        span.font-normal(title="Archived locally" v-if="archive") (A)
       .w-2.h-2.rounded-full.shadow-inset(
         v-if="checkAvailability"
         :class="{'bg-green-500': online === true, 'bg-red-500':online === false}"

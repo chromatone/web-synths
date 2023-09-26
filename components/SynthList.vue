@@ -31,11 +31,8 @@ SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
     :index="s")
     SynthCard( 
       :style="{opacity: isOff(s) ? 0.8 : 1}"
-      :title="synth.title"
-      :description="synth.description"
-      :cover="synth.cover"
-      :url="synth.url"
       :key="synth.id"
+      v-bind="synth"
       :off="isOff(s)")
 </template>
 
