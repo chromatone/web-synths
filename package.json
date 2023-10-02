@@ -26,6 +26,7 @@
 	"devDependencies": {
 		"@directus/sdk": "10.3.5",
 		"@unocss/extractor-pug": "0.55.7",
+		"@vite-pwa/vitepress": "^0.2.1",
 		"@vue/language-plugin-pug": "^1.8.10",
 		"image-downloader": "4.3.0",
 		"pug": "3.0.2",

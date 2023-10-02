@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import { withPwa } from '@vite-pwa/vitepress'
 
 import Unocss from "unocss/vite";
 import {
@@ -28,7 +29,31 @@ const meta = {
   umamiScript: "https://stats.chromatone.center/script.js"
 };
 
-export default defineConfig({
+export default withPwa(defineConfig({
+  pwa: {
+    base: '/',
+    scope: '/',
+    registerType: 'autoUpdate',
+    // injectRegister: 'inline',
+    includeAssets: ['logo.svg'],
+    workbox: {
+      globPatterns: ['**/*.{css,js,html,svg,png,webp,ico,txt,woff2}'],
+    },
+    manifest: {
+      name: 'Web Synths Collection',
+      short_name: 'Web Synths',
+      theme_color: '#f6f6f6',
+      display: "standalone",
+      icons: [
+        {
+          src: 'icon.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any maskable',
+        },
+      ],
+    },
+  },
   title: meta.title,
   description: meta.description,
   titleTemplate: 'Online synthesizers collection',
@@ -106,4 +131,4 @@ window.dataLayer = window.dataLayer || [];
       ['meta', { name: 'twitter:image', content: image }],
     ]
   },
-});
+}));
