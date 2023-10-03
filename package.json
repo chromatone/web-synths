@@ -11,7 +11,7 @@
 		"deploy": "sh deploy.sh"
 	},
 	"engines": {
-		"node": "20.x"
+		"node": "18.x"
 	},
 	"packageManager": "pnpm@8.8.0",
 	"keywords": [],
