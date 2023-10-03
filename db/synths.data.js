@@ -8,7 +8,7 @@ export default {
       sort: ['sort', 'id'], limit: -1, filter: { status: { '_eq': 'published' } }
     });
 
-    downloadCovers(records, {
+    await downloadCovers(records, {
       folder: 'cover'
     })
 
