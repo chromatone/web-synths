@@ -1,10 +1,15 @@
-<script setup lang="ts">
+<script setup>
+import AuthUser from '../../components/AuthUser.vue'
+
 import DefaultTheme from 'vitepress/theme'
 const { Layout } = DefaultTheme
 </script>
 
 <template lang="pug">
 Layout
+  template(#nav-bar-content-after)
+    .flex
+      //- AuthUser
   template(#layout-bottom)
     .flex.items-center.text-center.min-h-30
       .p-2.max-w-45ch.mx-auto With ❤️ by 

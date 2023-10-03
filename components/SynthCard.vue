@@ -1,6 +1,6 @@
-<script setup lang="ts">
+<script setup>
 import { computed, onMounted, ref, watch } from 'vue'
-import { useForm } from '../composables/useForm.ts';
+import { useForm } from '../composables/useForm.js';
 import { DragHandle } from 'vue-slicksort';
 //@ts-ignore
 import SynthFav from './SynthFav.vue';

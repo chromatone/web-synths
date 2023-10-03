@@ -3,18 +3,16 @@ import download from 'image-downloader'
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import fs from 'node:fs'
-import { Directus } from '@directus/sdk';
+import { useItems } from './composables/useItems.js';
 
 export default {
   async load() {
 
     const dirname = path.dirname(fileURLToPath(import.meta.url));
 
-    const directus = new Directus('https://db.chromatone.center');
-
-    const res = await directus.items('synths').readByQuery({ sort: ['sort', 'id'], limit: -1, filter: { status: { '_eq': 'published' } } });
-
-    const records = res.data
+    const records = await useItems('synths', {
+      sort: ['sort', 'id'], limit: -1, filter: { status: { '_eq': 'published' } }
+    });
 
     for (let r of records) {
       let dest = path.resolve(dirname, './public/cover/')

@@ -94,6 +94,7 @@ window.dataLayer = window.dataLayer || [];
         transformers: [transformerDirectives()],
         presets: [
           presetIcons({
+            cdn: 'https://esm.sh/',
             scale: 1.2,
             extraProperties: {
               "vertical-align": "middle",

@@ -1,6 +1,6 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
-import { useForm } from "../composables/useForm.ts";
+import { useForm } from "../composables/useForm.js";
 import { data } from "../synths.data";
 import SynthCard from "./SynthCard.vue";
 import { SlickList, SlickItem } from "vue-slicksort";

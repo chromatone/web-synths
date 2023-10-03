@@ -1,5 +1,5 @@
-import { ref, computed, watch, Ref, onMounted } from 'vue'
-import { RemovableRef, useStorage } from '@vueuse/core';
+import { ref, computed, watch, onMounted } from 'vue'
+import { useStorage } from '@vueuse/core';
 
 const isAccessGranted = ref(false)
 const isFormOpen = ref(false)
@@ -13,7 +13,10 @@ const isValidEmail = computed(() => validateEmail(email.value))
 const started = ref(false)
 
 function validateEmail(mail) {
-  return /^[^@]+@\w+(\.\w+)+\w$/.test(mail)
+
+  const emailRegex = /^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]{1,255}\.[a-zA-Z]{2,10}$/;
+
+  return emailRegex.test(mail)
 }
 
 function resetEmail() {

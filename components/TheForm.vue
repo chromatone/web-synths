@@ -1,5 +1,5 @@
 <script setup>
-import { useForm } from '../composables/useForm.ts'
+import { useForm } from '../composables/useForm.js'
 
 const { name, email, isValidEmail, isFormOpen, grantAccess, storedEmail, storedName, resetEmail, isAccessGranted } = useForm()
 
