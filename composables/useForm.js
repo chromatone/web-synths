@@ -1,23 +1,32 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { useStorage } from '@vueuse/core';
 
+const emailRegex = /^([a-zA-Z0-9._%+-]{1,64})@[a-zA-Z0-9.-]{1,255}\.[a-zA-Z]{2,10}$/;
+
+const maxLength = 36;
+
 const isAccessGranted = ref(false)
 const isFormOpen = ref(false)
 const checkAvailability = ref(false)
 const storedEmail = useStorage('storedEmail', '')
 const storedName = useStorage('storedName', '')
 const isSent = ref(false)
-const email = ref('')
-const name = ref('')
+const email = ref(storedEmail)
+const name = ref(storedName)
+const namePlaceholder = computed(() => capitalizeFirstLetter(email.value.match(emailRegex)?.[1]))
+const password = ref('')
+const passwordPlaceholder = ref('')
 const isValidEmail = computed(() => validateEmail(email.value))
 const started = ref(false)
 
 function validateEmail(mail) {
-
-  const emailRegex = /^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]{1,255}\.[a-zA-Z]{2,10}$/;
-
   return emailRegex.test(mail)
 }
+
+function capitalizeFirstLetter(string = '') {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 
 function resetEmail() {
   storedEmail.value = ''
@@ -52,7 +61,12 @@ export function useForm() {
     checkAvailability,
     storedEmail,
     storedName,
-    resetEmail
+    resetEmail,
+    namePlaceholder,
+    password,
+    passwordPlaceholder,
+    generatePassword,
+    maxLength
   }
 }
 
@@ -62,10 +76,24 @@ export async function grantAccess() {
   isAccessGranted.value = true
   if (!isSent.value) {
     isSent.value = true
+
+
+    const data = {
+      email: email.value,
+      name: (name.value || namePlaceholder.value || '').slice(0, maxLength),
+    }
+
     try {
-      const data = { email: email.value, name: name.value.slice(0, 30) }
+
+      // await cleanClient.request(inviteUser(email.value, '8c5fd718-323c-4616-ae90-dd28c522cdbd'))
+
+      // const response = await userCreate({ ...data, password: password.value || passwordPlaceholder.value })
+
+      // console.log(response, user.value)
+
       storedEmail.value = email.value
-      storedName.value = name.value
+      storedName.value = name.value || namePlaceholder.value
+
       const response = await fetch(
         'https://db.chromatone.center/flows/trigger/f36a3461-c476-4ce5-88c9-eba2216083b0',
         {
@@ -80,13 +108,10 @@ export async function grantAccess() {
           referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
           body: JSON.stringify(data), // body data type must match "Content-Type" header
         });
-
-
-
       console.log(response?.json())
 
     } catch (e) {
-      console.error(e)
+      console.error(e, e?.errors?.[0]?.message, e?.response?.status)
     }
   }
 
@@ -94,3 +119,7 @@ export async function grantAccess() {
 
 
 //array:https://synth.playtronica.com,http://localhost:4173,https://tsoop.com,https://chromatone.center
+
+function generatePassword() {
+  return [...window.crypto.getRandomValues(new Uint8Array(16))].map(b => '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_.,!?$%&*#@'.charAt(b % 72)).join('').slice(0, 10)
+}

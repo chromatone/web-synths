@@ -9,12 +9,12 @@ const { Layout } = DefaultTheme
 Layout
   template(#nav-bar-content-after)
     .flex
-      //- AuthUser
+      AuthUser
   template(#layout-bottom)
     .flex.items-center.text-center.min-h-30
       .p-2.max-w-45ch.mx-auto With ❤️ by 
-        a(title="Visual Music Language", href="https://chromatone.center", target="_blank", rel="noopener") Chromatone
-        |  and 
         a(href="https://playtronica.com", title="Musical gadgets", target="_blank", rel="noopener") Playtronica
+        |  and 
+        a(title="Visual Music Language", href="https://chromatone.center", target="_blank", rel="noopener") Chromatone
 </template>
 

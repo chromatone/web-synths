@@ -11,7 +11,6 @@ const favourite = useLocalStorage('fav:' + props.url, false)
 
 function toggleFav(url) {
   favourite.value = !favourite.value
-  console.log(favourite.value)
 }
 
 </script>

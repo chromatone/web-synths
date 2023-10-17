@@ -1,6 +1,12 @@
 
 import { createDirectus, rest, staticToken, readItem, readItems } from '@directus/sdk'
 
+export const publicClient = createDirectus(
+  'https://db.chromatone.center/'
+).with(
+  rest()
+)
+
 export const client = createDirectus(
   'https://db.chromatone.center/'
 ).with(

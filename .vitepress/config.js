@@ -84,8 +84,7 @@ window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-647GHFC42Z');
-    `],
-    ['script', { type: "text/javascript" }, 'window.$sleek=[];window.SLEEK_PRODUCT_ID=988732704;(function(){d=document;s=d.createElement("script");s.src="https://client.sleekplan.com/sdk/e.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();']
+    `]
 
   ],
   vite: {
@@ -114,6 +113,8 @@ window.dataLayer = window.dataLayer || [];
     }
     return [
       process.env.NODE_ENV === "production" ? ["script", { async: true, defer: true, "data-website-id": meta.umamiId, src: meta.umamiScript }] : null,
+
+      process.env.NODE_ENV === "production" ? ['script', { type: "text/javascript" }, 'window.$sleek=[];window.SLEEK_PRODUCT_ID=988732704;(function(){d=document;s=d.createElement("script");s.src="https://client.sleekplan.com/sdk/e.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();'] : null,
 
       meta.icon ? ["link", { rel: "icon", type: "image/svg+xml", href: meta.url + meta.icon }] : null,
       meta?.author ? ["meta", { name: "author", content: meta?.author }] : null,

@@ -20,16 +20,17 @@ function isOff(n) {
 </script>
 
 <template lang='pug'>
-SlickList.flex.flex-wrap.items-stretch.gap-4.md-gap-6.m-2.lg-m-8(
+SlickList.flex.flex-col.items-stretch.gap-8.md-gap-6.bg-light-900.dark-bg-dark-800.py-8.p-2(
   v-model:list="list", 
   axis="xy", 
   use-drag-handle)
-  SlickItem.flex(
+  SlickItem.flex.max-w-200.w-full.mx-auto(
     style="flex: 1 1 240px"
     v-for="(synth,s) in list" 
     :key="synth.id"
     :index="s")
     SynthCard( 
+      :pos="s"
       :style="{opacity: isOff(s) ? 0.8 : 1}"
       :key="synth.id"
       v-bind="synth"

@@ -6,12 +6,16 @@ import { DragHandle } from 'vue-slicksort';
 import SynthFav from './SynthFav.vue';
 
 const props = defineProps({
+  pos: { type: Number, default: 0 },
   off: { type: Boolean, default: false },
   title: { type: String, default: '' },
   slug: { type: String, default: '' },
   description: { type: String, default: '' },
   cover: { type: String, default: '' },
   url: { type: String, default: '' },
+  author: { type: String, default: '' },
+  author_link: { type: String, default: '' },
+  tags: { type: Array, default: () => ([]) },
   archive: { type: Boolean, default: false },
   archive_link: { type: String, default: '' },
 })
@@ -45,28 +49,37 @@ function click() {
 </script>
 
 <template lang='pug'>
-button.flex.flex-col.text-left.relative.min-h-50.card.p-0.bg-light-300.shadow-lg.flex.flex-col.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative(
+button.w-full.flex.flex-wrap.text-left.relative.bg-light-300.shadow-lg.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative(
+  :data-umami-event="title"
   @click="click")
-  img(
-    :key="title"
-    height="200"
-    width="1000"
-    :src="`/cover/${slug}.webp`" 
-    :alt="`${title} illustration`")
-  .flex-1 
-  .p-4.flex.items-center.justify-between.w-full
-    .text-md.font-bold.flex.items-center.gap-2.flex-1
-      .flex-1 {{ title }} 
+  .cover.bg-cover.min-h-50.bg-center(
+    :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
+    style="flex: 1 1 200px"
+    )
+    DragHandle.scale-80.opacity-40.cursor-grab.absolute.top-2.left-2
+      svg(xmlns="http://www.w3.org/2000/svg", width="32", height="32", viewBox="0 0 32 32")
+        path(d="M4 7v2h24V7zm0 8v2h24v-2zm0 8v2h24v-2z", fill="#888888")
+    //- img(
+    //-   :src="`/cover/${slug}.webp`" 
+    //-   :alt="`${title} illustration`")
+  .p-4.flex.flex-col.items-start.justify-between.gap-2(
+    style="flex: 1 0 400px"
+    )
+    .text-xl.font-bold.flex.items-center.gap-2.flex-0.w-full
+      span.opacity-40.hover-opacity-80.transition.text-2xl.select-none.absolute.bottom-4.right-5.text-center {{ pos+1 }}
+      .flex-1 
+        span.text-2xl {{ title }} 
         span.font-normal(title="Archived locally by us" v-if="archive") (A)
       .w-2.h-2.rounded-full.shadow-inset(
         v-if="checkAvailability"
         :class="{'bg-green-500': online === true, 'bg-red-500':online === false}"
         )
       ClientOnly
-        SynthFav.scale-70.w-10(:url="url")
-      DragHandle.scale-80.opacity-40.cursor-grab.absolute.top-2.right-2
-        svg(xmlns="http://www.w3.org/2000/svg", width="32", height="32", viewBox="0 0 32 32")
-          path(d="M4 7v2h24V7zm0 8v2h24v-2zm0 8v2h24v-2z", fill="#888888")
+        SynthFav.scale-70.w-10.absolute.right-2(:url="url")
+    component.p-0(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
+    .flex-1
+    .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")
+      .px-2.py-1.text-sm.bg-light-800.dark-bg-dark-500.rounded-lg(v-for="tag in tags" :key="tag") {{ tag }}
       
 </template>
 
