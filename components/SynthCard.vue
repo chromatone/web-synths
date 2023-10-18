@@ -52,9 +52,9 @@ function click() {
 button.w-full.flex.flex-wrap.text-left.relative.bg-light-300.shadow-lg.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative(
   :data-umami-event="title"
   @click="click")
-  .cover.bg-cover.min-h-50.bg-center(
+  .cover.bg-cover.min-h-50.bg-center.filter.transition(
     :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
-    style="flex: 1 1 200px"
+    style="flex: 1 1 140px"
     )
     DragHandle.scale-80.opacity-40.cursor-grab.absolute.top-2.left-2
       svg(xmlns="http://www.w3.org/2000/svg", width="32", height="32", viewBox="0 0 32 32")
@@ -63,12 +63,12 @@ button.w-full.flex.flex-wrap.text-left.relative.bg-light-300.shadow-lg.dark-bg-d
     //-   :src="`/cover/${slug}.webp`" 
     //-   :alt="`${title} illustration`")
   .p-4.flex.flex-col.items-start.justify-between.gap-2(
-    style="flex: 1 0 400px"
+    style="flex: 1 0 200px"
     )
-    .text-xl.font-bold.flex.items-center.gap-2.flex-0.w-full
+    .font-bold.flex.items-center.gap-2.flex-0.w-full
       span.opacity-40.hover-opacity-80.transition.text-2xl.select-none.absolute.bottom-4.right-5.text-center {{ pos+1 }}
       .flex-1 
-        span.text-2xl {{ title }} 
+        span.text-xl {{ title }} 
         span.font-normal(title="Archived locally by us" v-if="archive") (A)
       .w-2.h-2.rounded-full.shadow-inset(
         v-if="checkAvailability"
@@ -76,7 +76,7 @@ button.w-full.flex.flex-wrap.text-left.relative.bg-light-300.shadow-lg.dark-bg-d
         )
       ClientOnly
         SynthFav.scale-70.w-10.absolute.right-2(:url="url")
-    component.p-0(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
+    component.p-0.text-sm(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
     .flex-1
     .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")
       .px-2.py-1.text-sm.bg-light-800.dark-bg-dark-500.rounded-lg(v-for="tag in tags" :key="tag") {{ tag }}
@@ -86,5 +86,13 @@ button.w-full.flex.flex-wrap.text-left.relative.bg-light-300.shadow-lg.dark-bg-d
 <style scoped lang="postcss">
 .card img {
   @apply filter grayscale-70 hover-grayscale-0 transition;
+}
+
+.cover {
+  @apply grayscale-80 opacity-90;
+}
+
+button:hover .cover {
+  @apply grayscale-0 opacity-100;
 }
 </style>

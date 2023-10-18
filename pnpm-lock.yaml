@@ -40,6 +40,9 @@ devDependencies:
   unocss:
     specifier: 0.56.5
     version: 0.56.5(postcss@8.4.27)(rollup@2.79.1)(vite@4.4.11)
+  unplugin-vue-components:
+    specifier: ^0.25.2
+    version: 0.25.2(rollup@2.79.1)(vue@3.3.4)
   vitepress:
     specifier: 1.0.0-rc.22
     version: 1.0.0-rc.22(@algolia/client-search@4.19.1)(postcss@8.4.27)(search-insights@2.6.0)
@@ -3380,6 +3383,13 @@ packages:
       brace-expansion: 2.0.1
     dev: true
 
+  /minimatch@9.0.3:
+    resolution: {integrity: sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==}
+    engines: {node: '>=16 || 14 >=14.17'}
+    dependencies:
+      brace-expansion: 2.0.1
+    dev: true
+
   /minisearch@6.1.0:
     resolution: {integrity: sha512-PNxA/X8pWk+TiqPbsoIYH0GQ5Di7m6326/lwU/S4mlo4wGQddIcf/V//1f9TB0V4j59b57b+HZxt8h3iMROGvg==}
     dev: true
@@ -4175,6 +4185,44 @@ packages:
       - supports-color
     dev: true
 
+  /unplugin-vue-components@0.25.2(rollup@2.79.1)(vue@3.3.4):
+    resolution: {integrity: sha512-OVmLFqILH6w+eM8fyt/d/eoJT9A6WO51NZLf1vC5c1FZ4rmq2bbGxTy8WP2Jm7xwFdukaIdv819+UI7RClPyCA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@babel/parser': ^7.15.8
+      '@nuxt/kit': ^3.2.2
+      vue: 2 || 3
+    peerDependenciesMeta:
+      '@babel/parser':
+        optional: true
+      '@nuxt/kit':
+        optional: true
+    dependencies:
+      '@antfu/utils': 0.7.6
+      '@rollup/pluginutils': 5.0.4(rollup@2.79.1)
+      chokidar: 3.5.3
+      debug: 4.3.4
+      fast-glob: 3.3.1
+      local-pkg: 0.4.3
+      magic-string: 0.30.3
+      minimatch: 9.0.3
+      resolve: 1.22.2
+      unplugin: 1.5.0
+      vue: 3.3.4
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: true
+
+  /unplugin@1.5.0:
+    resolution: {integrity: sha512-9ZdRwbh/4gcm1JTOkp9lAkIDrtOyOxgHmY7cjuwI8L/2RTikMcVG25GsZwNAgRuap3iDw2jeq7eoqtAsz5rW3A==}
+    dependencies:
+      acorn: 8.10.0
+      chokidar: 3.5.3
+      webpack-sources: 3.2.3
+      webpack-virtual-modules: 0.5.0
+    dev: true
+
   /upath@1.2.0:
     resolution: {integrity: sha512-aZwGpamFO61g3OlfT7OQCHqhGnW43ieH9WZeP7QxN/G/jS4jfqUkZxoryvJgVPEcrl5NL/ggHsSmLMHuH64Lhg==}
     engines: {node: '>=4'}
@@ -4411,6 +4459,15 @@ packages:
 
   /webidl-conversions@4.0.2:
     resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
+    dev: true
+
+  /webpack-sources@3.2.3:
+    resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
+    engines: {node: '>=10.13.0'}
+    dev: true
+
+  /webpack-virtual-modules@0.5.0:
+    resolution: {integrity: sha512-kyDivFZ7ZM0BVOUteVbDFhlRt7Ah/CSPwJdi8hBpkK7QLumUqdLtVfm/PX/hkcnrvr0i77fO5+TjZ94Pe+C9iw==}
     dev: true
 
   /whatwg-url@7.1.0:

@@ -5,15 +5,8 @@ date: 2023-06-22
 layout: home
 ---
 
-<script setup>
-import SynthList from './components/SynthList.vue'
-import TheForm from './components/TheForm.vue'
-import AboutUs from './components/AboutUs.vue'
-</script>
 
-<SynthList>
-
-</SynthList>
+<SynthList />
 
 <AboutUs>
 <h2 class="text-lg font-bold">Welcome to our free web synth collection!</h2>

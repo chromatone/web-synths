@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import { withPwa } from '@vite-pwa/vitepress'
+import Components from 'unplugin-vue-components/vite'
 
 import Unocss from "unocss/vite";
 import {
@@ -89,6 +90,15 @@ window.dataLayer = window.dataLayer || [];
   ],
   vite: {
     plugins: [
+      Components({
+        dirs: ['components'],
+        extensions: ['vue', 'ts', 'js'],
+        directoryAsNamespace: true,
+        collapseSamePrefixes: true,
+        globalNamespaces: ['global'],
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+        exclude: [/node_modules/, /\.git/],
+      }),
       Unocss({
         transformers: [transformerDirectives()],
         presets: [
