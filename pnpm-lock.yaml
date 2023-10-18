@@ -26,8 +26,8 @@ devDependencies:
     specifier: 0.56.5
     version: 0.56.5(pug@3.0.2)
   '@vite-pwa/vitepress':
-    specifier: ^0.2.1
-    version: 0.2.1(vite-plugin-pwa@0.16.5)
+    specifier: ^0.2.3
+    version: 0.2.3(vite-plugin-pwa@0.16.5)
   '@vue/language-plugin-pug':
     specifier: ^1.8.19
     version: 1.8.19
@@ -39,10 +39,10 @@ devDependencies:
     version: 3.0.2
   unocss:
     specifier: 0.56.5
-    version: 0.56.5(postcss@8.4.27)(rollup@2.79.1)(vite@4.4.9)
+    version: 0.56.5(postcss@8.4.27)(rollup@2.79.1)(vite@4.4.11)
   vitepress:
-    specifier: 1.0.0-rc.21
-    version: 1.0.0-rc.21(@algolia/client-search@4.19.1)(postcss@8.4.27)(search-insights@2.6.0)
+    specifier: 1.0.0-rc.22
+    version: 1.0.0-rc.22(@algolia/client-search@4.19.1)(postcss@8.4.27)(search-insights@2.6.0)
 
 packages:
 
@@ -1829,7 +1829,7 @@ packages:
   /@types/web-bluetooth@0.0.18:
     resolution: {integrity: sha512-v/ZHEj9xh82usl8LMR3GarzFY1IrbXJw5L4QfQhokjRV91q+SelFqxQWSep1ucXEZ22+dSTwLFkXeur25sPIbw==}
 
-  /@unocss/astro@0.56.5(rollup@2.79.1)(vite@4.4.9):
+  /@unocss/astro@0.56.5(rollup@2.79.1)(vite@4.4.11):
     resolution: {integrity: sha512-nkxyGV9mA7DZ5LEr4Gap/SggM60MFNUfn56ngpxCqjQHJOMRJrAcR99hCVn+78vZ9xuZl9HxdIwgZLzn41thMw==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0
@@ -1839,8 +1839,8 @@ packages:
     dependencies:
       '@unocss/core': 0.56.5
       '@unocss/reset': 0.56.5
-      '@unocss/vite': 0.56.5(rollup@2.79.1)(vite@4.4.9)
-      vite: 4.4.9
+      '@unocss/vite': 0.56.5(rollup@2.79.1)(vite@4.4.11)
+      vite: 4.4.11
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -2026,7 +2026,7 @@ packages:
       '@unocss/core': 0.56.5
     dev: true
 
-  /@unocss/vite@0.56.5(rollup@2.79.1)(vite@4.4.9):
+  /@unocss/vite@0.56.5(rollup@2.79.1)(vite@4.4.11):
     resolution: {integrity: sha512-X4nvIukXTH//d+Oc97nJogK04sVGw4fc5LhVV1DjHQVmAOAmhTJCG6SxWGoSeqqUMx5X3gI9fVILK+5O8yl5EA==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0
@@ -2041,17 +2041,17 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.3.1
       magic-string: 0.30.3
-      vite: 4.4.9
+      vite: 4.4.11
     transitivePeerDependencies:
       - rollup
     dev: true
 
-  /@vite-pwa/vitepress@0.2.1(vite-plugin-pwa@0.16.5):
-    resolution: {integrity: sha512-57cEZSK86kWI8pTIHe5rochWOGaApPH6jrdjhQy0ufnkYHml7J4xUGV5rHQpJMSWbS4YppwHsKzzltvjNCbg0g==}
+  /@vite-pwa/vitepress@0.2.3(vite-plugin-pwa@0.16.5):
+    resolution: {integrity: sha512-6k9151CmILbSJQ88hLEMLL+MOQZDURKg2c4Wo5UcaEaOWU0jv7S+mo8nqyg86sM6ry8Jlnp6Zfv6AE0FqnfEyQ==}
     peerDependencies:
       vite-plugin-pwa: '>=0.16.5 <1'
     dependencies:
-      vite-plugin-pwa: 0.16.5(vite@4.4.9)(workbox-build@7.0.0)(workbox-window@7.0.0)
+      vite-plugin-pwa: 0.16.5(vite@4.4.11)(workbox-build@7.0.0)(workbox-window@7.0.0)
     dev: true
 
   /@volar/language-core@1.10.1:
@@ -4136,7 +4136,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss@0.56.5(postcss@8.4.27)(rollup@2.79.1)(vite@4.4.9):
+  /unocss@0.56.5(postcss@8.4.27)(rollup@2.79.1)(vite@4.4.11):
     resolution: {integrity: sha512-tO+9St4CntSjHpLXZqBo0/etS06MtvFF1NEny/qFJCL9sCopWwmDKuzW6/LIb4wfqZLdMpVFoEACMNv8nP849A==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -4148,7 +4148,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      '@unocss/astro': 0.56.5(rollup@2.79.1)(vite@4.4.9)
+      '@unocss/astro': 0.56.5(rollup@2.79.1)(vite@4.4.11)
       '@unocss/cli': 0.56.5(rollup@2.79.1)
       '@unocss/core': 0.56.5
       '@unocss/extractor-arbitrary-variants': 0.56.5
@@ -4167,8 +4167,8 @@ packages:
       '@unocss/transformer-compile-class': 0.56.5
       '@unocss/transformer-directives': 0.56.5
       '@unocss/transformer-variant-group': 0.56.5
-      '@unocss/vite': 0.56.5(rollup@2.79.1)(vite@4.4.9)
-      vite: 4.4.9
+      '@unocss/vite': 0.56.5(rollup@2.79.1)(vite@4.4.11)
+      vite: 4.4.11
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -4197,7 +4197,7 @@ packages:
       punycode: 2.3.0
     dev: true
 
-  /vite-plugin-pwa@0.16.5(vite@4.4.9)(workbox-build@7.0.0)(workbox-window@7.0.0):
+  /vite-plugin-pwa@0.16.5(vite@4.4.11)(workbox-build@7.0.0)(workbox-window@7.0.0):
     resolution: {integrity: sha512-Ahol4dwhMP2UHPQXkllSlXbihOaDFnvBIDPmAxoSZ1EObBUJGP4CMRyCyAVkIHjd6/H+//vH0DM2ON+XxHr81g==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -4208,7 +4208,7 @@ packages:
       debug: 4.3.4
       fast-glob: 3.3.1
       pretty-bytes: 6.1.1
-      vite: 4.4.9
+      vite: 4.4.11
       workbox-build: 7.0.0
       workbox-window: 7.0.0
     transitivePeerDependencies:
@@ -4250,43 +4250,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vite@4.4.9:
-    resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.18.11
-      postcss: 8.4.27
-      rollup: 3.29.0
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
-  /vitepress@1.0.0-rc.21(@algolia/client-search@4.19.1)(postcss@8.4.27)(search-insights@2.6.0):
-    resolution: {integrity: sha512-eHX057NgAqmrj6FIqh7Sqsbk/kftrFMBUpCKjuQIZ+c+bYTbmzXsXrHSbT5b4WWy4vLx1993a+H3wIRy2dHi8g==}
+  /vitepress@1.0.0-rc.22(@algolia/client-search@4.19.1)(postcss@8.4.27)(search-insights@2.6.0):
+    resolution: {integrity: sha512-n7le5iikCFgWMuX7sKfzDGJGlrsYQ5trG3S97BghNz2alOTr4Xp+GrB6ShwogUTX9gNgeNmrACjokhW55LNeBA==}
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4.3.2

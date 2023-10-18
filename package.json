@@ -11,9 +11,9 @@
 		"deploy": "sh deploy.sh"
 	},
 	"engines": {
-		"node": "18.x"
+		"node": ">18.x"
 	},
-	"packageManager": "pnpm@8.9.0",
+	"packageManager": "pnpm@8.9.2",
 	"keywords": [],
 	"author": "",
 	"license": "MIT",
@@ -26,11 +26,11 @@
 	"devDependencies": {
 		"@directus/sdk": "12.0.1",
 		"@unocss/extractor-pug": "0.56.5",
-		"@vite-pwa/vitepress": "^0.2.1",
+		"@vite-pwa/vitepress": "^0.2.3",
 		"@vue/language-plugin-pug": "^1.8.19",
 		"image-downloader": "4.3.0",
 		"pug": "3.0.2",
 		"unocss": "0.56.5",
-		"vitepress": "1.0.0-rc.21"
+		"vitepress": "1.0.0-rc.22"
 	}
 }
