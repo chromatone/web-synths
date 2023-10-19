@@ -14,9 +14,6 @@ dependencies:
   vue:
     specifier: 3.3.4
     version: 3.3.4
-  vue-slicksort:
-    specifier: ^2.0.5
-    version: 2.0.5(vue@3.3.4)
 
 devDependencies:
   '@directus/sdk':
@@ -4439,14 +4436,6 @@ packages:
         optional: true
     dependencies:
       vue: 3.3.4
-
-  /vue-slicksort@2.0.5(vue@3.3.4):
-    resolution: {integrity: sha512-fXz1YrNjhUbJK7o0tMk27mIr4pMAZYLSYvtmLazCtfpvz+zafPCn34ILDL8B7hT7WLVZKreYs6JVe5VWymqmzA==}
-    peerDependencies:
-      vue: '>=3.0.0'
-    dependencies:
-      vue: 3.3.4
-    dev: false
 
   /vue@3.3.4:
     resolution: {integrity: sha512-VTyEYn3yvIeY1Py0WaYGZsXnz3y5UnGi62GjVEqvEGPl6nxbOrCXbVOTQWBEJUqAyTUk2uJ5JLVnYJ6ZzGbrSw==}

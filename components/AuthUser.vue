@@ -1,5 +1,4 @@
 <script setup>
-import TheForm from './TheForm.vue';
 import { useForm } from '../composables/useForm.js';
 import { useUser } from '../composables/useUser.js';
 

@@ -1,9 +1,6 @@
 <script setup>
 import { computed, onMounted, ref, watch } from 'vue'
 import { useForm } from '../composables/useForm.js';
-import { DragHandle } from 'vue-slicksort';
-//@ts-ignore
-import SynthFav from './SynthFav.vue';
 
 const props = defineProps({
   pos: { type: Number, default: 0 },
@@ -56,9 +53,9 @@ button.w-full.flex.flex-wrap.text-left.relative.bg-light-300.shadow-lg.dark-bg-d
     :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
     style="flex: 1 1 140px"
     )
-    DragHandle.scale-80.opacity-40.cursor-grab.absolute.top-2.left-2
-      svg(xmlns="http://www.w3.org/2000/svg", width="32", height="32", viewBox="0 0 32 32")
-        path(d="M4 7v2h24V7zm0 8v2h24v-2zm0 8v2h24v-2z", fill="#888888")
+    //- DragHandle.scale-80.opacity-40.cursor-grab.absolute.top-2.left-2
+    //-   svg(xmlns="http://www.w3.org/2000/svg", width="32", height="32", viewBox="0 0 32 32")
+    //-     path(d="M4 7v2h24V7zm0 8v2h24v-2zm0 8v2h24v-2z", fill="#888888")
     //- img(
     //-   :src="`/cover/${slug}.webp`" 
     //-   :alt="`${title} illustration`")
