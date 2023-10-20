@@ -63,7 +63,7 @@ export default withPwa(defineConfig({
   cleanUrls: true,
   outDir: 'dist',
   themeConfig: {
-    logo: "logo.svg",
+    logo: "/logo.svg",
     lastUpdated: true,
     socialLinks: [
       { icon: "github", link: "https://github.com/chromatone/web-synths" },

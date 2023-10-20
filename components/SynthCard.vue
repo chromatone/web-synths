@@ -49,9 +49,9 @@ function click() {
 button.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light-300.shadow-lg.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative(
   :data-umami-event="title"
   @click="click")
-  .cover.bg-cover.min-h-50.bg-center.filter.transition(
+  .cover.min-h-50.bg-cover.bg-center.filter.transition(
     :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
-    style="flex: 1 1 120px"
+    style="flex: 1 1 280px"
     )
     //- DragHandle.scale-80.opacity-40.cursor-grab.absolute.top-2.left-2
     //-   svg(xmlns="http://www.w3.org/2000/svg", width="32", height="32", viewBox="0 0 32 32")
@@ -60,10 +60,10 @@ button.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light-300.shado
     //-   :src="`/cover/${slug}.webp`" 
     //-   :alt="`${title} illustration`")
   .p-4.flex.flex-col.items-start.justify-between.gap-2(
-    style="flex: 1 0 200px"
+    style="flex: 10 0 200px"
     )
     .font-bold.flex.items-center.gap-2.flex-0.w-full
-      span.opacity-40.hover-opacity-80.transition.text-2xl.select-none.absolute.bottom-4.right-5.text-center {{ pos+1 }}
+      span.transition.text-2xl.select-none.absolute.top-4.left-5.mix-blend-difference.text-center {{ pos+1 }}
       .flex-1 
         span.text-xl {{ title }} 
         span.font-normal(title="Archived locally by us" v-if="archive") (A)

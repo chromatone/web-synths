@@ -1,6 +1,6 @@
 ---
 title: Login
-desctiption: Login to the site
+desctiption: Get in touch with community through contributions
 ---
 
-LOGIN PAGE
+<auth-login />
