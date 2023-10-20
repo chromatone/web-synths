@@ -34,6 +34,7 @@ export default withPwa(defineConfig({
   pwa: {
     base: '/',
     scope: '/',
+    outDir: './dist/',
     registerType: 'autoUpdate',
     // injectRegister: 'inline',
     includeAssets: ['logo.svg'],
@@ -60,6 +61,7 @@ export default withPwa(defineConfig({
   titleTemplate: 'Online synthesizers collection',
   lang: "en-US",
   cleanUrls: true,
+  outDir: 'dist',
   themeConfig: {
     logo: "logo.svg",
     lastUpdated: true,

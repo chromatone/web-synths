@@ -83,7 +83,6 @@ function scroll() {
       title="Your access status will be saved per device and you won't need to enter your e-mail again."
       )
       slot(name="button") GET ACCESS
-
 </template>
 
 <style>

@@ -46,12 +46,12 @@ function click() {
 </script>
 
 <template lang='pug'>
-button.w-full.flex.flex-wrap.text-left.relative.bg-light-300.shadow-lg.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative(
+button.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light-300.shadow-lg.dark-bg-dark-300.-hover-translate-y-2px.transition.hover-shadow-xl.rounded-xl.overflow-hidden.relative(
   :data-umami-event="title"
   @click="click")
   .cover.bg-cover.min-h-50.bg-center.filter.transition(
     :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
-    style="flex: 1 1 140px"
+    style="flex: 1 1 120px"
     )
     //- DragHandle.scale-80.opacity-40.cursor-grab.absolute.top-2.left-2
     //-   svg(xmlns="http://www.w3.org/2000/svg", width="32", height="32", viewBox="0 0 32 32")

@@ -10,3 +10,4 @@ database/
 uploads/
 public/cover/*
 synths.yaml
+dist

@@ -16,5 +16,6 @@ Layout
         a(href="https://playtronica.com", title="Musical gadgets", target="_blank", rel="noopener") Playtronica
         |  and 
         a(title="Visual Music Language", href="https://chromatone.center", target="_blank", rel="noopener") Chromatone
+    MidiPanel.sticky.bottom-0
 </template>
 
