@@ -81,14 +81,6 @@ export default withPwa(defineConfig({
     ["meta", { content: "yes", name: "apple-mobile-web-app-capable" }],
     ["meta", { content: "yes", name: "mobile-web-app-capable" }],
     ["meta", { content: "Synths online", name: "apple-mobile-web-app-title" }],
-    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-647GHFC42Z' }],
-    ['script', { type: "text/javascript" }, `
-window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-647GHFC42Z');
-    `]
-
   ],
   vite: {
     plugins: [
@@ -126,7 +118,12 @@ window.dataLayer = window.dataLayer || [];
     return [
       process.env.NODE_ENV === "production" ? ["script", { async: true, defer: true, "data-website-id": meta.umamiId, src: meta.umamiScript }] : null,
 
-      process.env.NODE_ENV === "production" ? ['script', { type: "text/javascript" }, 'window.$sleek=[];window.SLEEK_PRODUCT_ID=988732704;(function(){d=document;s=d.createElement("script");s.src="https://client.sleekplan.com/sdk/e.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();'] : null,
+      process.env.NODE_ENV === "production" ? ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-647GHFC42Z' }] : null,
+
+      process.env.NODE_ENV === "production" ? ['script', { type: "text/javascript" }, `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-647GHFC42Z');`] : null,
 
       meta.icon ? ["link", { rel: "icon", type: "image/svg+xml", href: meta.url + meta.icon }] : null,
       meta?.author ? ["meta", { name: "author", content: meta?.author }] : null,
