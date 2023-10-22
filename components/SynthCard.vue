@@ -77,7 +77,7 @@ button.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light-300.shado
     .flex-1
     .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")
       .px-2.py-1.text-sm.bg-light-800.dark-bg-dark-500.rounded-lg(v-for="tag in tags" :key="tag") {{ tag }}
-      
+    a.p-1.bg-dark-300.absolute.bottom-2.right-2.rounded-full.opacity-10.hover-opacity-80.transition(@click.stop :href="`/${slug}/`")
 </template>
 
 <style scoped lang="postcss">
