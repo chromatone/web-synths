@@ -1,9 +1,9 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
-import { useForm } from "../composables/useForm.js";
-import { data } from "../db/synths.data";
+import { useForm } from "../../composables/useForm.js";
+import { data } from "../../db/synths.data";
 
-import { version } from '../package.json'
+import { version } from '../../package.json'
 
 const { isAccessGranted } = useForm()
 

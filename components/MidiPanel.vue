@@ -19,5 +19,5 @@ const { midi } = useMidi()
       )
       .text-sm {{ input.name }} 
   template(v-else)
-    .text-xs(style="flex: 1 1 200px") No MIDI inputs detected.
+    .text-xs(style="flex: 1 1 200px") No MIDI devices detected.
 </template>

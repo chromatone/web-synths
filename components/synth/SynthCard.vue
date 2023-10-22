@@ -1,6 +1,6 @@
 <script setup>
 import { computed, onMounted, ref, watch } from 'vue'
-import { useForm } from '../composables/useForm.js';
+import { useForm } from '../../composables/useForm.js';
 
 const props = defineProps({
   pos: { type: Number, default: 0 },
