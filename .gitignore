@@ -12,3 +12,4 @@ public/cover/*
 synths.yaml
 dist
 node_modules
+dist/

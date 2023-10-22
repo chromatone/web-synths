@@ -7,7 +7,7 @@ export default {
       sort: ['sort', 'id'], limit: -1, filter: { status: { '_eq': 'published' } }
     })
 
-    return synths?.map(p => {
+    return (synths || [])?.map(p => {
       let content = p.content
       delete p.content
       return { params: p, content }
