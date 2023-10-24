@@ -17,7 +17,7 @@ const props = defineProps({
   archive_link: { type: String, default: '' },
 })
 
-const { checkAvailability, isFormOpen } = useForm()
+const { checkAvailability, isFormOpen, isAccessGranted } = useForm()
 
 const online = ref(null)
 
@@ -46,7 +46,7 @@ function click() {
 </script>
 
 <template lang='pug'>
-button.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light-500.dark-bg-dark-300.-hover-translate-y-6px.transition.duration-200.hover-shadow-lg.rounded-lg.overflow-hidden.relative.border-1.border-dark-100.border-opacity-20.shadow-sm.dark-border-light-800.dark-border-opacity-20(
+button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light-500.dark-bg-dark-300.-hover-translate-y-6px.transition.duration-200.hover-shadow-lg.rounded-lg.overflow-hidden.relative.border-1.border-dark-100.border-opacity-20.shadow-sm.dark-border-light-800.dark-border-opacity-20(
   :data-umami-event="title"
   @click="click")
   .cover.min-h-50.bg-cover.bg-center.filter.transition(
@@ -77,7 +77,10 @@ button.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light-500.dark-
     .flex-1
     .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")
       .px-2.py-1.text-sm.bg-light-800.dark-bg-dark-500.rounded-lg(v-for="tag in tags" :key="tag") {{ tag }}
-    a.p-1.dark-bg-light-300.bg-dark-300.absolute.bottom-2.right-2.rounded-full.opacity-10.hover-opacity-80.transition(@click.stop :href="`/${slug}/`")
+    a.p-1.dark-bg-light-300.bg-dark-300.absolute.bottom-2.right-2.rounded-full.opacity-10.hover-opacity-80.transition(
+      v-if="isAccessGranted"
+      @click.stop :href="`/${slug}/`"
+      )
 </template>
 
 <style scoped lang="postcss">

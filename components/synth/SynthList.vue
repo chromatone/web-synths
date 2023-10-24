@@ -8,13 +8,13 @@ const { isAccessGranted } = useForm()
 const list = ref(data)
 
 function isOff(n) {
-  return !isAccessGranted.value && n > 5
+  return !isAccessGranted.value && n < list.value.length - 5
 }
 
 </script>
 
 <template lang='pug'>
-.flex.flex-col.items-stretch.gap-8.md-gap-6.py-8.p-2
+.flex.flex-col.items-center.gap-16.py-8.p-2.max-w-160.mx-auto
   .flex.w-full.sticky(
     :style="{top:`${90+s*6}px`, zIndex: s+10}"
     style="flex: 1 1 240px"

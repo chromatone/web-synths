@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from 'vue';
+
 const props = defineProps({
   title: { type: String, default: '' },
   description: { type: String, default: '' },
@@ -9,25 +11,46 @@ const props = defineProps({
   url: { type: String, default: '' },
   tags: { type: Array, default: [] }
 })
+
+const iframeLoaded = ref(false)
+
+function iFrameLoad(e) {
+  if (e.timeStamp < 5000) {
+    iframeLoaded.value = true;
+  }
+}
 </script>
 
 <template lang='pug'>
-.flex.flex-col.gap-4.bg-light-300.dark-bg-dark-400.rounded-lg.overflow-hidden
-  .p-0
-    img(:src="`/cover/${slug}.webp`")
-  .flex.flex-col.p-4.gap-4
-    .text-4xl.font-bold {{ title }}
-    component.text-xl(
-      v-if="author"
-      :is="author_link ? 'a' : 'div'"
-        :href="author_link") by {{ author }}
-    a(
+.flex.flex-col.gap-4.bg-light-300.dark-bg-dark-300.rounded-lg.shadow-xl.overflow-hidden.mx-auto
+  .p-0.h-70svh.bg-cover.bg-center(
+    :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
+  )
+    iframe.w-full.h-70svh(
+      allow="midi *"
+      v-show="iframeLoaded"
+      @load="iFrameLoad"
+      :title="title" 
+      :src="url"
+      )
+
+  .flex.flex-col.p-4.gap-1.bottom-0.bg-light-100.dark-bg-dark-200.w-full.max-w-180.mx-auto.mb-12
+    .text-3xl.font-bold.flex.items-end.gap-4 {{ title }} 
+      component.text-lg.font-300(
+        v-if="author"
+        target="_blank"
+        :is="author_link ? 'a' : 'div'"
+          :href="author_link") by {{ author }}
+    a.my-2.font-mono.text-sm(
       :href="url" 
       target="_blank"
       ) {{ url }}
     .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")
       .px-2.py-1.text-sm.bg-light-800.dark-bg-dark-500.rounded-lg(v-for="tag in tags" :key="tag") {{ tag }}
     .p-0(v-if="description") {{ description }}
+
   .p-0
     slot
 </template>
+
+<style scoped lang="postcss"></style>

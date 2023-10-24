@@ -1,7 +1,10 @@
 <script setup>
-import { useForm } from '../composables/useForm.js'
+import { ref } from 'vue';
+import { useForm } from '../../composables/useForm.js'
 
 const { name, email, isValidEmail, isFormOpen, grantAccess, storedEmail, storedName, resetEmail, isAccessGranted, namePlaceholder, passwordPlaceholder, password, generatePassword, maxLength, claimInvite, invited } = useForm()
+
+const loginForm = ref()
 
 function scroll() {
   window.scrollTo({
@@ -23,19 +26,18 @@ function scroll() {
 
   .flex.flex-col.gap-4.max-w-45ch.text-center(v-if="isAccessGranted")
     .text-3xl.font-bold Hello, {{ storedName }}!
-    .text-xl Enjoy your web-synthesizers hub
+    .text-xl You are part of web-musicians community
     .text-sm.flex.gap-2.justify-center {{ storedEmail }}
       span.opacity-20.hover-opacity-50.transition.cursor-pointer(@click="resetEmail") Log out
-    //- .flex.justify-center.cursor-pointer.p-2.opacity-50.hover-opacity-100.transition(
-      @click="scroll()"
-      )
-      svg.absolute(xmlns="http://www.w3.org/2000/svg", width="100", height="100", viewBox="0 0 32 32")
-        path(d="M16 4.688L3.781 16.905l1.438 1.407L16 7.53l10.781 10.782l1.438-1.407zm0 7L3.781 23.905l1.438 1.407L16 14.53l10.781 10.781l1.438-1.406z", fill="#888888")
-
-    //- button.text-sm.md-text-md.p-4.font-bold.md-p-4.rounded-xl.shadow-xl.hover-shadow-2xl.transition.-hover-translate-y-2px.disabled-opacity-40.active-translate-y-0.active-shadow-md.bg-green-400.dark-bg-green-700(
-      v-if="!invited"
-      @click="claimInvite()"
-      ) Claim Invite
+    .flex.gap-4.justify-center
+      button.text-sm.md-text-md.p-4.font-bold.md-p-4.rounded-xl.shadow-xl.hover-shadow-2xl.transition.-hover-translate-y-2px.disabled-opacity-40.active-translate-y-0.active-shadow-md.bg-green-400.dark-bg-green-700(
+        v-if="!invited"
+        @click="claimInvite()"
+        ) Claim Invite
+      //- button.text-sm.md-text-md.p-4.font-bold.md-p-4.rounded-xl.shadow-xl.hover-shadow-2xl.transition.-hover-translate-y-2px.disabled-opacity-40.active-translate-y-0.active-shadow-md.bg-green-400.dark-bg-green-700(
+        v-if="!invited"
+        @click="loginForm = true"
+        ) Login
 
   .flex.flex-col.gap-8.relative.pt-8.items-center(v-else)
 

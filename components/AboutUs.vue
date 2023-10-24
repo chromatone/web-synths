@@ -1,10 +1,7 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
-import { useShare, useElementVisibility, useTransition } from '@vueuse/core'
-
-const props = defineProps({
-  synths: { type: Number, default: 30 }
-})
+import { useShare, useElementVisibility, useTransition, watchOnce } from '@vueuse/core'
+import { data } from '../db/synths.data.js'
 
 const counters = ref()
 const players = ref([])
@@ -12,12 +9,17 @@ const count = computed(() => players.value.length)
 const counter = useTransition(count)
 
 onMounted(() => {
-  fetch('https://corsproxy.io/?https://db.chromatone.center/items/players?limit=-1')
+  fetch('https://db.chromatone.center/items/players?limit=-1')
     .then(response => response.json())
     .then(({ data }) => players.value = data)
 })
 
 const visible = useElementVisibility(counters)
+const seen = ref(false)
+
+watchOnce(visible, v => {
+  if (v) seen.value = true
+})
 
 const { share, isSupported } = useShare()
 
@@ -28,6 +30,10 @@ function startShare() {
     url: location.href,
   })
 }
+
+function scrollTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 </script>
 
 <template lang='pug'>
@@ -35,11 +41,15 @@ function startShare() {
   .mx-auto.max-w-75ch.intro.md-text-lg
     slot
     .flex.justify-center(ref="counters")
-      .p-2.flex.flex-col.mt-8(v-if="visible")
-        .text-4xl.font-bold {{ synths }}
+      .p-2.flex.flex-col.mt-8
+        .text-4xl.font-bold {{ data.length }}
         .text-lg web synths
-      .p-2.flex.flex-col.mt-8(v-if="visible&&count>0")
+      .p-2.flex.flex-col.mt-8(v-if="seen&&count>0")
         .text-4xl.font-bold {{ counter.toFixed() }}+
         .text-lg web musicians
     button.text-white.py-2.px-4.mt-6.shadow-lg.rounded-lg.cursor-pointer.bg-green-600.-hover-translate-y-2px.transition(@click="startShare()" v-if="isSupported") Share now to save for later
+  button.opacity-70.my-12.mx-auto.p-4.text-4xl.items-center.flex.flex-col(@click="scrollTop()")
+    .i-la-angle-up
+    span.font-100 Scroll up
+
 </template>

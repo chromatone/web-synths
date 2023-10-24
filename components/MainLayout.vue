@@ -11,7 +11,7 @@ const { theme, site, isDark } = useData()
 <template lang="pug">
 .flex.flex-col.noise.items-center.relative.min-h-100svh
   .w-full.backdrop-blur-xl.sticky.top-0.z-100.bg-light-200.bg-opacity-60.dark-bg-dark-300.dark-bg-opacity-60
-    .flex.flex.items-center.w-full.max-w-200.mx-auto.gap-4.px-4
+    .flex.flex.items-center.w-full.max-w-180.mx-auto.gap-4.px-4
       a.p-2.flex.items-center.gap-4(href="/")
         img.w-12(:src="theme.logo")
         .text-xl.font-600 {{ site.title }}
@@ -24,16 +24,11 @@ const { theme, site, isDark } = useData()
         @click="isFormOpen=!isFormOpen")
         .i-ph-user-circle-duotone.p-5
 
-  .flex.flex-wrap.items-center.w-full.max-w-200.mx-auto
+  .flex.flex-wrap.w-full.mx-auto.flex-auto.justify-center
     content.w-full
-  .flex-auto
-  .flex.items-center.text-center.min-h-30
-    .p-2.max-w-45ch.mx-auto With ❤️ by 
-      a(href="https://playtronica.com", title="Musical gadgets", target="_blank", rel="noopener") Playtronica
-      |  and 
-      a(title="Visual Music Language", href="https://chromatone.center", target="_blank", rel="noopener") Chromatone
-  MidiPanel.sticky.bottom-2
-  TheForm We are building a community of web-based musicians. Type in your e-mail to instantly get full access to the collection and occasionally receive community updates.
+
+  MidiPanel.fixed.bottom-4
+  FormMain We are building a community of web-based musicians. Type in your e-mail to instantly get full access to the collection and occasionally receive community updates.
 
     template(#button) JOIN THE COMMUNITY
     template(#notice) Your access status will be saved per device and you won't need to enter your e-mail again.
