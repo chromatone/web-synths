@@ -1,7 +1,7 @@
 <script setup>
 import { useForm } from '../composables/useForm.js'
 
-const { name, email, isValidEmail, isFormOpen, grantAccess, storedEmail, storedName, resetEmail, isAccessGranted, namePlaceholder, passwordPlaceholder, password, generatePassword, maxLength } = useForm()
+const { name, email, isValidEmail, isFormOpen, grantAccess, storedEmail, storedName, resetEmail, isAccessGranted, namePlaceholder, passwordPlaceholder, password, generatePassword, maxLength, claimInvite, invited } = useForm()
 
 function scroll() {
   window.scrollTo({
@@ -13,26 +13,29 @@ function scroll() {
 </script>
 
 <template lang='pug'>
-.z-10.min-h-40dvh.bottom-0.right-0.left-0.bg-light-800.bg-opacity-80.backdrop-blur.flex.flex-col.items-center.gap-4.justify-center.dark-bg-dark-200.dark-bg-opacity-80.p-8.shadow(
-  v-show="isFormOpen"
+.fixed.z-1000.min-h-40dvh.bottom-0.w-full.bg-light-800.bg-opacity-80.backdrop-blur.flex.flex-col.items-center.gap-4.justify-center.dark-bg-dark-200.dark-bg-opacity-80.p-8.shadow.max-w-180.bottom-0.rounded-xl(
+  v-if="isFormOpen"
   )
-
-  svg.absolute.top-4.right-4.text-4xl.cursor-pointer(
+  button.i-la-times.absolute.top-4.right-4.text-2xl.hover-opacity-90.opacity-50.transition(
     v-show="isFormOpen"
     @click="isFormOpen=false"
-    xmlns="http://www.w3.org/2000/svg", width="1em", height="1em", viewBox="0 0 32 32")
-    path(d="M7.219 5.781L5.78 7.22L14.563 16L5.78 24.781L7.22 26.22L16 17.437l8.781 8.782l1.438-1.438L17.437 16l8.782-8.781L24.78 5.78L16 14.563z", fill="#888888")
+    )
 
   .flex.flex-col.gap-4.max-w-45ch.text-center(v-if="isAccessGranted")
     .text-3xl.font-bold Hello, {{ storedName }}!
     .text-xl Enjoy your web-synthesizers hub
     .text-sm.flex.gap-2.justify-center {{ storedEmail }}
       span.opacity-20.hover-opacity-50.transition.cursor-pointer(@click="resetEmail") Log out
-    .flex.justify-center.cursor-pointer.p-2.opacity-50.hover-opacity-100.transition(
+    //- .flex.justify-center.cursor-pointer.p-2.opacity-50.hover-opacity-100.transition(
       @click="scroll()"
       )
       svg.absolute(xmlns="http://www.w3.org/2000/svg", width="100", height="100", viewBox="0 0 32 32")
         path(d="M16 4.688L3.781 16.905l1.438 1.407L16 7.53l10.781 10.782l1.438-1.407zm0 7L3.781 23.905l1.438 1.407L16 14.53l10.781 10.781l1.438-1.406z", fill="#888888")
+
+    //- button.text-sm.md-text-md.p-4.font-bold.md-p-4.rounded-xl.shadow-xl.hover-shadow-2xl.transition.-hover-translate-y-2px.disabled-opacity-40.active-translate-y-0.active-shadow-md.bg-green-400.dark-bg-green-700(
+      v-if="!invited"
+      @click="claimInvite()"
+      ) Claim Invite
 
   .flex.flex-col.gap-8.relative.pt-8.items-center(v-else)
 
@@ -83,6 +86,8 @@ function scroll() {
       title="Your access status will be saved per device and you won't need to enter your e-mail again."
       )
       slot(name="button") GET ACCESS
+
+  //- AuthLogin.max-h-40.overflow-y-scroll
 </template>
 
 <style>

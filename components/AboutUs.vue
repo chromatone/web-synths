@@ -31,7 +31,7 @@ function startShare() {
 </script>
 
 <template lang='pug'>
-.bg-light-300.dark-bg-dark-700.dark-text-light-200.text-center.line-height-loose.text-md.py-16
+.text-center.line-height-loose.text-md.py-16.px-4
   .mx-auto.max-w-75ch.intro.md-text-lg
     slot
     .flex.justify-center(ref="counters")

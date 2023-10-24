@@ -5,6 +5,8 @@ date: 2023-06-22
 layout: home
 ---
 
+
+
 <SynthList />
 
 <AboutUs>

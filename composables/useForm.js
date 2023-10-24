@@ -1,5 +1,8 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { useStorage } from '@vueuse/core';
+import { useUrlSearchParams } from '@vueuse/core'
+
+const searchParams = useUrlSearchParams('history')
 
 const emailRegex = /^([a-zA-Z0-9._%+-]{1,64})@[a-zA-Z0-9.-]{1,255}\.[a-zA-Z]{2,10}$/;
 
@@ -18,6 +21,7 @@ const password = ref('')
 const passwordPlaceholder = ref('')
 const isValidEmail = computed(() => validateEmail(email.value))
 const started = ref(false)
+const invited = ref(false)
 
 function validateEmail(mail) {
   return emailRegex.test(mail)
@@ -26,7 +30,6 @@ function validateEmail(mail) {
 function capitalizeFirstLetter(string = '') {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
 
 function resetEmail() {
   storedEmail.value = ''
@@ -46,11 +49,15 @@ export function useForm() {
       if (storedEmail.value) {
         isAccessGranted.value = true
       }
+      if (searchParams.token) {
+        acceptInvite()
+      }
     })
     started.value = true
   }
 
   return {
+    searchParams,
     isAccessGranted,
     isValidEmail,
     email,
@@ -66,10 +73,52 @@ export function useForm() {
     password,
     passwordPlaceholder,
     generatePassword,
-    maxLength
+    maxLength,
+    claimInvite,
+    invited
   }
 }
 
+
+export async function acceptInvite() {
+  console.log(searchParams.token, storedEmail.value)
+}
+
+export async function claimInvite() {
+
+  if (!storedEmail.value) return
+
+  if (!invited.value) {
+
+    const data = {
+      email: storedEmail.value,
+    }
+
+    try {
+
+      const invite = await fetch(
+        'https://db.chromatone.center/flows/trigger/c5ef0e6e-453d-4698-a995-e749dd331b7d',
+        {
+          method: "POST", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors", // no-cors, *cors, same-origin
+          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: "same-origin", // include, *same-origin, omit
+          headers: {
+            "Content-Type": "application/json"
+          },
+          redirect: "follow", // manual, *follow, error
+          referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+          body: JSON.stringify(data), // body data type must match "Content-Type" header
+        });
+
+      console.log(await invite?.json())
+    } catch (e) {
+      console.error(e, e?.errors?.[0]?.message, e?.response?.status)
+    }
+
+    invited.value = true
+  }
+}
 
 export async function grantAccess() {
   if (!email.value && !validateEmail(email.value)) return
@@ -110,22 +159,7 @@ export async function grantAccess() {
         });
       console.log(await response?.json())
 
-      // const invite = await fetch(
-      //   'https://db.chromatone.center/flows/trigger/c5ef0e6e-453d-4698-a995-e749dd331b7d',
-      //   {
-      //     method: "POST", // *GET, POST, PUT, DELETE, etc.
-      //     mode: "cors", // no-cors, *cors, same-origin
-      //     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      //     credentials: "same-origin", // include, *same-origin, omit
-      //     headers: {
-      //       "Content-Type": "application/json"
-      //     },
-      //     redirect: "follow", // manual, *follow, error
-      //     referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      //     body: JSON.stringify(data), // body data type must match "Content-Type" header
-      //   });
 
-      // console.log(await invite?.json())
 
     } catch (e) {
       console.error(e, e?.errors?.[0]?.message, e?.response?.status)

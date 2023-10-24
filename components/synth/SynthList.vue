@@ -3,8 +3,6 @@ import { computed, onMounted, ref } from 'vue';
 import { useForm } from "../../composables/useForm.js";
 import { data } from "../../db/synths.data";
 
-import { version } from '../../package.json'
-
 const { isAccessGranted } = useForm()
 
 const list = ref(data)
@@ -16,15 +14,16 @@ function isOff(n) {
 </script>
 
 <template lang='pug'>
-.flex.flex-col.items-stretch.gap-8.md-gap-6.bg-light-900.dark-bg-dark-800.py-8.p-2
-  .flex.max-w-200.w-full.mx-auto(
+.flex.flex-col.items-stretch.gap-8.md-gap-6.py-8.p-2
+  .flex.w-full.sticky(
+    :style="{top:`${90+s*6}px`, zIndex: s+10}"
     style="flex: 1 1 240px"
     v-for="(synth,s) in list" 
     :key="synth.id"
-    :index="s")
+    :index="s") 
     SynthCard( 
       :pos="s"
-      :style="{opacity: isOff(s) ? 0.8 : 1}"
+      :style="{filter: isOff(s) ? `contrast(70%) blur(2px) opacity(80%)` : `` }"
       :key="synth.id"
       v-bind="synth"
       :off="isOff(s)")

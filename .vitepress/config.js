@@ -13,6 +13,7 @@ import extractorPug from "@unocss/extractor-pug";
 
 const meta = {
   title: "Web synths",
+  template: 'Online synthesizers collection',
   description: "Web audio synthesizers collection to play with a MIDI-controller straight from the browser.",
   site: "synth.playtronica.com",
   url: "https://synth.playtronica.com/", //the end slash here is mandatory
@@ -31,37 +32,15 @@ const meta = {
 };
 
 export default withPwa(defineConfig({
-  pwa: {
-    base: '/',
-    scope: '/',
-    outDir: './dist/',
-    registerType: 'autoUpdate',
-    // injectRegister: 'inline',
-    includeAssets: ['logo.svg'],
-    workbox: {
-      globPatterns: ['**/*.{css,js,html,svg,png,webp,ico,txt,woff2}'],
-    },
-    manifest: {
-      name: 'Web Synths Collection',
-      short_name: 'Web Synths',
-      theme_color: '#f6f6f6',
-      display: "standalone",
-      icons: [
-        {
-          src: 'icon.png',
-          sizes: '512x512',
-          type: 'image/png',
-          purpose: 'any maskable',
-        },
-      ],
-    },
-  },
   title: meta.title,
   description: meta.description,
-  titleTemplate: 'Online synthesizers collection',
+  titleTemplate: meta.template,
   lang: "en-US",
   cleanUrls: true,
   outDir: 'dist',
+  sitemap: {
+    hostname: 'https://synth.playtronica.com'
+  },
   themeConfig: {
     logo: "/logo.svg",
     lastUpdated: true,
@@ -141,5 +120,30 @@ export default withPwa(defineConfig({
       ['meta', { name: 'twitter:creator', content: `@${meta.author}` }],
       ['meta', { name: 'twitter:image', content: image }],
     ]
+  },
+  pwa: {
+    base: '/',
+    scope: '/',
+    outDir: './dist/',
+    registerType: 'autoUpdate',
+    // injectRegister: 'inline',
+    includeAssets: ['logo.svg'],
+    workbox: {
+      globPatterns: ['**/*.{css,js,html,svg,png,webp,ico,txt,woff2}'],
+    },
+    manifest: {
+      name: 'Web Synths Collection',
+      short_name: 'Web Synths',
+      theme_color: '#f6f6f6',
+      display: "standalone",
+      icons: [
+        {
+          src: 'icon.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any maskable',
+        },
+      ],
+    },
   },
 }));
