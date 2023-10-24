@@ -29,7 +29,7 @@ function scroll() {
     .text-xl You are part of web-musicians community
     .text-sm.flex.gap-2.justify-center {{ storedEmail }}
       span.opacity-20.hover-opacity-50.transition.cursor-pointer(@click="resetEmail") Log out
-    .flex.gap-4.justify-center
+    //- .flex.gap-4.justify-center
       button.text-sm.md-text-md.p-4.font-bold.md-p-4.rounded-xl.shadow-xl.hover-shadow-2xl.transition.-hover-translate-y-2px.disabled-opacity-40.active-translate-y-0.active-shadow-md.bg-green-400.dark-bg-green-700(
         v-if="!invited"
         @click="claimInvite()"
