@@ -12,6 +12,7 @@ const props = defineProps({
   tags: { type: Array, default: [] },
   archive: { type: Boolean, default: false },
   archive_link: { type: String, default: '' },
+  iframe: { type: Boolean, default: false },
 })
 
 const iframeLoaded = ref(false)
@@ -26,15 +27,18 @@ function iFrameLoad(e) {
 <template lang='pug'>
 .flex.flex-col.gap-4.bg-light-300.dark-bg-dark-300.rounded-lg.shadow-xl.overflow-hidden.mx-auto
   .p-0.h-70svh.bg-cover.bg-center(
+    :class="{'animate-pulse': iframe && !iframeLoaded}"
     :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
     )
-    iframe.w-full.h-70svh.bg-light-100.dark-bg-dark-800(
-      allow="midi *"
-      v-show="iframeLoaded"
-      @load="iFrameLoad"
-      :title="title" 
-      :src="archive ? archive_link : url"
-      )
+    transition(name="fade")
+      iframe.w-full.h-70svh.bg-light-100.dark-bg-dark-800(
+        allow="midi *"
+        v-if="iframe"
+        v-show="iframeLoaded"
+        @load="iFrameLoad"
+        :title="title" 
+        :src="archive ? archive_link : url"
+        )
 
   .flex.flex-col.p-4.gap-1.bottom-0.bg-light-100.dark-bg-dark-200.w-full.max-w-180.mx-auto.mb-12
     .text-xl.font-bold.flex.items-center.gap-4 {{ title }} 
