@@ -38,7 +38,7 @@ const { theme, site, isDark } = useData()
 <style lang="postcss">
 html {
   overscroll-behavior-y: none;
-  font-family: 'Circe', ui-sans-serif;
+  font-family: 'Circe', ui-sans-sefir, sans-serif;
   scroll-snap-type: proximity;
 }
 

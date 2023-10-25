@@ -6,35 +6,12 @@ layout: home
 ---
 
 
-<script setup>
-import { ref, nextTick, onMounted } from 'vue'
-import {useForm} from './composables/useForm.js'
-
-const { isAccessGranted } = useForm()
-
-const welcome = ref()
-onMounted(() => {
-  nextTick()
-  setTimeout(() => {
-      if (!isAccessGranted.value) {
-     welcome.value.scrollIntoView({
-    behavior: 'smooth',
-    inline: 'center',
-    block: 'start',
-  });
-  }
-  },200)
-
-  })
-</script>
-
 <SynthList />
 
 <AboutUs>
 <h2  class="text-2xl font-bold mb-10">Open web-synth collection to unleash sonic powers of your browser ⚡️</h2>
 
 <a href='https://chromatone.center' target='_blank'
- ref="welcome"
 rel='noopener'>
 Chromatone</a> is an open source visual music language for education, research and performance. We develop a new universal way to communicate music.
 <a href='https://playtronica.com' target='_blank' rel='noopener'>
