@@ -16,7 +16,7 @@ function isOff(n) {
 <template lang='pug'>
 .flex.flex-col.items-center.gap-16.py-8.p-2.max-w-160.mx-auto
   .flex.w-full.sticky(
-    :style="{top:`${90+s*6}px`, zIndex: s+10}"
+    :style="{top:`${90+s*5}px`, zIndex: s+10}"
     style="flex: 1 1 240px"
     v-for="(synth,s) in list" 
     :key="synth.id"

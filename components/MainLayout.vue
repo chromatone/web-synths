@@ -25,9 +25,10 @@ const { theme, site, isDark } = useData()
         .i-ph-user-circle-duotone.p-5
 
   .flex.flex-wrap.w-full.mx-auto.flex-auto.justify-center
-    content.w-full
+    content#content.w-full
 
-  MidiPanel.fixed.bottom-4
+  MidiPanel.sticky.bottom-0.z-200
+
   FormMain We are building a community of web-based musicians. Type in your e-mail to instantly get full access to the collection and occasionally receive community updates.
 
     template(#button) JOIN THE COMMUNITY
@@ -73,5 +74,19 @@ a:hover {
 
 .dark .noise::before {
   background-image: linear-gradient(#3339, #eee4);
+}
+
+#content {
+  @apply leading-loose;
+
+  & p,
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    @apply max-w-160 mx-auto py-4;
+  }
 }
 </style>

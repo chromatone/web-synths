@@ -15,6 +15,7 @@ const props = defineProps({
   tags: { type: Array, default: () => ([]) },
   archive: { type: Boolean, default: false },
   archive_link: { type: String, default: '' },
+  iframe: { type: Boolean, default: false },
 })
 
 const { checkAvailability, isFormOpen, isAccessGranted } = useForm()
@@ -65,22 +66,28 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
     .font-bold.flex.items-center.gap-2.flex-0.w-full
       .transition.text-xl.select-none.absolute.top-4.left-4.text-center.z-200 {{ pos+1 }}
       .flex-1 
-        span.text-xl {{ title }} 
-        span.font-normal(title="Archived locally by us" v-if="archive") (A)
-      .w-2.h-2.rounded-full.shadow-inset(
-        v-if="checkAvailability"
-        :class="{'bg-green-500': online === true, 'bg-red-500':online === false}"
-        )
+        span.flex.items-center.gap-2
+          .text-2xl {{ title }} 
+          span.font-normal(title="Archived locally by us" v-if="archive")
+            .i-ph-archive-duotone
+        .w-2.h-2.rounded-full.shadow-inset(
+          v-if="checkAvailability"
+          :class="{'bg-green-500': online === true, 'bg-red-500':online === false}"
+          )
       ClientOnly
         SynthFav.scale-70.w-10.absolute.right-2(:url="url")
     component.p-0.text-sm(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
     .flex-1
     .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")
       .px-2.py-1.text-sm.bg-light-800.dark-bg-dark-500.rounded-lg(v-for="tag in tags" :key="tag") {{ tag }}
-    a.p-1.dark-bg-light-300.bg-dark-300.absolute.bottom-2.right-2.rounded-full.opacity-10.hover-opacity-80.transition(
-      v-if="isAccessGranted"
-      @click.stop :href="`/${slug}/`"
-      )
+    .absolute.bottom-4.right-4
+      a.text-lg.opacity-40.hover-opacity-80.transition(
+        title="Open in an iFrame"
+        @click.stop :href="`/${slug}/`"
+        v-if="iframe"
+        )
+        .i-tabler-browser-check
+      .i-tabler-browser-x.text-lg.opacity-40.transition(v-else title="Open in a new window")
 </template>
 
 <style scoped lang="postcss">

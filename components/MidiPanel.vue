@@ -5,7 +5,7 @@ const { midi } = useMidi()
 </script>
 
 <template lang='pug'>
-.flex.flex-wrap.gap-2.items-center.p-2.bg-light-900.bg-opacity-60.backdrop-blur-lg.dark-bg-dark-500.dark-bg-opacity-50.max-h-60.shadow-lg.overflow-y-scroll.rounded.max-w-180.mx-auto.w-full.z-100.text-center
+.flex.flex-wrap.gap-2.items-center.p-2.bg-light-300.bg-opacity-60.backdrop-blur-lg.dark-bg-dark-500.dark-bg-opacity-50.max-h-60.shadow-lg.overflow-y-scroll.rounded.mx-auto.w-full.z-1
   .opacity-50
     .i-simple-icons-midi.text-2xl(
       title="MIDI"

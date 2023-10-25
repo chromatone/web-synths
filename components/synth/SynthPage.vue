@@ -9,7 +9,9 @@ const props = defineProps({
   cover: { type: String, default: '' },
   slug: { type: String, default: '' },
   url: { type: String, default: '' },
-  tags: { type: Array, default: [] }
+  tags: { type: Array, default: [] },
+  archive: { type: Boolean, default: false },
+  archive_link: { type: String, default: '' },
 })
 
 const iframeLoaded = ref(false)
@@ -25,17 +27,17 @@ function iFrameLoad(e) {
 .flex.flex-col.gap-4.bg-light-300.dark-bg-dark-300.rounded-lg.shadow-xl.overflow-hidden.mx-auto
   .p-0.h-70svh.bg-cover.bg-center(
     :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
-  )
-    iframe.w-full.h-70svh(
+    )
+    iframe.w-full.h-70svh.bg-light-100.dark-bg-dark-800(
       allow="midi *"
       v-show="iframeLoaded"
       @load="iFrameLoad"
       :title="title" 
-      :src="url"
+      :src="archive ? archive_link : url"
       )
 
   .flex.flex-col.p-4.gap-1.bottom-0.bg-light-100.dark-bg-dark-200.w-full.max-w-180.mx-auto.mb-12
-    .text-3xl.font-bold.flex.items-end.gap-4 {{ title }} 
+    .text-xl.font-bold.flex.items-center.gap-4 {{ title }} 
       component.text-lg.font-300(
         v-if="author"
         target="_blank"
@@ -49,8 +51,8 @@ function iFrameLoad(e) {
       .px-2.py-1.text-sm.bg-light-800.dark-bg-dark-500.rounded-lg(v-for="tag in tags" :key="tag") {{ tag }}
     .p-0(v-if="description") {{ description }}
 
-  .p-0
-    slot
+    .mt-4
+      slot
 </template>
 
 <style scoped lang="postcss"></style>

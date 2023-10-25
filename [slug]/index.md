@@ -1,6 +1,6 @@
 ---
 dynamic: true
-page_type: projects
+page_type: synth
 ---
 
 <script setup>
