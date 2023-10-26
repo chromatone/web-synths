@@ -23,17 +23,17 @@
 }
 
 .panel-enter-active {
-	transition: all 0.1s ease-out;
+	transition: all 0.2s ease-out;
 }
 .panel-enter-from {
 	opacity: 0;
 	z-index: -20;
-	transform: translateY(-100%);
+	transform: translateY(100%);
 }
 
 .panel-leave-to {
 	opacity: 0;
-	transform: translateY(-100px);
+	transform: translateY(100px);
 }
 
 .panel-leave-active {

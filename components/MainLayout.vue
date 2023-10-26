@@ -31,12 +31,11 @@ const { theme, site, isDark } = useData()
   .flex.flex-wrap.w-full.mx-auto.flex-auto.justify-center
     content#content.w-full
 
-  MidiPanel.sticky.bottom-0.z-200
-
   FormMain We are building a community of web-based musicians. Type in your e-mail to instantly get full access to the collection and occasionally receive community updates.
 
     template(#button) JOIN THE COMMUNITY
     template(#notice) Your access status will be saved per device and you won't need to enter your e-mail again.
+  AboutFooter
 </template>
 
 <style lang="postcss">
