@@ -4,20 +4,19 @@ import { useElementVisibility, useTransition, watchOnce } from '@vueuse/core'
 import { data } from '../../db/synths.data.js'
 
 const counters = ref()
-const players = ref([])
 const synths = ref(0)
-const count = computed(() => players.value.length)
+const counts = ref(0)
 const synthCounter = useTransition(synths)
-const counter = useTransition(count)
+const counter = useTransition(counts)
 
 const visible = useElementVisibility(counters)
 
 watchOnce(visible, v => {
   if (v) {
     synths.value = data.length
-    fetch('https://db.chromatone.center/items/players?limit=-1')
+    fetch('https://db.chromatone.center/flows/trigger/5912fabc-c7af-4e00-bb0e-873a6b5a6494')
       .then(response => response.json())
-      .then(({ data }) => players.value = data)
+      .then(({ count }) => counts.value = count)
   }
 })
 
