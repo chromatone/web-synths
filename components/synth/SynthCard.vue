@@ -1,11 +1,13 @@
 <script setup>
-import { computed, onMounted, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { useForm } from '../../composables/useForm.js';
+import { useClicks, } from '../../composables/useClicks.js';
 
 const props = defineProps({
   pos: { type: Number, default: 0 },
   off: { type: Boolean, default: false },
   title: { type: String, default: '' },
+  id: { type: Number, default: 0 },
   slug: { type: String, default: '' },
   description: { type: String, default: '' },
   cover: { type: String, default: '' },
@@ -16,6 +18,7 @@ const props = defineProps({
   archive: { type: Boolean, default: false },
   archive_link: { type: String, default: '' },
   iframe: { type: Boolean, default: false },
+  clicks: { type: Number, default: 0 },
 })
 
 const { checkAvailability, isFormOpen, isAccessGranted } = useForm()
@@ -35,13 +38,17 @@ watch(checkAvailability, async check => {
   }
 })
 
-function click() {
+const { clicksCount, clickSynth } = useClicks(props.id)
+
+watch(() => props.clicks, c => clicksCount.value = c, { immediate: true })
+
+async function click() {
   if (props.off) {
     isFormOpen.value = !isFormOpen.value
   } else {
+    clickSynth(props.id)
     window.open(props.archive ? props.archive_link : props.url, '_blank')
   }
-  // console.log('clicked', props.url, props.off)
 }
 
 </script>
@@ -63,11 +70,13 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
   .p-4.flex.flex-col.items-start.justify-between.gap-2(
     style="flex: 10 0 200px"
     )
-    .font-bold.flex.items-center.gap-2.flex-0.w-full
+    .flex.items-center.gap-2.flex-0.w-full
       .transition.text-xl.select-none.absolute.top-4.left-4.text-center.z-200 {{ pos+1 }}
+      .px-2.py-1.bg-light-800.dark-bg-dark-800.rounded-xl.transition.text-sm.select-none.absolute.bottom-2.left-2.text-center.z-200.flex.items-center.gap-1  {{ clicksCount }}
+        .i-la-hand-pointer
       .flex-1 
         span.flex.items-center.gap-2
-          .text-2xl {{ title }} 
+          .text-2xl.font-bold {{ title }}
           span.font-normal(title="Archived locally by us" v-if="archive")
             .i-ph-archive-duotone
         .w-2.h-2.rounded-full.shadow-inset(
@@ -76,7 +85,7 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
           )
       ClientOnly
         SynthFav.scale-70.w-10.absolute.right-2.z-200(:url="url")
-    component.p-0.text-sm(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
+    component.p-0.text-md(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
     .flex-1
     .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")
       .px-2.py-1.text-sm.bg-light-800.dark-bg-dark-500.rounded-lg(v-for="tag in tags" :key="tag") {{ tag }}

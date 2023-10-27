@@ -1,5 +1,7 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted } from 'vue'
+import { ref, watch } from 'vue';
+import { useClicks, } from '../../composables/useClicks.js'
 
 const props = defineProps({
   title: { type: String, default: '' },
@@ -13,6 +15,8 @@ const props = defineProps({
   archive: { type: Boolean, default: false },
   archive_link: { type: String, default: '' },
   iframe: { type: Boolean, default: false },
+  clicks: { type: Number, default: 0 },
+  id: { type: Number, default: 0 }
 })
 
 const iframeLoaded = ref(false)
@@ -22,6 +26,15 @@ function iFrameLoad(e) {
     iframeLoaded.value = true;
   }
 }
+
+const { clickSynth, clicksCount } = useClicks(props.id)
+
+watch(() => props.clicks, c => clicksCount.value = c, { immediate: true })
+
+onMounted(async () => {
+  await clickSynth()
+})
+
 </script>
 
 <template lang='pug'>
@@ -40,7 +53,12 @@ function iFrameLoad(e) {
         :src="archive ? archive_link : url"
         )
 
-  .flex.flex-col.p-4.gap-1.bottom-0.bg-light-100.dark-bg-dark-200.w-full.max-w-180.mx-auto.mb-12
+  .flex.flex-col.p-4.gap-1.bottom-0.bg-light-100.dark-bg-dark-200.w-full.max-w-180.mx-auto.mb-12.relative
+
+
+    .px-2.py-1.bg-light-800.dark-bg-dark-800.rounded-xl.transition.text-sm.select-none.absolute.top-2.right-2.text-center.z-200.flex.items-center.gap-1  {{ clicksCount }}
+      .i-la-hand-pointer
+
     .text-xl.font-bold.flex.items-center.gap-4 {{ title }} 
       component.text-lg.font-300(
         v-if="author"
