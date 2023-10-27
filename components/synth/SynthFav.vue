@@ -8,7 +8,6 @@ const props = defineProps({
 
 const favourite = useLocalStorage('fav:' + props.url, false)
 
-
 function toggleFav(url) {
   favourite.value = !favourite.value
 }
@@ -16,7 +15,7 @@ function toggleFav(url) {
 </script>
 
 <template lang="pug">
-.text-3xl
+.text-3xl(@click.stop.prevent="toggleFav()")
   .i-la-star(v-if="!favourite")
   .i-la-star-solid.text-yellow(v-else)
 </template>

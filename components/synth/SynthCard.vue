@@ -75,7 +75,7 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
           :class="{'bg-green-500': online === true, 'bg-red-500':online === false}"
           )
       ClientOnly
-        SynthFav.scale-70.w-10.absolute.right-2(:url="url")
+        SynthFav.scale-70.w-10.absolute.right-2.z-200(:url="url")
     component.p-0.text-sm(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
     .flex-1
     .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")
