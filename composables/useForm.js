@@ -97,7 +97,7 @@ export async function claimInvite() {
     try {
 
       const invite = await fetch(
-        'https://db.chromatone.center/flows/trigger/c5ef0e6e-453d-4698-a995-e749dd331b7d',
+        'https://synthdb.chromatone.center/flows/trigger/164bb1bb-3745-423f-8239-703198dfbac5',
         {
           method: "POST", // *GET, POST, PUT, DELETE, etc.
           mode: "cors", // no-cors, *cors, same-origin
