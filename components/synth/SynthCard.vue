@@ -55,7 +55,6 @@ async function click() {
 
 <template lang='pug'>
 button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light-500.dark-bg-dark-300.-hover-translate-y-6px.transition.duration-200.hover-shadow-lg.rounded-lg.overflow-hidden.relative.border-1.border-dark-100.border-opacity-20.shadow-sm.dark-border-light-800.dark-border-opacity-20(
-  :data-umami-event="title"
   @click="click")
   .cover.min-h-50.bg-cover.bg-center.filter.transition(
     :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
