@@ -11,12 +11,19 @@ const counter = useTransition(counts)
 
 const visible = useElementVisibility(counters)
 
-watchOnce(visible, v => {
+watchOnce(visible, async v => {
   if (v) {
     synths.value = data.length
-    fetch('https://db.chromatone.center/flows/trigger/5912fabc-c7af-4e00-bb0e-873a6b5a6494')
-      .then(response => response.json())
-      .then(({ count }) => counts.value = count)
+    const res = await fetch('https://synthdb.chromatone.center/flows/trigger/0c0e8d82-8e12-44a6-867a-57ddeec9d774',
+      {
+        type: 'GET',
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+    const response = await res.json()
+    counts.value = response.count
   }
 })
 

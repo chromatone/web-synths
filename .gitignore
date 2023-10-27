@@ -8,7 +8,7 @@ node_modules/
 players/
 database/
 uploads/
-public/cover/*
+public/cover/
 synths.yaml
 dist
 node_modules

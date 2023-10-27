@@ -4,7 +4,7 @@ export default {
   async paths() {
 
     const synths = await useItems('synths', {
-      sort: ['sort', 'id'], limit: -1, filter: { status: { '_eq': 'published' } }
+      sort: ['sort'], limit: -1
     })
 
     return (synths || [])?.map(p => {

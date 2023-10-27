@@ -144,7 +144,7 @@ export async function grantAccess() {
       storedName.value = name.value || namePlaceholder.value
 
       const response = await fetch(
-        'https://db.chromatone.center/flows/trigger/f36a3461-c476-4ce5-88c9-eba2216083b0',
+        'https://synthdb.chromatone.center/flows/trigger/51cc7591-219e-4b56-ad6d-c39a34f7cf2f',
         {
           method: "POST", // *GET, POST, PUT, DELETE, etc.
           mode: "cors", // no-cors, *cors, same-origin

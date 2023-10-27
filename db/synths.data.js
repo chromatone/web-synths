@@ -5,7 +5,7 @@ export default {
   async load() {
 
     const records = await useItems('synths', {
-      sort: ['sort', 'id'], limit: -1, filter: { status: { '_eq': 'published' } }
+      sort: ['sort'], limit: -1,
     });
 
     await downloadCovers(records, {
