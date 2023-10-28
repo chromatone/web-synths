@@ -2,6 +2,9 @@
 import { ref, watch } from 'vue'
 import { useForm } from '../../composables/useForm.js';
 import { useClicks, } from '../../composables/useClicks.js';
+import { favourites } from '../../composables/useFavourites.js';
+import { useData } from 'vitepress';
+const { isDark } = useData()
 
 const props = defineProps({
   pos: { type: Number, default: 0 },
@@ -21,22 +24,8 @@ const props = defineProps({
   clicks: { type: Number, default: 0 },
 })
 
-const { checkAvailability, isFormOpen, isAccessGranted } = useForm()
+const { isFormOpen } = useForm()
 
-const online = ref(null)
-
-watch(checkAvailability, async check => {
-  try {
-    const response = await fetch('https://corsproxy.io/?' + props.url);
-    if (response.status == 200) {
-      online.value = true
-    } else {
-      online.value = false
-    }
-  } catch (e) {
-    online.value = false
-  }
-})
 
 const { clicksCount, clickSynth } = useClicks(props.id)
 
@@ -55,6 +44,7 @@ async function click() {
 
 <template lang='pug'>
 button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light-500.dark-bg-dark-300.-hover-translate-y-6px.transition.duration-200.hover-shadow-lg.rounded-lg.overflow-hidden.relative.border-1.border-dark-100.border-opacity-20.shadow-sm.dark-border-light-800.dark-border-opacity-20(
+  :style="{borderColor: favourites[id] ? isDark ? 'hsl(50deg,80%,35%)':'hsl(40deg,90%,80%)':null}"
   @click="click")
   .cover.min-h-50.bg-cover.bg-center.filter.transition(
     :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
@@ -72,18 +62,14 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
     .flex.items-center.gap-2.flex-0.w-full
       .transition.text-xl.select-none.absolute.top-4.left-4.text-center.z-200 {{ pos+1 }}
       .px-2.py-1.bg-light-800.dark-bg-dark-800.rounded-xl.transition.text-sm.select-none.absolute.bottom-2.left-2.text-center.z-200.flex.items-center.gap-1  {{ clicksCount }}
-        .i-la-hand-pointer
+        .i-la-eye
       .flex-1 
         span.flex.items-center.gap-2
           .text-2xl.font-bold {{ title }}
           span.font-normal(title="Archived locally by us" v-if="archive")
             .i-ph-archive-duotone
-        .w-2.h-2.rounded-full.shadow-inset(
-          v-if="checkAvailability"
-          :class="{'bg-green-500': online === true, 'bg-red-500':online === false}"
-          )
       ClientOnly
-        SynthFav.scale-70.w-10.absolute.right-2.z-200(:url="url")
+        SynthFav.text-xl.mr-2.absolute.right-2.z-200(:id="id" )
     component.p-0.text-md(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
     .flex-1
     .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")

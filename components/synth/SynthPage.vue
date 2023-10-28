@@ -56,19 +56,20 @@ onMounted(async () => {
   .flex.flex-col.p-4.gap-1.bottom-0.bg-light-100.dark-bg-dark-200.w-full.max-w-180.mx-auto.mb-12.relative
 
 
-    .px-2.py-1.bg-light-800.dark-bg-dark-800.rounded-xl.transition.text-sm.select-none.absolute.top-2.right-2.text-center.z-200.flex.items-center.gap-1  {{ clicksCount }}
-      .i-la-hand-pointer
-
     .text-xl.font-bold.flex.items-center.gap-4 {{ title }} 
       component.text-lg.font-300(
         v-if="author"
         target="_blank"
         :is="author_link ? 'a' : 'div'"
           :href="author_link") by {{ author }}
-    a.my-2.font-mono.text-sm(
-      :href="url" 
-      target="_blank"
-      ) {{ url }}
+      SynthFav(:id="id")
+    .p-0.flex.gap-4
+      a.my-2.font-mono.text-sm(
+        :href="url" 
+        target="_blank"
+        ) {{ url }}
+      .px-2.py-0.bg-light-800.dark-bg-dark-800.rounded-xl.transition.text-sm.select-none.text-center.z-200.flex.items-center.gap-1.opacity-40.hover-opacity-100.transition  {{ clicksCount }}
+        .i-la-eye
     .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")
       .px-2.py-1.text-sm.bg-light-800.dark-bg-dark-500.rounded-lg(v-for="tag in tags" :key="tag") {{ tag }}
     .p-0(v-if="description") {{ description }}
