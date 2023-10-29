@@ -42,7 +42,7 @@ transition(name="panel")
 
     .flex.flex-col.gap-8.relative.pt-8.items-center(v-else)
 
-      label.text-center.max-w-45ch(for="email")
+      label.text-center.max-w-55ch(for="email")
         slot
 
       .flex.gap-4.flex-col.w-full
