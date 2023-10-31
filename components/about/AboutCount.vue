@@ -14,7 +14,7 @@ const visible = useElementVisibility(counters)
 watchOnce(visible, async v => {
   if (v) {
     synths.value = data.length
-    const res = await fetch('https://synthdb.chromatone.center/flows/trigger/0c0e8d82-8e12-44a6-867a-57ddeec9d774',
+    const res = await fetch('https://db.synth.chromatone.center/flows/trigger/0c0e8d82-8e12-44a6-867a-57ddeec9d774',
       {
         type: 'GET',
         mode: "cors",

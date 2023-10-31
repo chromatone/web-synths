@@ -61,7 +61,7 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
     )
     .flex.items-center.gap-2.flex-0.w-full
       .transition.text-xl.select-none.absolute.top-4.left-4.text-center.z-200 {{ pos+1 }}
-      .px-2.py-1.bg-light-800.dark-bg-dark-800.rounded-xl.transition.text-sm.select-none.absolute.bottom-2.left-2.text-center.z-200.flex.items-center.gap-1  {{ clicksCount }}
+      .px-2.py-1.bg-light-800.dark-bg-dark-800.rounded-xl.transition.text-sm.select-none.absolute.bottom-2.left-2.text-center.z-200.flex.items-center.gap-1(title="Since 28 Oct 2023")  {{ clicksCount }}
         .i-la-eye
       .flex-1 
         span.flex.items-center.gap-2

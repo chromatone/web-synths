@@ -22,7 +22,7 @@ export async function downloadCovers(records = [], {
     if (!r?.[field]) continue
     let filePath = path.resolve(dest, `${r.slug}.webp`)
     if (fs.existsSync(filePath)) continue
-    let url = `https://synthdb.chromatone.center/assets/${r[field]}?${query}&download`
+    let url = `https://db.synth.chromatone.center/assets/${r[field]}?${query}&download`
     urls.push({ url, slug: r.slug, dest: filePath })
   }
 
