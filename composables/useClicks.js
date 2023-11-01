@@ -1,5 +1,6 @@
 import { useThrottleFn } from '@vueuse/core'
-import { ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
+import { useItem } from './useItems.js';
 
 
 
@@ -25,15 +26,16 @@ export async function sendClick(id) {
   }
 }
 
-export function useClicks(id) {
+export function useClicks(id, num = 0) {
 
-  const clicksCount = ref(0)
+  const clicksCount = ref(num)
 
   const throttledClick = useThrottleFn(sendClick, 10000)
 
   async function clickSynth() {
     clicksCount.value = await throttledClick(id)
   }
+
 
   return {
     clicksCount,

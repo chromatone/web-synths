@@ -2,6 +2,7 @@
 import { computed, onMounted, ref } from 'vue';
 import { useForm } from "../../composables/useForm.js";
 import { data } from "../../db/synths.data";
+import { useItems } from '../../composables/useItems.js';
 
 const { isAccessGranted } = useForm()
 
@@ -10,6 +11,14 @@ const list = ref(data)
 function isOff(n) {
   return !isAccessGranted.value && n > 5
 }
+
+const clicks = ref([])
+
+onMounted(async () => {
+  clicks.value = await useItems('synths', {
+    fields: ['id', 'clicks']
+  })
+})
 
 </script>
 
@@ -21,11 +30,13 @@ function isOff(n) {
     v-for="(synth,s) in list" 
     :key="synth.id"
     :index="s") 
+
     SynthCard( 
       :pos="s"
       :style="{filter: isOff(s) ? `contrast(70%) blur(2px) opacity(80%)` : `` }"
       :key="synth.id"
       v-bind="synth"
+      :counter="clicks.find(el=>el.id==synth.id)?.clicks"
       :off="isOff(s)")
 </template>
 

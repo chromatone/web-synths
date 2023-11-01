@@ -22,14 +22,12 @@ const props = defineProps({
   archive_link: { type: String, default: '' },
   iframe: { type: Boolean, default: false },
   clicks: { type: Number, default: 0 },
+  counter: { type: Number, default: 0 },
 })
 
 const { isFormOpen } = useForm()
 
-
 const { clicksCount, clickSynth } = useClicks(props.id)
-
-watch(() => props.clicks, c => clicksCount.value = c, { immediate: true })
 
 async function click() {
   if (props.off) {
@@ -61,7 +59,10 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
     )
     .flex.items-center.gap-2.flex-0.w-full
       .transition.text-xl.select-none.absolute.top-4.left-4.text-center.z-200 {{ pos+1 }}
-      .px-2.py-1.bg-light-800.dark-bg-dark-800.rounded-xl.transition.text-sm.select-none.absolute.bottom-2.left-2.text-center.z-200.flex.items-center.gap-1(title="Since 28 Oct 2023")  {{ clicksCount }}
+      .px-2.py-1.bg-light-800.dark-bg-dark-800.rounded-xl.transition.text-sm.select-none.absolute.bottom-2.left-2.text-center.z-200.flex.items-center.gap-1.opacity-70.hover-opacity-100(
+        title="Since 28 Oct 2023"
+        v-if="clicksCount || counter"
+        )  {{ clicksCount || counter }}
         .i-la-eye
       .flex-1 
         span.flex.items-center.gap-2
@@ -72,6 +73,7 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
         SynthFav.text-xl.mr-2.absolute.right-2.z-200(:id="id" )
     component.p-0.text-md(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
     .flex-1
+      slot
     .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")
       .px-2.py-1.text-sm.bg-light-800.dark-bg-dark-500.rounded-lg(v-for="tag in tags" :key="tag") {{ tag }}
     .absolute.bottom-4.right-4

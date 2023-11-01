@@ -15,3 +15,13 @@ export async function useItems(collection, query) {
     console.log(e)
   }
 }
+
+
+export async function useItem(collection, key, query) {
+  try {
+    const item = await client.request(readItem(collection, key, query))
+    return item
+  } catch (e) {
+    console.log(e)
+  }
+}
