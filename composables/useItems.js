@@ -1,5 +1,5 @@
 
-import { createDirectus, rest, staticToken, readItem, readItems } from '@directus/sdk'
+import { createDirectus, rest, readItem, readItems } from '@directus/sdk'
 
 export const client = createDirectus(
   'https://db.synth.chromatone.center/'
