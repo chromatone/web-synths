@@ -8,7 +8,7 @@ const { isDark } = useData()
 
 const props = defineProps({
   pos: { type: Number, default: 0 },
-  off: { type: Boolean, default: false },
+  public: { type: Boolean, default: false },
   title: { type: String, default: '' },
   id: { type: Number, default: 0 },
   slug: { type: String, default: '' },
@@ -20,21 +20,26 @@ const props = defineProps({
   tags: { type: Array, default: () => ([]) },
   archive: { type: Boolean, default: false },
   archive_link: { type: String, default: '' },
-  iframe: { type: Boolean, default: false },
+  iframe: { type: Boolean, default: null },
   clicks: { type: Number, default: 0 },
   counter: { type: Number, default: 0 },
 })
 
-const { isFormOpen } = useForm()
+const { isFormOpen, isAccessGranted } = useForm()
 
 const { clicksCount, clickSynth } = useClicks(props.id)
 
 async function click() {
-  if (props.off) {
+  if (!props.public && !isAccessGranted.value) {
     isFormOpen.value = !isFormOpen.value
   } else {
     clickSynth(props.id)
-    window.open(props.archive ? props.archive_link : props.url, '_blank')
+    if (props.iframe) {
+      window.open(props.slug + '/', '_self')
+    } else {
+      window.open(props.archive ? props.archive_link : props.url, '_blank')
+    }
+
   }
 }
 
@@ -62,8 +67,9 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
       .px-2.py-1.bg-light-800.dark-bg-dark-800.rounded-xl.transition.text-sm.select-none.absolute.bottom-2.left-2.text-center.z-200.flex.items-center.gap-1.opacity-70.hover-opacity-100(
         title="Since 28 Oct 2023"
         v-if="clicksCount || counter"
-        )  {{ clicksCount || counter }}
+        ) 
         .i-la-eye
+        .p-0.mt-2px  {{ clicksCount || counter }}
       .flex-1 
         span.flex.items-center.gap-2
           .text-2xl.font-bold {{ title }}
@@ -76,14 +82,11 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
       slot
     .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")
       .px-2.py-1.text-sm.bg-light-800.dark-bg-dark-500.rounded-lg(v-for="tag in tags" :key="tag") {{ tag }}
-    .absolute.bottom-4.right-4
-      a.text-lg.opacity-40.hover-opacity-80.transition(
-        title="Open in an iFrame"
-        @click.stop :href="`/${slug}/`"
-        v-if="iframe"
-        )
-        .i-tabler-browser-check
-      .i-tabler-browser-x.text-lg.opacity-40.transition(v-else title="Open in a new window")
+
+    a.absolute.bottom-4.right-4.i-la-external-link-square-alt.text-lg.opacity-40.transition.transition.hover-opacity-100(
+      @click.stop :href="`/${slug}/`" v-if="!iframe"
+        title="Opens in a new window"
+      )
 </template>
 
 <style scoped lang="postcss">

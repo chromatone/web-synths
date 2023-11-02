@@ -46,13 +46,12 @@ onMounted(async () => {
     transition(name="fade")
       iframe.w-full.h-70svh.bg-light-100.dark-bg-dark-800(
         allow="midi *"
-        v-if="iframe"
+
         v-show="iframeLoaded"
         @load="iFrameLoad"
         :title="title" 
         :src="archive ? archive_link : url"
         )
-
   .flex.flex-col.p-4.gap-1.bottom-0.bg-light-100.dark-bg-dark-200.w-full.max-w-180.mx-auto.mb-12.relative
 
 

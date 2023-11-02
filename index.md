@@ -8,8 +8,6 @@ layout: home
 <h1 class="text-center text-2xl sm-text-3xl font-bold mt-4" style="padding: 0.1rem 1rem;">Free web synthesizers collection </h1>
 <h3 class="text-xl sm-text-2xl text-center my-2" style="padding: 0 1rem;">Discover the music potential of your browser </h3>
 
-  <MidiPanel class="max-w-140 mt-4" />
-
 <SynthList />
 
 <div class="px-4 text-lg text-center mb-8 max-w-150 mx-auto">
