@@ -59,9 +59,8 @@ onMounted(async () => {
         v-bind="synth"
         :counter="clicks.find(el=>el.id==synth.id)?.clicks"
         )
-  .p-4.text-center(v-if="filteredList.length==0") We don't know such web pianos and synthesizers by now. 
-    .p-0 Suggest a new music web-app via 
-      a(href="mailto:support@chromatone.center") support@chromatone.center
+  .p-2.animate-pulse(key="nnn" v-if="filteredList.length==0") We don't know such a web-app yet. 
+FormSynth.max-w-140.mx-auto
 </template>
 
 <style lang="postcss">

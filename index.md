@@ -5,7 +5,7 @@ date: 2023-06-22
 layout: home
 ---
 
-<h1 class="text-center text-2xl sm-text-3xl font-bold mt-4" style="padding: 0.1rem 1rem;">Free web synthesizers collection </h1>
+<h1 class="text-center text-2xl sm-text-3xl font-bold mt-8" style="padding: 0.1rem 1rem;">Online piano and synth web-apps collection </h1>
 <h3 class="text-xl sm-text-2xl text-center my-2" style="padding: 0 1rem;">Discover the music potential of your browser </h3>
 
 <SynthList />
@@ -15,7 +15,7 @@ layout: home
 rel='noopener'>
 Chromatone</a> is an open source visual music language for education, research and performance. We develop a new universal way to communicate music.
 <a class="font-bold" href='https://playtronica.com' target='_blank' rel='noopener'>
-Playtronica</a> is a digital playground that explores the possibilities of the material world through technology, creating gadgets that make the world musical. Together we share our passion for web-based music instruments.
+Playtronica</a> is a digital playground that explores the possibilities of the material world through technology, creating gadgets that make the world musical. Together we share our passion for online music instruments.
 
 <AboutCount />
 
