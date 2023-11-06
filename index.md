@@ -24,6 +24,5 @@ Playtronica</a> is a digital playground that explores the possibilities of the m
 <a target="_blank" href="https://chromatone.center/" ><img src="/click-logo.svg" class="max-w-16 mx-auto" />
 </a>
 <AboutShare />
-
 <!-- <MainAction /> -->
 </div>

@@ -59,8 +59,9 @@ onMounted(async () => {
         v-bind="synth"
         :counter="clicks.find(el=>el.id==synth.id)?.clicks"
         )
-  .p-2.animate-pulse(key="nnn" v-if="filteredList.length==0") We don't know such a web-app yet. 
-FormSynth.max-w-140.mx-auto
+  .p-2(key="nnn" v-if="filteredList.length==0") 
+    .animate-pulse.text-center We don't know such a web-app yet. 
+    FormSynth.max-w-140.mx-auto.mt-6
 </template>
 
 <style lang="postcss">
