@@ -5,8 +5,8 @@ date: 2023-06-22
 layout: home
 ---
 
-<h1 class="text-center text-2xl sm-text-3xl font-bold mt-8" style="padding: 0.1rem 1rem;">Online synth web-apps collection </h1>
-<h3 class="text-xl sm-text-2xl text-center my-2" style="padding: 0 1rem;">Discover the music potential of your browser </h3>
+<h1 class="text-center text-2xl sm-text-3xl font-bold mt-8" style="padding: 0.1rem 1rem;">Online synthesizers and web piano apps</h1>
+<h2 class="text-xl sm-text-2xl text-center my-2" style="padding: 0 1rem;">Curated collection of free music creation resources</h2>
 
 <SynthList />
 

@@ -13,8 +13,8 @@ import extractorPug from "@unocss/extractor-pug";
 
 const meta = {
   title: "Web synths",
-  template: 'Online synthesizers collection',
-  description: "Web audio synthesizers collection to play with a MIDI-controller straight from the browser.",
+  template: 'Online web audio instruments collection',
+  description: "Web audio synthesizers collection to play music directly in your browser with any MIDI-controller.",
   site: "synth.playtronica.com",
   url: "https://synth.playtronica.com/", //the end slash here is mandatory
   repo: "https://github.com/chromatone/web-synths",
@@ -25,7 +25,7 @@ const meta = {
   color: '#cccccc',
   twitter: "davay42",
   author: "davay42", //your twitter handle
-  tags: "synths, webaudio, synthesizer, MIDI, midi-controller, play music, online synth, online DAW, browser audio, web music",
+  tags: "synths, webaudio, synthesizer, MIDI, midi-controller, play music, online synth, online DAW, browser audio, web music, online piano, web audio synthesizer, Playtronica, MIDI controller, browser music, interactive piano, digital synthesizers, music creation online, web-based instruments, web audio api",
   // add it if you use [umami](https://umami.is/) for stats
   umamiId: "dc58489b-fcbe-4efc-9b84-1c449913976c",
   umamiScript: "https://stats.chromatone.center/script.js"
