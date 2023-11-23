@@ -57,7 +57,7 @@ onMounted(async () => {
         :style="{filter: !synth.public&&!isAccessGranted ? `contrast(70%) blur(2px) opacity(80%)` : `` }"
         :key="synth.id"
         v-bind="synth"
-        :counter="clicks.find(el=>el.id==synth.id)?.clicks"
+        :counter="clicks?.find(el=>el?.id==synth?.id)?.clicks"
         )
   .p-2(key="nnn" v-if="filteredList.length==0") 
     .animate-pulse.text-center We don't know such a web-app yet. 
