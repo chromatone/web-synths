@@ -99,7 +99,7 @@ export async function claimInvite() {
     try {
 
       const invite = await fetch(
-        'https://db.synth.chromatone.center/flows/trigger/164bb1bb-3745-423f-8239-703198dfbac5',
+        'https://dbs.chromatone.center/flows/trigger/164bb1bb-3745-423f-8239-703198dfbac5',
         {
           method: "POST", // *GET, POST, PUT, DELETE, etc.
           mode: "cors", // no-cors, *cors, same-origin
@@ -146,7 +146,7 @@ export async function grantAccess() {
       storedName.value = name.value || namePlaceholder.value
 
       const response = await fetch(
-        'https://db.synth.chromatone.center/flows/trigger/51cc7591-219e-4b56-ad6d-c39a34f7cf2f',
+        'https://dbs.chromatone.center/flows/trigger/51cc7591-219e-4b56-ad6d-c39a34f7cf2f',
         {
           method: "POST",
           mode: "cors",

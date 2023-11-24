@@ -17,7 +17,7 @@ const reply = ref()
 async function sendSuggest() {
   try {
     const res = await fetch(
-      'https://db.synth.chromatone.center/flows/trigger/dc8ca96f-76e6-4cac-b26c-10751746eb89',
+      'https://dbs.chromatone.center/flows/trigger/dc8ca96f-76e6-4cac-b26c-10751746eb89',
       {
         method: "POST",
         mode: "cors",

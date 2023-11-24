@@ -2,7 +2,7 @@
 import { createDirectus, rest, readItem, readItems } from '@directus/sdk'
 
 export const client = createDirectus(
-  'https://db.synth.chromatone.center/'
+  'https://dbs.chromatone.center/'
 ).with(
   rest()
 )

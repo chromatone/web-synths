@@ -12,7 +12,7 @@ class LocalStorage {
 }
 
 export const userDB = createDirectus(
-  'https://db.synth.chromatone.center/'
+  'https://dbs.chromatone.center/'
 ).with(
   rest({ credentials: 'include' })
 ).with(
