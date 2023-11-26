@@ -50,6 +50,6 @@ button.p-0.cursor-pointer.flex.items-center.gap-1.justify-center(@click.stop.pre
   .i-la-star(v-if="!favourite")
   .i-la-star-solid.text-yellow(v-else)
   .text-xs.opacity-50.absolute.-bottom-3(
-  title="Added to favourites since 26 Nov 2023"
+  title="Added to favourites since Dec 2023"
   v-if="favs || stars") {{ favs || stars }}
 </template>
