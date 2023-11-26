@@ -74,13 +74,13 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
     .flex.items-center.gap-2.flex-0.w-full
       .transition.text-xl.select-none.absolute.top-4.left-4.text-center.z-200 {{ sort }}
 
-      .flex-1 
+      .flex-auto
         span.flex.items-center.gap-2
           .text-2xl.font-bold {{ title }}
           span.font-normal(title="Archived locally by us" v-if="archive")
             .i-ph-archive-duotone
       ClientOnly
-        SynthFav.text-xl.mr-2.absolute.right-2.z-200(:id="id" :stars="stars" )
+        SynthFav.text-xl.mr-2.absolute.z-200(:id="id" :stars="stars" )
     component.p-0.text-md(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
     .flex-1
       slot
