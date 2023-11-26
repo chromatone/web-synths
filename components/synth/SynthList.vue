@@ -34,7 +34,10 @@ const clicks = ref([])
 
 onMounted(async () => {
   clicks.value = await useItems('synths', {
-    fields: ['id', 'clicks',]
+    fields: ['id', {
+      stats: ['views', 'stars']
+    }
+    ]
   })
 })
 
@@ -75,7 +78,8 @@ watch(favourites, f => {
         :style="{filter: !synth.public&&!isAccessGranted ? `contrast(70%) blur(2px) opacity(80%)` : `` }"
         :key="synth.id"
         v-bind="synth"
-        :counter="clicks?.find(el=>el?.id==synth?.id)?.clicks"
+        :counter="clicks?.find(el=>el?.id==synth?.id)?.stats?.[0]?.views"
+        :stars="clicks?.find(el=>el?.id==synth?.id)?.stats?.[0]?.stars"
         )
   .p-2(key="nnn" v-if="filteredList.length==0") 
     .animate-pulse.text-center We don't know such a web-app yet. 

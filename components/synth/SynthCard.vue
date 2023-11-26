@@ -23,6 +23,7 @@ const props = defineProps({
   archive_link: { type: String, default: '' },
   iframe: { type: Boolean, default: null },
   clicks: { type: Number, default: 0 },
+  stars: { type: Number, default: 0 },
   counter: { type: Number, default: 0 },
 })
 
@@ -79,7 +80,7 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
           span.font-normal(title="Archived locally by us" v-if="archive")
             .i-ph-archive-duotone
       ClientOnly
-        SynthFav.text-xl.mr-2.absolute.right-2.z-200(:id="id" )
+        SynthFav.text-xl.mr-2.absolute.right-2.z-200(:id="id" :stars="stars" )
     component.p-0.text-md(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
     .flex-1
       slot

@@ -8,7 +8,7 @@ export async function sendClick(id) {
   try {
     console.log(id)
     const counting = await fetch(
-      'https://dbs.chromatone.center/flows/trigger/c4e39986-cc31-423b-8218-69a620f46215',
+      'https://dbs.chromatone.center/flows/trigger/96844b2f-abd0-41ed-bfe1-c5bcf788a98d',
       {
         method: "POST",
         mode: "cors",
