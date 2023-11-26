@@ -46,10 +46,10 @@ async function sendFav(id) {
 </script>
 
 <template lang="pug">
-button.p-0.cursor-pointer.flex.items-center.gap-1.justify-center(@click.stop.prevent="toggleFav()" title="Toggle star") 
+button.p-0.cursor-pointer.flex.items-center.gap-1.justify-center.relative(@click.stop.prevent="toggleFav()" title="Toggle star") 
   .i-la-star(v-if="!favourite")
   .i-la-star-solid.text-yellow(v-else)
-  .text-xs.opacity-50.absolute.-bottom-3(
+  .text-xs.opacity-50.absolute.-bottom-4(
   title="Added to favourites since Dec 2023"
   v-if="favs || stars") {{ favs || stars }}
 </template>

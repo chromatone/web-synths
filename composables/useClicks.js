@@ -6,7 +6,6 @@ import { useItem } from './useItems.js';
 
 export async function sendClick(id) {
   try {
-    console.log(id)
     const counting = await fetch(
       'https://dbs.chromatone.center/flows/trigger/96844b2f-abd0-41ed-bfe1-c5bcf788a98d',
       {

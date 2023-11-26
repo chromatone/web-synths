@@ -2,6 +2,7 @@
 import { onMounted } from 'vue'
 import { ref, watch } from 'vue';
 import { useClicks, } from '../../composables/useClicks.js'
+import { useItem } from '../../composables/useItems.js'
 
 const props = defineProps({
   title: { type: String, default: '' },
@@ -31,8 +32,12 @@ const { clickSynth, clicksCount } = useClicks(props.id)
 
 watch(() => props.clicks, c => clicksCount.value = c, { immediate: true })
 
+const stars = ref(0)
+
 onMounted(async () => {
   await clickSynth()
+  let stats = await useItem('synth_stats', props.id)
+  stars.value = stats?.stars || 0
 })
 
 </script>
@@ -55,13 +60,15 @@ onMounted(async () => {
   .flex.flex-col.p-4.gap-1.bottom-0.bg-light-100.dark-bg-dark-200.w-full.max-w-180.mx-auto.mb-12.relative
 
 
-    .text-xl.font-bold.flex.items-center.gap-4 {{ title }} 
+    .text-xl.flex.items-center.gap-4
+      .font-bold {{ title }} 
       component.text-lg.font-300(
         v-if="author"
         target="_blank"
         :is="author_link ? 'a' : 'div'"
           :href="author_link") by {{ author }}
-      SynthFav(:id="id")
+      .flex-auto
+      SynthFav(:id="id" :stars="stars")
     .p-0.flex.gap-4
       a.my-2.font-mono.text-sm(
         :href="url" 

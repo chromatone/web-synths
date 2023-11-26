@@ -11,8 +11,6 @@ const { params: p, frontmatter: f } = useData()
 
 </script>
 
-<SynthPage v-bind="p" >
-
-</SynthPage >
+<SynthPage v-bind="p" />
 
 <!-- @content -->
