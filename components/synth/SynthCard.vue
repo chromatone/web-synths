@@ -8,6 +8,7 @@ const { isDark } = useData()
 
 const props = defineProps({
   pos: { type: Number, default: 0 },
+  sort: { type: Number, default: 0 },
   public: { type: Boolean, default: false },
   title: { type: String, default: '' },
   id: { type: Number, default: 0 },
@@ -70,7 +71,7 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
     style="flex: 10 0 200px"
     )
     .flex.items-center.gap-2.flex-0.w-full
-      .transition.text-xl.select-none.absolute.top-4.left-4.text-center.z-200 {{ pos+1 }}
+      .transition.text-xl.select-none.absolute.top-4.left-4.text-center.z-200 {{ sort }}
 
       .flex-1 
         span.flex.items-center.gap-2
