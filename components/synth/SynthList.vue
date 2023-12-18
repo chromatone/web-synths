@@ -54,13 +54,13 @@ watch(favourites, f => {
 
 <template lang='pug'>
 .flex.flex-col.items-center.mb-2.px-8
-  .w-full.max-w-110.flex.items-center.relative.my-4
-    input.w-full.focus.text-xl.py-1.pl-9.bg-light-200.bg-opacity-20.shadow-inner.border-1.border-dark-100.border-opacity-10.rounded-lg.dark-bg-dark-200.outline-none.focus-border-opacity-90(
-      :placeholder="'Start typing to search...'"
+  .w-full.max-w-110.flex.items-center.relative.my-4.gap-2
+    input.w-full.focus.text-xl.py-2.pl-9.bg-light-50.bg-opacity-100.shadow-inner.border-1.border-dark-100.border-opacity-10.rounded-lg.dark-bg-dark-200.outline-none.focus-border-opacity-90(
+      :placeholder="'Type to search...'"
       v-model="search")
     .i-la-search.absolute.left-2.text-xl.opacity-40
     .i-la-times.absolute.right-2.text-xl.opacity-40.hover-opacity-80.transition.cursor-pointer(@click="search=''" v-if="search")
-    button.p-1.flex.items-center.gap-2.text-xl.text-yellow(
+    button.transition.p-2.shadow.dark-bg-dark-200.dark-hover-bg-dark-100.bg-light-300.hover-bg-light-100.rounded-lg.flex.items-center.gap-2.text-xl.text-yellow(
       :title=" favFilter ? 'Only favourites are shown' : 'Show only favourites'" 
       v-if="Object.values(favourites).filter(Boolean).length>0 && !search" @click="favFilter=!favFilter")
       .i-la-star-solid(v-if="favFilter")
