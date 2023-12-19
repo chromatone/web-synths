@@ -25,6 +25,7 @@ const props = defineProps({
   clicks: { type: Number, default: 0 },
   stars: { type: Number, default: 0 },
   counter: { type: Number, default: 0 },
+  is_new: { type: Boolean, default: null },
 })
 
 const { isFormOpen, isAccessGranted } = useForm()
@@ -91,6 +92,9 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
       @click.stop :href="`/${slug}/`" v-if="!iframe"
         title="Opens in a new window"
       )
+    .text-xl.p-2.absolute.left-2.top-4.bg-yellow-600.rounded-xl.shadow.font-bold.z-1000.transform.-rotate-10(
+      v-if="is_new"
+      ) NEW!
 </template>
 
 <style scoped lang="postcss">
