@@ -10,6 +10,7 @@ const { theme, site, isDark } = useData()
 
 <template lang="pug">
 .flex.flex-col.noise.items-center.relative.min-h-100svh
+  RegisterSW
   .w-full.backdrop-blur-xl.sticky.top-0.z-100.bg-light-200.bg-opacity-60.dark-bg-dark-300.dark-bg-opacity-60
     .flex.flex.items-center.w-full.max-w-180.mx-auto.gap-4.px-2
       a.p-2.flex.items-center.gap-4(href="/")
