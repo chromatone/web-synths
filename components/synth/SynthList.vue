@@ -68,7 +68,7 @@ watch(favourites, f => {
         .i-la-star-solid(v-if="favFilter")
         .i-la-star(v-else)
     button.transition.p-2.shadow.dark-bg-dark-200.dark-hover-bg-dark-100.bg-light-300.hover-bg-light-100.rounded-lg.flex.items-center.gap-2.text-xl(
-      :title=" favFilter ? 'Only favourites are shown' : 'Show only favourites'" 
+      title="Suggest a new link to the collection" 
       v-if="!search" @click="addNew=!addNew")
       .i-la-plus.transform.transition(:class="{'rotate-45':addNew}")
 .flex.flex-col.items-center.gap-8.p-2.max-w-160.mx-auto.mb-12
