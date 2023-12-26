@@ -1,6 +1,8 @@
 <script setup>
 import { ref, reactive } from 'vue';
 
+const emit = defineEmits(['submitted'])
+
 const data = reactive({
   url: '',
   text: ''
@@ -33,6 +35,9 @@ async function sendSuggest() {
     reply.value = await res?.json()
     data.url = ''
     data.text = ''
+    setTimeout(() => {
+      emit('submitted')
+    }, 2000)
   } catch (e) {
     console.error(e, e?.errors?.[0]?.message, e?.response?.status)
   }

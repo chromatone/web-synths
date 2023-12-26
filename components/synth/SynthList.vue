@@ -21,6 +21,7 @@ const fuse = new Fuse(data, {
 const favFilter = useStorage('fav-filter', false)
 
 const search = ref('')
+const addNew = ref(false)
 
 const results = computed(() => fuse.search(search.value));
 
@@ -63,27 +64,33 @@ watch(favourites, f => {
     button.transition.p-2.shadow.dark-bg-dark-200.dark-hover-bg-dark-100.bg-light-300.hover-bg-light-100.rounded-lg.flex.items-center.gap-2.text-xl.text-yellow(
       :title=" favFilter ? 'Only favourites are shown' : 'Show only favourites'" 
       v-if="Object.values(favourites).filter(Boolean).length>0 && !search" @click="favFilter=!favFilter")
-      .i-la-star-solid(v-if="favFilter")
-      .i-la-star(v-else)
+      transition(name="fade")
+        .i-la-star-solid(v-if="favFilter")
+        .i-la-star(v-else)
+    button.transition.p-2.shadow.dark-bg-dark-200.dark-hover-bg-dark-100.bg-light-300.hover-bg-light-100.rounded-lg.flex.items-center.gap-2.text-xl(
+      :title=" favFilter ? 'Only favourites are shown' : 'Show only favourites'" 
+      v-if="!search" @click="addNew=!addNew")
+      .i-la-plus.transform.transition(:class="{'rotate-45':addNew}")
 .flex.flex-col.items-center.gap-8.p-2.max-w-160.mx-auto.mb-12
-  .flex.w-full.sticky(
-    :style="{top:`${80+s*4}px`, zIndex: s+10}"
-    style="flex: 1 1 240px"
-    v-for="(synth,s) in filteredList" 
-    :key="synth.id"
-    :index="s") 
+  template(v-if="!addNew")
     transition-group(name="fade")
-      SynthCard( 
-        :pos="s"
-        :style="{filter: !synth.public&&!isAccessGranted ? `contrast(70%) blur(2px) opacity(80%)` : `` }"
+      .flex.w-full.sticky(
+        :style="{top:`${80+s*4}px`, zIndex: s+10}"
+        style="flex: 1 1 240px"
+        v-for="(synth,s) in filteredList" 
         :key="synth.id"
-        v-bind="synth"
-        :counter="clicks?.find(el=>el?.id==synth?.id)?.stats?.[0]?.views"
-        :stars="clicks?.find(el=>el?.id==synth?.id)?.stats?.[0]?.stars"
-        )
-  .p-2(key="nnn" v-if="filteredList.length==0") 
-    .animate-pulse.text-center We don't know such a web-app yet. 
-    FormSynth.max-w-140.mx-auto.mt-6
+        :index="s") 
+        SynthCard( 
+          :pos="s"
+          :style="{filter: !synth.public&&!isAccessGranted ? `contrast(70%) blur(2px) opacity(80%)` : `` }"
+          :key="synth.id"
+          v-bind="synth"
+          :counter="clicks?.find(el=>el?.id==synth?.id)?.stats?.[0]?.views"
+          :stars="clicks?.find(el=>el?.id==synth?.id)?.stats?.[0]?.stars"
+          )
+  .p-2(key="nnn" v-if="filteredList.length==0 || addNew") 
+    .animate-pulse.text-center(v-if="!addNew") We don't know such a web-app yet. 
+    FormSynth.max-w-140.mx-auto.mt-6(@submitted="addNew=false")
 </template>
 
 <style lang="postcss">
