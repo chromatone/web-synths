@@ -89,8 +89,9 @@ a:hover {
   & h3,
   & h4,
   & h5,
-  & h6 {
-    @apply max-w-160 mx-auto py-4;
+  & h6,
+  & li {
+    @apply max-w-160 mx-auto py-2;
   }
 }
 </style>
