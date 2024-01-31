@@ -44,12 +44,12 @@ onMounted(async () => {
 
 <template lang='pug'>
 .flex.flex-col.gap-4.bg-light-300.dark-bg-dark-300.rounded-lg.shadow-xl.overflow-hidden.mx-auto
-  .p-0.h-70svh.bg-cover.bg-center(
+  .p-0l.h-70vh.h-70svh.bg-cover.bg-center(
     :class="{'animate-pulse': iframe && !iframeLoaded}"
     :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
     )
     transition(name="fade")
-      iframe.w-full.h-70svh.bg-light-100.dark-bg-dark-800(
+      iframe.w-full.h-70vh.h-70svh.bg-light-100.dark-bg-dark-800(
         allow="midi *"
 
         v-show="iframeLoaded"
