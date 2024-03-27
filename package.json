@@ -13,12 +13,12 @@
 	"engines": {
 		"node": ">18.x"
 	},
-	"packageManager": "pnpm@8.15.4",
+	"packageManager": "pnpm@8.15.5",
 	"keywords": [],
 	"author": "",
 	"license": "MIT",
 	"dependencies": {
-		"@unocss/reset": "^0.58.5",
+		"@unocss/reset": "^0.58.7",
 		"@vueuse/core": "^10.9.0",
 		"@vueuse/integrations": "^10.9.0",
 		"fuse.js": "^7.0.0",
@@ -27,15 +27,15 @@
 	},
 	"devDependencies": {
 		"@directus/sdk": "^15.0.3",
-		"@unocss/extractor-pug": "^0.58.5",
+		"@unocss/extractor-pug": "^0.58.7",
 		"@vite-pwa/vitepress": "^0.4.0",
-		"@vue/language-plugin-pug": "^2.0.6",
+		"@vue/language-plugin-pug": "^2.0.7",
 		"image-downloader": "^4.3.0",
 		"postcss-nesting": "^12.1.0",
 		"pug": "^3.0.2",
-		"unocss": "^0.58.5",
+		"unocss": "^0.58.7",
 		"unplugin-vue-components": "^0.26.0",
-		"vitepress": "^1.0.0-rc.45",
+		"vitepress": "^1.0.1",
 		"workbox-window": "^7.0.0"
 	}
 }
