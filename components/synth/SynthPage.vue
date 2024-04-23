@@ -44,22 +44,22 @@ onMounted(async () => {
 
 <template lang='pug'>
 .flex.flex-col.gap-4.bg-light-300.dark-bg-dark-300.rounded-lg.shadow-xl.overflow-hidden.mx-auto
-  .p-0l.h-70vh.h-70svh.bg-cover.bg-center(
-    :class="{'animate-pulse': iframe && !iframeLoaded}"
-    :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
-    )
+  .h-70vh.h-70svh
+    .h-70vh.h-70svh.bg-cover.bg-center.absolute.z-100.w-full(
+      :class="{'animate-pulse': iframe && !iframeLoaded}"
+      @click="iframeLoaded=true"
+      v-show="!iframeLoaded"
+      :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
+      )
     transition(name="fade")
       iframe.w-full.h-70vh.h-70svh.bg-light-100.dark-bg-dark-800(
         allow="midi *"
-
-        v-show="iframeLoaded"
-        @load="iFrameLoad"
+        @load=" iframeLoaded = true"
         :title="title" 
         :src="archive ? archive_link : url"
         )
+
   .flex.flex-col.p-4.gap-1.bottom-0.bg-light-100.dark-bg-dark-200.w-full.max-w-180.mx-auto.mb-12.relative
-
-
     .text-xl.flex.items-center.gap-4
       .font-bold {{ title }} 
       component.text-lg.font-300(
