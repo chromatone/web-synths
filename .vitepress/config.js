@@ -16,7 +16,7 @@ const meta = {
   template: 'Online web audio instruments collection',
   description: "Web audio synthesizers collection to play music directly in your browser with any MIDI-controller.",
   site: "synth.playtronica.com",
-  url: "https://synth.playtronica.com/", //the end slash here is mandatory
+  url: process.env.NODE_ENV === "production" ? "https://synth.playtronica.com/" : "localhost:5173/", //the end slash here is mandatory
   repo: "https://github.com/chromatone/web-synths",
   locale: "en",
   icon: "logo.svg",
@@ -92,7 +92,7 @@ export default withPwa(defineConfig({
     const url = pageData.relativePath.split('index.md')[0]
     let image = meta.image
     if (pageData.frontmatter.dynamic) {
-      image = pageData.frontmatter?.cover
+      image = `${meta.url}cover/${pageData.params?.slug}.webp`
     }
     return [
       process.env.NODE_ENV === "production" ? ["script", { async: true, defer: true, "data-website-id": meta.umamiId, src: meta.umamiScript }] : null,
@@ -109,12 +109,12 @@ export default withPwa(defineConfig({
       meta?.tags ? ["meta", { name: "keywords", content: meta?.tags }] : null,
       meta.color ? ["meta", { name: "theme-color", content: meta.color }] : null,
 
-      ['meta', { property: 'og:title', content: pageData.title + ' | Chromatone & Playtronica' }],
-      ['meta', { property: 'og:description', content: pageData.description }],
+      ['meta', { property: 'og:title', content: pageData.params?.title + ' | Web Synths Collection by Playtronica & Chromatone' }],
+      ['meta', { property: 'og:description', content: pageData.params?.description }],
       ['meta', { property: 'og:url', content: meta.url + url }],
       ['meta', { property: 'og:image', content: image }],
-      ['meta', { name: 'twitter:title', content: pageData.title + ' | Chromatone & Playtronica' }],
-      ['meta', { name: 'twitter:description', content: pageData.description }],
+      ['meta', { name: 'twitter:title', content: pageData.params?.title + ' | Web Synths Collection by Playtronica & Chromatone' }],
+      ['meta', { name: 'twitter:description', content: pageData.params?.description }],
       ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
       ['meta', { name: 'twitter:site', content: `@${meta.author}` }],
       ['meta', { name: 'twitter:creator', content: `@${meta.author}` }],
