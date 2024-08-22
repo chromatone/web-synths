@@ -12,8 +12,8 @@ import {
 import extractorPug from "@unocss/extractor-pug";
 
 const meta = {
-  title: "Web synths",
-  template: 'Online web audio instruments collection',
+  title: "Web Synths Collection",
+  template: 'Online web audio instruments playground',
   description: "Web audio synthesizers collection to play music directly in your browser with any MIDI-controller.",
   site: "synth.playtronica.com",
   url: process.env.NODE_ENV === "production" ? "https://synth.playtronica.com/" : "localhost:5173/", //the end slash here is mandatory

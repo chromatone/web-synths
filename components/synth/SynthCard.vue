@@ -50,10 +50,10 @@ async function click() {
 
 <template lang='pug'>
 button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light-500.dark-bg-dark-300.-hover-translate-y-6px.transition.duration-200.hover-shadow-lg.rounded-lg.overflow-hidden.relative.border-1.border-dark-100.border-opacity-20.shadow-sm.dark-border-light-800.dark-border-opacity-20(
-  :style="{borderColor: favourites[id] ? isDark ? 'hsl(50deg,80%,35%)':'hsl(40deg,90%,80%)':null}"
+  :style="{ borderColor: favourites[id] ? isDark ? 'hsl(50deg,80%,35%)' : 'hsl(40deg,90%,80%)' : null }"
   @click="click")
   .cover.min-h-50.bg-cover.bg-center.filter.transition(
-    :style="{backgroundImage: `url(/cover/${slug}.webp)`}"
+    :style="{ backgroundImage: `url(/cover/${slug}.webp)` }"
     style="flex: 1 1 280px"
     )
     //- DragHandle.scale-80.opacity-40.cursor-grab.absolute.top-2.left-2
@@ -73,7 +73,7 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
     style="flex: 10 0 200px"
     )
     .flex.items-center.gap-2.flex-0.w-full
-      .transition.text-xl.select-none.absolute.top-4.left-4.text-center.z-200 {{ sort }}
+      .transition.text-xl.select-none.absolute.top-4.left-4.text-center.z-200.text-shadow-md {{ sort }}
 
       .flex-auto
         span.flex.items-center.gap-2
@@ -85,7 +85,7 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
     component.p-0.text-md(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
     .flex-1
       slot
-    .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length>0")
+    .flex-1.flex.items-end.flex.flex-wrap.gap-2(v-if="tags?.length > 0")
       .px-2.py-1.text-sm.bg-light-800.dark-bg-dark-500.rounded-lg(v-for="tag in tags" :key="tag") {{ tag }}
 
     a.absolute.bottom-4.right-4.i-la-external-link-square-alt.text-lg.opacity-40.transition.transition.hover-opacity-100(

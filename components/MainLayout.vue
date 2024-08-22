@@ -9,16 +9,16 @@ const { theme, site, isDark } = useData()
 </script>
 
 <template lang="pug">
-.flex.flex-col.noise.items-center.relative.min-h-100svh
+.flex.flex-col.noise.items-center.relative.min-h-100svh.pb-15
   RegisterSW
-  .w-full.backdrop-blur-xl.sticky.top-0.z-100.bg-light-200.bg-opacity-60.dark-bg-dark-300.dark-bg-opacity-60
+  .w-full.backdrop-blur-xl.fixed.bottom-0.z-100.bg-light-200.bg-opacity-60.dark-bg-dark-300.dark-bg-opacity-60.z-200
     .flex.flex.items-center.w-full.max-w-180.mx-auto.gap-4.px-2
       a.p-2.flex.items-center.gap-4(href="/")
         img.w-12(:src="theme.logo" alt="Web-synths collection logo")
         .text-xl.font-600 {{ site.title }}
       .flex-1
       button.text-xl(
-        @click="isDark=!isDark"
+        @click="isDark = !isDark"
         aria-label="Dark mode toggle"
         )
         .i-la-sun(v-if="!isDark")
@@ -26,17 +26,17 @@ const { theme, site, isDark } = useData()
 
       button.p-4.z-2000.cursor-pointer(
         aria-label="Player profile"
-        @click="isFormOpen=!isFormOpen")
+        @click="isFormOpen = !isFormOpen")
         .i-ph-user-circle-duotone.p-5
-
-  .flex.flex-wrap.w-full.mx-auto.flex-auto.justify-center
+    AboutFooter.z-100
+  .flex.flex-wrap.w-full.mx-auto.flex-auto.justify-center.mb-12
     content#content.w-full
   transition(name="panel")
     FormMain.fixed.z-1000(v-if="isFormOpen") We are building a community of web-based musicians. Type in your e-mail to instantly gain full access to the collection and receive occasional community updates from us. Stay tuned! 
 
       template(#button) JOIN THE COMMUNITY
       template(#notice) Your access status will be saved per device and you won't need to enter your e-mail again.
-  AboutFooter
+
 </template>
 
 <style lang="postcss">
@@ -83,6 +83,10 @@ a:hover {
 #content {
   @apply leading-loose;
 
+  & p {
+    @apply p-8 bg-light-200 bg-op-80 backdrop-blur dark-bg-dark-700 dark-bg-op-80 m-2;
+  }
+
   & p,
   & h1,
   & h2,
@@ -91,7 +95,7 @@ a:hover {
   & h5,
   & h6,
   & li {
-    @apply max-w-160 mx-auto py-2;
+    @apply max-w-180 mx-auto py-2;
   }
 }
 </style>

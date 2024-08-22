@@ -3,9 +3,9 @@
 </script>
 
 <template lang='pug'>
-.flex.items-center.gap-1.p-4.bg-light-100.bg-opacity-70.dark-bg-dark-400.dark-bg-opacity-40.w-full.justify-center
-  .p-0 Made with 🧡 by
+.flex.items-center.gap-1.p-1.bg-light-100.bg-opacity-90.dark-bg-dark-900.dark-bg-opacity-90.w-full.justify-center.op-70
+  .p-0 Curated with ❤️‍🔥 by
   a(href="https://shop.playtronica.com" target="_blank") Playtronica 
-  span &
+  span & 
   a(href="https://chromatone.center" target="_blank") Chromatone
 </template>
