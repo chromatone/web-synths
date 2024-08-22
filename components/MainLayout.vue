@@ -9,13 +9,13 @@ const { theme, site, isDark } = useData()
 </script>
 
 <template lang="pug">
-.flex.flex-col.noise.items-center.relative.min-h-100svh.pb-15
+.flex.flex-col.noise.items-center.relative.min-h-100svh
   RegisterSW
-  .w-full.backdrop-blur-xl.fixed.bottom-0.z-100.bg-light-200.bg-opacity-60.dark-bg-dark-300.dark-bg-opacity-60.z-200
-    .flex.flex.items-center.w-full.max-w-180.mx-auto.gap-4.px-2
+  .w-full.backdrop-blur-xl.fixed.bottom-0.bg-light-200.bg-opacity-60.dark-bg-dark-300.dark-bg-opacity-60.z-200
+    .flex.flex.items-center.w-full.max-w-160.mx-auto.gap-2.p-1
       a.p-2.flex.items-center.gap-4(href="/")
-        img.w-12(:src="theme.logo" alt="Web-synths collection logo")
-        .text-xl.font-600 {{ site.title }}
+        img.w-8(:src="theme.logo" alt="Web-synths collection logo")
+        .text-lg.font-600 {{ site.title }}
       .flex-1
       button.text-xl(
         @click="isDark = !isDark"
@@ -24,12 +24,12 @@ const { theme, site, isDark } = useData()
         .i-la-sun(v-if="!isDark")
         .i-tabler-moon-2(v-else)
 
-      button.p-4.z-2000.cursor-pointer(
+      button.p-2.z-2000.cursor-pointer.text-2xl(
         aria-label="Player profile"
         @click="isFormOpen = !isFormOpen")
-        .i-ph-user-circle-duotone.p-5
+        .i-ph-user-circle-duotone
     AboutFooter.z-100
-  .flex.flex-wrap.w-full.mx-auto.flex-auto.justify-center.mb-12
+  .flex.flex-wrap.w-full.mx-auto.flex-auto.justify-center.pb-20
     content#content.w-full
   transition(name="panel")
     FormMain.fixed.z-1000(v-if="isFormOpen") We are building a community of web-based musicians. Type in your e-mail to instantly gain full access to the collection and receive occasional community updates from us. Stay tuned! 
@@ -83,7 +83,8 @@ a:hover {
 #content {
   @apply leading-loose;
 
-  & p {
+  & p,
+  & ul {
     @apply p-8 bg-light-200 bg-op-80 backdrop-blur dark-bg-dark-700 dark-bg-op-80 m-2;
   }
 
@@ -94,7 +95,8 @@ a:hover {
   & h4,
   & h5,
   & h6,
-  & li {
+  & li,
+  & ul {
     @apply max-w-180 mx-auto py-2;
   }
 }
