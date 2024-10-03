@@ -3,7 +3,6 @@ node_modules/
 .vitepress/temp/
 .vitepress/dist/
 .vitepress/.temp
-.DS_Store
 .env
 players/
 database/
@@ -13,7 +12,6 @@ synths.yaml
 dist
 node_modules
 dist/
-public/.DS_Store
 .DS_Store
-.DS_Store
-public/.DS_Store
+
+
