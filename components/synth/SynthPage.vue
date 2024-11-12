@@ -53,7 +53,7 @@ onMounted(async () => {
       )
     transition(name="fade")
       iframe.w-full.h-90vh.h-90svh.bg-light-100.dark-bg-dark-800.fixed.top-0(
-        allow="midi *"
+        allow="midi;microphone;accelerometer;autoplay;camera;fullscreen;gyroscope;magnetometer;picture-in-picture;web-share;"
         @load=" iframeLoaded = true"
         :title="title" 
         :src="archive ? archive_link : url"
