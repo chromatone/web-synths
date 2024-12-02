@@ -5,6 +5,9 @@ on:
   repository_dispatch:
     types:
       - buildhook
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build
