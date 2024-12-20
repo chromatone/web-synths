@@ -1,6 +1,5 @@
 import { useThrottleFn } from '@vueuse/core'
 import { onMounted, ref, watch } from 'vue'
-import { useItem } from './useItems.js';
 
 
 
