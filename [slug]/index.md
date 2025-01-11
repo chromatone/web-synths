@@ -1,4 +1,6 @@
 ---
+title: Web-synth
+description: Synth page
 dynamic: true
 page_type: synth
 ---

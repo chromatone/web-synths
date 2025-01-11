@@ -79,10 +79,10 @@ export default withPwa(defineConfig({
 
   transformHead({ pageData }) {
     const url = pageData.relativePath.split('index.md')[0]
-    const image = pageData.frontmatter.dynamic
-      ? `${baseUrl}cover/${pageData.params?.slug}.webp`
-      : "cover.jpg"
-
+    let image = "cover.jpg"
+    if (pageData.frontmatter?.dynamic) {
+      image = `${baseUrl}cover/${pageData.params?.slug}.webp`
+    }
     return [
       process.env.NODE_ENV === "production" ? ["script", {
         async: true,
@@ -104,16 +104,16 @@ export default withPwa(defineConfig({
       gtag('config', 'G-647GHFC42Z');`] : null,
 
       ['meta', { property: 'og:title', content: pageData.params?.title + ' | Web Synths Collection by Playtronica & Chromatone' }],
-      ['meta', { property: 'og:description', content: pageData.params?.description }],
+      ['meta', { property: 'og:description', content: pageData.params?.description || 'Web synths collection' }],
       ['meta', { property: 'og:url', content: baseUrl + url }],
       ['meta', { property: 'og:image', content: image }],
       ['meta', { name: 'twitter:title', content: pageData.params?.title + ' | Web Synths Collection by Playtronica & Chromatone' }],
-      ['meta', { name: 'twitter:description', content: pageData.params?.description }],
+      ['meta', { name: 'twitter:description', content: pageData.params?.description || 'Web-synths collection' }],
       ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
       ['meta', { name: 'twitter:site', content: '@davay42' }],
       ['meta', { name: 'twitter:creator', content: '@davay42' }],
       ['meta', { name: 'twitter:image', content: image }],
-    ]
+    ].filter(Boolean)
   },
 
   pwa: {
