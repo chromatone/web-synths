@@ -7,6 +7,7 @@ layout: home
 
 <h1 class="text-center text-2xl sm-text-3xl font-bold mt-8" style="padding: 0.1rem 1rem;">Online synthesizers and web piano apps</h1>
 <h2 class="text-xl sm-text-2xl text-center my-2" style="padding: 0 1rem;">Curated collection of free music creation resources</h2>
+<div class="text-sm bg-red bg-op-20 text-center my-2" style="padding: 0 1rem;"> <a href="https://news.ycombinator.com/item?id=23676109" target="_blank" class="underline op-50 hover-op-100 transition">iOS browsers don't support MIDI.</a> You can try <a href="https://apps.apple.com/us/app/web-midi-browser/id953846217" target="_blank" class="underline op-50 hover-op-100 transition">WebMIDI Browser</a>, but the app is old and might crash.</div>
 
 <SynthList />
 
