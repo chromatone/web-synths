@@ -95,12 +95,8 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
     .text-xl.p-2.absolute.left-2.top-4.bg-yellow-600.rounded-xl.shadow.font-bold.z-1000.transform.-rotate-10(
       v-if="is_new"
       ) NEW!
-    svg.absolute.bottom-6.right-2.w-15.-rotate-20.hover-scale-180.-hover-translate-x-4.-hover-translate-y-2.transition-500.-hover-rotate-25(viewBox="0 0 30 10" title="Compatible with Playtronica devices" alt="Compatible with Playtronica devices" v-if="playtronica_compatible")
-      rect(width="30" y="1" rx="4" height="8" fill="white")
-      circle(cx="5" cy="5" r="5" fill="hsl(50deg,50%,50%)")
-      circle(cx="25" cy="5" r="5" fill="hsl(50deg,50%,50%)")
-      text(x="10.5" y="6.5" font-size="4") Touch Me
-      path(d="M3 5 L4.5 6.5 L7 4", stroke="green", stroke-width="0.7", fill="none")
+    img.absolute.bottom-4.right-2.w-10.-rotate-20.hover-scale-200.-hover-translate-x-4.-hover-translate-y-2.transition-500.-hover-rotate-25( title="Compatible with Playtronica devices" alt="Compatible with Playtronica devices" v-if="playtronica_compatible" src="/playtronica-friendly.png")
+      
   
 </template>
 
