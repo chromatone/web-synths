@@ -103,11 +103,11 @@ export default withPwa(defineConfig({
       gtag('js', new Date());
       gtag('config', 'G-647GHFC42Z');`] : null,
 
-      ['meta', { property: 'og:title', content: pageData.params?.title + ' | Web Synths Collection by Playtronica & Chromatone' }],
+      ['meta', { property: 'og:title', content: pageData.params?.title || 'Web-Synths' + ' | Web Synths Collection by Playtronica & Chromatone' }],
       ['meta', { property: 'og:description', content: pageData.params?.description || 'Web synths collection' }],
       ['meta', { property: 'og:url', content: baseUrl + url }],
       ['meta', { property: 'og:image', content: image }],
-      ['meta', { name: 'twitter:title', content: pageData.params?.title + ' | Web Synths Collection by Playtronica & Chromatone' }],
+      ['meta', { name: 'twitter:title', content: pageData.params?.title || 'Web-Synths' + ' | Web Synths Collection by Playtronica & Chromatone' }],
       ['meta', { name: 'twitter:description', content: pageData.params?.description || 'Web-synths collection' }],
       ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
       ['meta', { name: 'twitter:site', content: '@davay42' }],
