@@ -14,22 +14,22 @@ const { theme, site, isDark } = useData()
   .w-full.backdrop-blur-xl.fixed.bottom-0.bg-light-200.bg-opacity-60.dark-bg-dark-300.dark-bg-opacity-60.z-200
     .flex.flex.items-center.w-full.max-w-160.mx-auto.gap-2.p-1
       a.p-2.flex.items-center.gap-4(href="/")
-        img.w-8(:src="theme.logo" alt="Web-synths collection logo")
-        .text-lg.font-600 {{ site.title }}
+        img.w-7(:src="theme.logo" alt="Web-synths collection logo")
+        .text-md.font-600 {{ site.title }}
       .flex-1
-      button.text-xl(
+      button.text-lg(
         @click="isDark = !isDark"
         aria-label="Dark mode toggle"
         )
         .i-la-sun(v-if="!isDark")
         .i-tabler-moon-2(v-else)
 
-      button.p-2.z-2000.cursor-pointer.text-2xl(
+      button.p-2.z-2000.cursor-pointer.text-xl(
         aria-label="Player profile"
         @click="isFormOpen = !isFormOpen")
         .i-ph-user-circle-duotone
-    AboutFooter.z-100
-  .flex.flex-wrap.w-full.mx-auto.flex-auto.justify-center.pb-20
+
+  .flex.flex-wrap.w-full.mx-auto.flex-auto.justify-center.pb-12
     content#content.w-full
   transition(name="panel")
     FormMain.fixed.z-1000(v-if="isFormOpen") We are building a community of web-based musicians. Type in your e-mail to instantly gain full access to the collection and receive occasional community updates from us. Stay tuned! 

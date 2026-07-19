@@ -44,7 +44,7 @@ onMounted(async () => {
 
 <template lang='pug'>
 .flex.flex-col.gap-4.bg-light-300.dark-bg-dark-300.rounded-lg.shadow-xl.overflow-hidden.mx-auto.relative.mb-0
-  .h-85vh.h-85svh
+  .h-85svh
     .h-90vh.h-90svh.bg-cover.bg-center.absolute.z-100.w-full(
       :class="{ 'animate-pulse': iframe && !iframeLoaded }"
       @click="iframeLoaded = true"
@@ -52,7 +52,7 @@ onMounted(async () => {
       :style="{ backgroundImage: `url(/cover/${slug}.webp)` }"
       )
     transition(name="fade")
-      iframe.w-full.h-90vh.h-90svh.bg-light-100.dark-bg-dark-800.fixed.top-0(
+      iframe.w-full.h-95svh.bg-light-100.dark-bg-dark-800.fixed.top-0(
         allow="midi;microphone;accelerometer;autoplay;camera;fullscreen;gyroscope;magnetometer;picture-in-picture;web-share;"
         @load=" iframeLoaded = true"
         :title="title" 

@@ -6,7 +6,8 @@ layout: home
 ---
 
 <h1 class="text-center text-2xl sm-text-3xl font-bold mt-8" style="padding: 0.1rem 1rem;">Online synthesizers and web piano apps</h1>
-<h2 class="text-xl sm-text-2xl text-center my-2" style="padding: 0 1rem;">Curated collection of free music creation resources</h2>
+<h2 class="text-xl sm-text-2xl text-center my-2" style="padding: 0 1rem;">Collection of free music creation resources</h2>
+<AboutFooter/>
 <div class="text-sm bg-green bg-op-20 py-1 text-center my-2">To play MIDI instruments on iOS, use the new <a href="https://apps.apple.com/us/app/midiweb-browser/id6757226617" target="_blank" class="underline op-50 hover-op-100 transition">MIDIWeb Browser</a> app.</div>
 
 <SynthList />

@@ -82,7 +82,7 @@ watch(favourites, f => {
         :index="s") 
         SynthCard( 
           :pos="s"
-          :style="{ filter: !synth.public && !isAccessGranted ? `contrast(70%) blur(2px) opacity(80%)` : `` }"
+          :style="{ filter: !synth.public && !isAccessGranted ? `contrast(30%) grayscale(100%) blur(1px)` : `` }"
           :key="synth.id"
           v-bind="synth"
           :counter="clicks?.find(el => el?.id == synth?.id)?.stats?.[0]?.views"
