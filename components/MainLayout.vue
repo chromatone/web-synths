@@ -11,6 +11,7 @@ const { theme, site, isDark } = useData()
 <template lang="pug">
 .flex.flex-col.noise.items-center.relative.min-h-100svh
   RegisterSW
+  .bf-banner Black Friday deals on Playtronica instruments &rarr; #[a(href="https://playtronica.com") Shop now]
   .w-full.backdrop-blur-xl.fixed.bottom-0.bg-light-200.bg-opacity-60.dark-bg-dark-300.dark-bg-opacity-60.z-200
     .flex.flex.items-center.w-full.max-w-160.mx-auto.gap-2.p-1
       a.p-2.flex.items-center.gap-4(href="/")
@@ -52,6 +53,23 @@ html.dark {
 
 a:hover {
   @apply underline;
+}
+
+.bf-banner {
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px 16px;
+  font: 600 14px/1.35 system-ui, sans-serif;
+
+  & a {
+    color: #ffe14d;
+    text-decoration: underline;
+  }
 }
 
 .noise {
