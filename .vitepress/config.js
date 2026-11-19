@@ -124,6 +124,9 @@ export default withPwa(defineConfig({
     includeAssets: ['logo.svg'],
     workbox: {
       globPatterns: ['**/*.{css,js,html,svg,png,webp,ico,txt,woff2}'],
+      cleanupOutdatedCaches: true,
+      skipWaiting: true,
+      clientsClaim: true,
     },
     manifest: {
       name: 'Web Synths Collection',
