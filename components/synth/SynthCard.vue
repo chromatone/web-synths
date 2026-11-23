@@ -54,6 +54,7 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
   :style="{ borderColor: favourites[id] ? isDark ? 'hsl(50deg,80%,45%)' : 'hsl(40deg,90%,80%)' : null }"
   @click="click")
   .cover.min-h-50.bg-cover.bg-center.filter.transition(
+    :class="{ promo: id < 0 }"
     :style="{ backgroundImage: `url(/${id < 0 ? 'promo' : 'cover'}/${slug}.webp)` }"
     style="flex: 1 1 280px"
     )
@@ -109,7 +110,7 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
   @apply grayscale-80 opacity-90;
 }
 
-button:hover .cover {
+button:hover .cover, .cover.promo {
   @apply grayscale-0 opacity-100;
 }
 </style>
