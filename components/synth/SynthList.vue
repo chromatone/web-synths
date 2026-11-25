@@ -6,6 +6,7 @@ import { useItems } from '../../composables/useItems.js';
 import Fuse from "fuse.js";
 import { favourites } from '../../composables/useFavourites.js';
 import { useStorage } from '@vueuse/core';
+import { promo, PROMO_END, BF_END } from '../../db/promo.js';
 
 const { isAccessGranted } = useForm()
 
@@ -29,11 +30,18 @@ const searchFilter = computed(() => results.value.filter(item => item.score < 0.
   return item.item.slug
 }))
 
-const filteredList = computed(() => list.value.filter(item => search.value ? searchFilter.value.includes(item.slug) : favFilter.value ? favourites.value[item.id] : true))
+const showPromo = ref(false) // checked on the client, so an old build stops pinning on time
+const showBF = ref(false)
+
+const filteredList = computed(() => [
+  ...(showPromo.value && !search.value && !favFilter.value ? promo : []),
+  ...list.value.filter(item => search.value ? searchFilter.value.includes(item.slug) : favFilter.value ? favourites.value[item.id] : true)])
 
 const clicks = ref([])
 
 onMounted(async () => {
+  showPromo.value = Date.now() < PROMO_END
+  showBF.value = Date.now() < BF_END
   clicks.value = await useItems('synths', {
     fields: ['id', {
       stats: ['views', 'stars']
@@ -88,6 +96,7 @@ watch(favourites, f => {
           :counter="clicks?.find(el => el?.id == synth?.id)?.stats?.[0]?.views"
           :stars="clicks?.find(el => el?.id == synth?.id)?.stats?.[0]?.stars"
           )
+          .text-sm.font-bold.px-2.py-1.rounded-lg.bg-black.text-yellow-300(v-if="synth.id < 0 && showBF") Black Friday
   .p-2(key="nnn" v-if="filteredList.length == 0 || addNew") 
     .animate-pulse.text-center(v-if="!addNew") We don't know such a web-app yet. 
     FormSynth.max-w-140.mx-auto.mt-6(@submitted="addNew = false")

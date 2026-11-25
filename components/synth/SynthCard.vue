@@ -37,7 +37,7 @@ async function click() {
   if (!props.public && !isAccessGranted.value) {
     isFormOpen.value = !isFormOpen.value
   } else {
-    clickSynth(props.id)
+    if (props.id > 0) clickSynth(props.id)
     if (props.iframe) {
       window.open(props.slug + '/', '_self')
     } else {
@@ -54,7 +54,8 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
   :style="{ borderColor: favourites[id] ? isDark ? 'hsl(50deg,80%,45%)' : 'hsl(40deg,90%,80%)' : null }"
   @click="click")
   .cover.min-h-50.bg-cover.bg-center.filter.transition(
-    :style="{ backgroundImage: `url(/cover/${slug}.webp)` }"
+    :class="{ promo: id < 0 }"
+    :style="{ backgroundImage: `url(/${id < 0 ? 'promo' : 'cover'}/${slug}.webp)` }"
     style="flex: 1 1 280px"
     )
     //- DragHandle.scale-80.opacity-40.cursor-grab.absolute.top-2.left-2
@@ -80,11 +81,11 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
           span.font-normal(title="Archived locally by us" v-if="archive")
             .i-ph-archive-duotone
           a.i-la-external-link-square-alt.text-lg.opacity-40.transition.transition.hover-opacity-100(
-            @click.stop :href="`/${slug}/`" v-if="!iframe"
+            @click.stop :href="`/${slug}/`" v-if="!iframe && id > 0"
               title="Opens in a new window"
             )
       ClientOnly
-        SynthFav.text-xl.mr-2.absolute.z-200(:id="id" :stars="stars" )
+        SynthFav.text-xl.mr-2.absolute.z-200(:id="id" :stars="stars" v-if="id > 0")
     component.p-0.text-md(:is="author_link ? 'a' : 'div'" v-if="author" :href="author_link" target="_blank") by {{ author }}
     .flex-1
       slot
@@ -109,7 +110,7 @@ button.max-w-180.w-full.flex.flex-wrap.items-stretch.text-left.relative.bg-light
   @apply grayscale-80 opacity-90;
 }
 
-button:hover .cover {
+button:hover .cover, .cover.promo {
   @apply grayscale-0 opacity-100;
 }
 </style>
