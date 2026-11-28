@@ -11,7 +11,7 @@ const { theme, site, isDark } = useData()
 <template lang="pug">
 .flex.flex-col.noise.items-center.relative.min-h-100svh
   RegisterSW
-  .bf-banner Black Friday deals on Playtronica instruments &rarr; #[a(href="https://playtronica.com") Shop now]
+  .bf-banner Black Friday deals on Playtronica instruments &rarr; #[a(href="https://shop.playtronica.com/collections/black-friday-sale?utm_source=synth&utm_medium=banner&utm_campaign=bf2026") Shop now]
   .w-full.backdrop-blur-xl.fixed.bottom-0.bg-light-200.bg-opacity-60.dark-bg-dark-300.dark-bg-opacity-60.z-200
     .flex.flex.items-center.w-full.max-w-160.mx-auto.gap-2.p-1
       a.p-2.flex.items-center.gap-4(href="/")
